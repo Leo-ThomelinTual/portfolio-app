@@ -48,10 +48,8 @@
   max-width: 85vw;
   min-height: 350px;
   max-height: 350px;
-  border-radius: 25px;
   margin-top: 10rem;
   background-color: var(--background--clr);
-  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.514);
 }
 
 .wrapper {
@@ -63,8 +61,8 @@
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 1) 20%,
-    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 75%,
     rgba(0, 0, 0, 0)
   );
 }
@@ -78,7 +76,6 @@
   position: absolute;
   left: max(calc(200px * 8), 100%);
   animation: scroll 30s linear infinite;
-  border-radius: 20px;
   text-decoration: none;
   font-size: 2rem;
   font-weight: bold;
@@ -126,8 +123,7 @@
 .item1 {
   width: 200px;
   height: 100px;
-  background-color: red;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   position: absolute;
   left: max(calc(200px * 8), 100%);
   animation: scroll 30s linear infinite reverse;

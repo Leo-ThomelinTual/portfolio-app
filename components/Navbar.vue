@@ -31,6 +31,13 @@ const isActive = (path) => {
       </li>
       <li>
         <NuxtLink
+          :class="['nav-item', { active: isActive('/centreInteret') }]"
+          to="/centreInteret"
+          >Centre d'intérêt</NuxtLink
+        >
+      </li>
+      <li>
+        <NuxtLink
           :class="['nav-item', { active: isActive('/contact') }]"
           to="/contact"
           >Contact</NuxtLink
@@ -55,6 +62,13 @@ const isActive = (path) => {
       <li class="hover:-translate-y-[5px]">
         <NuxtLink to="/project" :class="['', { active: isActive('/project') }]"
           ><Icon size="2.7rem" name="pajamas:project"
+        /></NuxtLink>
+      </li>
+      <li class="hover:-translate-y-[5px]">
+        <NuxtLink
+          :class="['', { active: isActive('/centreInteret') }]"
+          to="/centreInteret"
+          ><Icon size="2.7rem" name="fluent:target-arrow-16-regular"
         /></NuxtLink>
       </li>
       <li class="hover:-translate-y-[5px]">

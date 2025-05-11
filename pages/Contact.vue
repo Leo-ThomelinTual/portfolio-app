@@ -1,8 +1,12 @@
-<script setup></script>
+<script setup>
+useHead({
+  titleTemplate: "%s Contact",
+});
+</script>
 <template>
   <main>
     <section
-      class="flex flex-wrap justify-center gap-[2em] py-[100px] md:py-[150px]"
+      class="flex flex-wrap justify-center gap-[3em] py-[20%] md:py-[150px]"
     >
       <h2 class="md:hidden">Me Contacter</h2>
       <section class="card bg-gray-500 bg-opacity-25 h-[100%]">
@@ -10,8 +14,11 @@
         <article>
           <h5>Facebook</h5>
         </article>
-        <a class="mb-4 button button-secondary" href="facebook.com"
-          >Me contacter</a
+        <NuxtLink
+          class="mb-4 button button-secondary"
+          href="https://www.facebook.com/profile.php?id=61564035716349"
+          target="_blank"
+          >Me contacter</NuxtLink
         >
       </section>
 
@@ -20,8 +27,11 @@
         <article>
           <h5>GitHub</h5>
         </article>
-        <a class="mb-4 button button-secondary" href="facebook.com"
-          >Me contacter</a
+        <NuxtLink
+          class="mb-4 button button-secondary"
+          href="https://github.com/Leo-ThomelinTual?tab=repositories"
+          target="_blank"
+          >Me contacter</NuxtLink
         >
       </section>
 
@@ -30,8 +40,11 @@
         <article>
           <h5>LinkedIn</h5>
         </article>
-        <a class="mb-4 button button-secondary" href="facebook.com"
-          >Me contacter</a
+        <NuxtLink
+          class="mb-4 button button-secondary"
+          href="https://www.linkedin.com/in/leo-thomelintual/"
+          target="_blank"
+          >Me contacter</NuxtLink
         >
       </section>
 
@@ -40,8 +53,10 @@
         <article>
           <h5>LinkedIn</h5>
         </article>
-        <a class="mb-4 button button-secondary" href="facebook.com"
-          >Me contacter</a
+        <NuxtLink
+          class="mb-4 button button-secondary"
+          href="mailto:leo.thomelintual@gmail.com"
+          >Me contacter</NuxtLink
         >
       </section>
     </section>
