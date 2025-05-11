@@ -1,0 +1,48 @@
+button,
+.button {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  vertical-align: middle;
+  outline: 2px solid var(--primaryColor);
+  height: 40px;
+  color: var(--dark-contrast);
+  cursor: pointer;
+  padding: 0 10px;
+  border-radius: var(--border-radius);
+  transition: all 0.5s ease;
+}
+button:hover,
+.button:hover {
+  outline-offset: 3px;
+  shape-outside: 50px;
+  box-shadow: 0px 0px 15px var(--light-var1);
+  background-color: var(--dark-contrast);
+  color: var(--secondaryColor);
+}
+
+.button-primary {
+  background-color: var(--secondaryColor);
+}
+
+.button-secondary {
+  background-color: transparent;
+}
+
+.sleek-Button {
+  background-color: blue;
+  outline: 2px solid transparent;
+  margin: 5px;
+  animation: outline-spread 1s ease reverse;
+}
+.sleek-Button:hover {
+  outline: 2px solid blue;
+  animation: outline-spread 1s ease-in-out forwards;
+}
+.sleek-Button-reversed {
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+.sleek-Button-reversed:hover {
+  border: 2px solid blue;
+}

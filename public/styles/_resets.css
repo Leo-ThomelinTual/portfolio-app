@@ -1,0 +1,61 @@
+body {
+  background-color: var(--backgroundColor);
+  color: var(--dark-contrast);
+  height: 100vh;
+}
+
+:focus-visible {
+  background-color: var(--primaryColor) !important;
+  color: var(--dark-contrast) !important;
+  border-radius: var(--border-radius);
+  img {
+    /* transform: scale(1.1); */
+    filter: brightness(1.2);
+    outline-offset: 3px;
+    outline: 2px solid var(--primaryColor);
+  }
+}
+
+.button-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 102;
+}
+
+strong {
+  color: var(--primaryColor);
+  padding-bottom: 3px;
+}
+
+* {
+  cursor: url(../icons/dot-pointer.svg), default;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+  font-family: "Jetbrains Mono";
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: var(--ls-h);
+}
+
+h1 {
+  font-size: clamp(2em, 2vw, var(--fs-h1));
+}
+h2 {
+  font-size: clamp(2em, 2vw, var(--fs-h2));
+}
+h3 {
+  font-size: clamp(2em, 2vw, var(--fs-h3));
+}
+p {
+  font-size: clamp(1em, 1vw, var(--fs-p));
+  line-height: var(--lh-p);
+  letter-spacing: var(--ls-p);
+}
