@@ -2,6 +2,8 @@ body {
   background-color: var(--backgroundColor);
   color: var(--dark-contrast);
   height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 :focus-visible {
@@ -9,10 +11,12 @@ body {
   color: var(--dark-contrast) !important;
   border-radius: var(--border-radius);
   img {
-    /* transform: scale(1.1); */
+    transform: scale(1.02);
     filter: brightness(1.2);
     outline-offset: 3px;
+    border: none;
     outline: 2px solid var(--primaryColor);
+    transition: all 0.2s ease-in-out;
   }
 }
 
@@ -29,12 +33,12 @@ strong {
 }
 
 * {
-  cursor: url(../icons/dot-pointer.svg), default;
+  cursor: url(../ico/dot-pointer.svg), default;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   vertical-align: middle;
-  font-family: "Jetbrains Mono";
+  font-family: Jetbrains Mono, monospace;
 }
 
 h1,

@@ -1,17 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
+  css: ["~/assets/css/app.css"],
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
   app: {
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "layout", mode: "out-in" },
     head: {
-      title: "Portfolio -", // default fallback title
+      title: "Portfolio -",
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
       htmlAttrs: {
         lang: "fr",
       },
-      charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-      link: [{ rel: "icon", type: "image/x-icon", href: "/public/new.ico" }],
+      link: [{ rel: "icon", type: "image/svg", href: "/favicon.svg" }],
     },
   },
 });

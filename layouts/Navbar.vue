@@ -7,7 +7,7 @@ const isActive = (path) => {
 </script>
 <template>
   <nav
-    class="fixed md:top-2 bottom-2 md:left-[50%] md:-translate-x-1/2 w-full md:h-[75px] md:w-[max-content] md:px-20 bg-gray-500 flex justify-center bg-opacity-25 backdrop-blur-sm rounded-xl border border-gray-500 border-opacity-75 z-[1000]"
+    class="fixed md:top-1 bottom-2 md:left-[50%] md:-translate-x-1/2 w-full md:h-[70px] md:w-[max-content] md:px-20 bg-gray-500 flex justify-center bg-opacity-25 backdrop-blur-sm rounded-xl border border-gray-500 border-opacity-75 z-[1000]"
   >
     <ul class="hidden md:flex flex p-5 text-white gap-10 text-xl">
       <li>

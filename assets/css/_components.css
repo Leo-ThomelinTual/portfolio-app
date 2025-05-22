@@ -116,46 +116,4 @@
   animation: homepage-tempName 8s linear infinite;
 }
 
-.notification {
-  position: absolute;
-  top: 100px;
-  right: 10px;
-  z-index: 1000;
-  margin: 10px;
-  padding: 10px;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  color: var(--dark-contrast);
-  border-radius: var(--border-radius);
-  animation: SlideInFrom_Right-Scale-Bounce 1s ease forwards;
-}
-.notification-success {
-  background-color: var(--success);
-}
-.notification-error {
-  background-color: var(--alert);
-}
-.notification-warning {
-  background-color: var(--warning);
-}
-.notification-information {
-  background-color: var(--info);
-}
-/* .blur-container {
-  position: absolute;
-  filter: blur(100px);
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-} */
 
-.blur-item-blue {
-  background-color: var(--secondaryColor);
-  width: 45em;
-  height: 25em;
-  filter: blur(100px);
-  border-radius: 50%;
-}

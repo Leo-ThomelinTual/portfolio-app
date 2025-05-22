@@ -5,6 +5,7 @@ useHead({
 </script>
 <template>
   <main>
+    <Wrapper class="hidden md:flex" />
     <section class="absolute bottom-[0] right-[0] z-[-10]">
       <article class="blur-item-blue"></article>
     </section>
@@ -73,30 +74,29 @@ useHead({
       </section>
     </section>
     <section class="flex flex-col gap-20 md:gap-[30em]">
-      <article
-        class="flex flex-col gap-2 w-full md:w-2/3 xl:w-1/3 px-4 md:px-0 md:m-4"
-      >
-        <h2 class="border-b py-2 border-indigo-700 pl-3">Symfony</h2>
-        <h3 class="pl-3">Symfony (Framework PHP)</h3>
-        <p class="md:border-l-2 border-indigo-700 p-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-          repudiandae, voluptatem, ipsa doloremque, voluptas voluptatum
-          perspiciatis voluptatibus aut eum voluptates provident.
-        </p>
-      </article>
-      <article
-        class="flex flex-col gap-2 w-full md:w-2/3 xl:w-1/3 px-4 md:px-0 md:m-4"
-      >
-        <h2 class="border-b py-2 border-indigo-700 pl-3">Symfony</h2>
-        <h3 class="pl-3">Symfony (Framework PHP)</h3>
-        <p class="md:border-l-2 border-indigo-700 p-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-          repudiandae, voluptatem, ipsa doloremque, voluptas voluptatum
-          perspiciatis voluptatibus aut eum voluptates provident.
-        </p>
-      </article>
+      <CompetenceFrame>
+        <template #competence-title>Symfony</template>
+        <template #competence-subtitle>Symfony (Framework PHP)</template>
+        <template #competence-text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+          dicta molestiae. Ipsam temporibus eius nesciunt consectetur quam quae,
+          aliquid quo eligendi neque velit aperiam excepturi perspiciatis error
+          impedit? Voluptatibus, in.
+        </template>
+      </CompetenceFrame>
+      <CompetenceFrame>
+        <template #competence-title>PHP</template>
+        <template #competence-subtitle>PHP</template>
+        <template #competence-text>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+          dicta molestiae. Ipsam temporibus eius nesciunt consectetur quam quae,
+          aliquid quo eligendi neque velit aperiam excepturi perspiciatis error
+          impedit? Voluptatibus, in.
+        </template>
+      </CompetenceFrame>
     </section>
   </main>
+  <blurItem class="absolute top-[150vh] right-[0] z-[-10]" />
 </template>
 
 <style scoped>
