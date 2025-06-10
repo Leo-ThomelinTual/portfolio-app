@@ -234,10 +234,10 @@
 
 @keyframes Pop_In {
   0% {
-    transform: scale(0%);
+    scale: 0%;
   }
   100% {
-    transform: scale(100%);
+    scale: 100%;
   }
 }
 @keyframes Pop_Out {
@@ -278,15 +278,12 @@
 ############################################
 */
 
-@keyframes homepage-tempName {
+@keyframes slow-appear {
   0% {
-    content: "Développeur Front-end.";
-  }
-  50% {
-    content: "Développeur Web Junior.";
+    opacity: 0;
   }
   100% {
-    content: "Web Designer.";
+    opacity: 100;
   }
 }
 
@@ -305,5 +302,66 @@
 @keyframes scroll {
   to {
     left: -200px;
+  }
+}
+
+@keyframes superAnim {
+  0% {
+    width: 400px;
+    height: 400px;
+    rotate: 0;
+  }
+  5% {
+    width: 400px;
+    height: 500px;
+    rotate: 20deg;
+  }
+  10% {
+    width: 400px;
+    height: 600px;
+    rotate: 50deg;
+  }
+  15% {
+    width: 500px;
+    height: 400px;
+    rotate: 60deg;
+  }
+  20% {
+    width: 600px;
+    height: 400px;
+    rotate: 80deg;
+  }
+  25% {
+    width: 400px;
+    height: 400px;
+    rotate: 100deg;
+  }
+  30% {
+  }
+  35% {
+  }
+  40% {
+  }
+  50% {
+  }
+  55% {
+  }
+  60% {
+  }
+  65% {
+  }
+  70% {
+  }
+  75% {
+  }
+  80% {
+  }
+  85% {
+  }
+  90% {
+  }
+  95% {
+  }
+  100% {
   }
 }

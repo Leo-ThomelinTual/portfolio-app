@@ -5,10 +5,6 @@ useHead({
 </script>
 <template>
   <main>
-    <Wrapper class="hidden md:flex" />
-    <section class="absolute bottom-[0] right-[0] z-[-10]">
-      <article class="blur-item-blue"></article>
-    </section>
     <NuxtLink
       class="fixed bottom-0 right-0 text-3xl opacity-25 hover:opacity-100 transition-all duration-200"
       to="/"
@@ -73,6 +69,7 @@ useHead({
         </article>
       </section>
     </section>
+    <Wrapper class="hidden md:flex" />
     <section class="flex flex-col gap-20 md:gap-[30em]">
       <CompetenceFrame>
         <template #competence-title>Symfony</template>
@@ -96,7 +93,7 @@ useHead({
       </CompetenceFrame>
     </section>
   </main>
-  <blurItem class="absolute top-[150vh] right-[0] z-[-10]" />
+  
 </template>
 
 <style scoped>

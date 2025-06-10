@@ -5,9 +5,9 @@ button,
   align-items: center;
   vertical-align: middle;
   outline: 2px solid var(--primaryColor);
+  cursor: url(../ico/cursor-grab.svg), pointer;
   height: 40px;
   color: var(--dark-contrast);
-  cursor: pointer;
   padding: 0 10px;
   border-radius: var(--border-radius);
   transition: all 0.5s ease;
@@ -27,22 +27,4 @@ button:hover,
 
 .button-secondary {
   background-color: transparent;
-}
-
-.sleek-Button {
-  background-color: blue;
-  outline: 2px solid transparent;
-  margin: 5px;
-  animation: outline-spread 1s ease reverse;
-}
-.sleek-Button:hover {
-  outline: 2px solid blue;
-  animation: outline-spread 1s ease-in-out forwards;
-}
-.sleek-Button-reversed {
-  background-color: transparent;
-  border: 2px solid transparent;
-}
-.sleek-Button-reversed:hover {
-  border: 2px solid blue;
 }

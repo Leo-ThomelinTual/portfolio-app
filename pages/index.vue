@@ -6,6 +6,9 @@ useHead({
 
 <template>
   <main>
+    <!-- <div
+      class="absolute left-[50%] top-50% transform -translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[--secondaryColor] blur-[50px] animation-[superAnim_1s_ease_infinite]"
+    ></div> -->
     <section
       class="flex md:items-center h-[100vh] w-full md:w-1/2 px-2 md:px-0 md:mx-5 transition-blur-md duration-500"
     >
@@ -17,7 +20,8 @@ useHead({
           <h2
             class="mx-md-4 pb-3 flex gap-2 font-bold border-b-2 border-gray-500"
           >
-            Je suis <strong class="homepage-tempName"></strong>
+            Je suis
+            <strong class="homepage-skillshow"></strong>
           </h2>
           <article class="flex gap-3 flex-wrap text-4xl">
             <Icon name="line-md:chevron-small-right" />
@@ -43,27 +47,44 @@ useHead({
               <strong>bonne base en Web Design</strong> et j'essais d'apprendre
               <strong>UI/UX</strong>.
             </p>
-            <NuxtLink
-              class="button button-primary gap-1 font-bold"
-              to="/contact"
-            >
-              Hire me
-              <Icon size="1.5em" name="material-symbols:arrow-forward" />
-            </NuxtLink>
+            <article class="flex gap-[--grid-gap]">
+              <NuxtLink
+                class="button button-secondary gap-1 hover:gap-2 font-bold"
+                to="/contact"
+              >
+                View more
+              </NuxtLink>
+              <NuxtLink
+                class="button button-primary gap-1 hover:gap-2 font-bold"
+                to="/contact"
+              >
+                Hire me
+                <Icon size="1.5em" name="material-symbols:arrow-forward" />
+              </NuxtLink>
+            </article>
           </article>
         </article>
       </section>
     </section>
-    <Showcase />
-    <blurItem class="absolute top-[0] right-[0] z-[-10]" />
-    <!-- <Notifications class="notification-error">
-      <template #notification-title>Erreur</template>
-      <template #notification-text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-        voluptatum eos natus tempore laborum.
-      </template>
-    </Notifications> -->
+    <Showcase class="bg-[url('~/public/img/nomansky.jpg')]" />
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.homepage-skillshow::after {
+  content: "";
+  animation: homepageSkillshow 10s linear infinite;
+}
+
+@keyframes homepageSkillshow {
+  0% {
+    content: "Développeur Front-end.";
+  }
+  50% {
+    content: "Développeur Web Junior.";
+  }
+  100% {
+    content: "Web Designer.";
+  }
+}
+</style>
