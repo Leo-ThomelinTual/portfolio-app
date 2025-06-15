@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
   <section
-    class="fixed bottom-0 flex flex-col m-2 p-3 w-max bg-black bg-opacity-50 rounded-md z-[1000]"
+    class="fixed bottom-[-50px] hover:bottom-0 flex flex-col m-2 p-3 w-max bg-black bg-opacity-50 rounded-md z-[1000]"
   >
     <p>Disponible in :</p>
     <section class="flex gap-[--grid-gap]">

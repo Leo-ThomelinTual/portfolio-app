@@ -1,5 +1,5 @@
 <template>
-  <TagTemplates>
+  <TagTemplates id="tailwindcss">
     <template #frameworkName>TailwindsCSS</template>
     <template #frameworkIcon><Icon name="devicon:tailwindcss" /></template>
   </TagTemplates>

@@ -44,6 +44,7 @@ function hideNotification() {
   color: #d9d9d9;
   border-radius: 5px;
   animation: SlideInFrom_Right-Bounce 1s ease forwards;
+  transition: transform 1s ease;
 }
 .notification-success {
   background: var(--success);
@@ -59,14 +60,11 @@ function hideNotification() {
 }
 
 @keyframes animation-closing {
-  0% {
-    transform: translateX(0%);
-  }
   50% {
-    transform: translateX(-10%);
+    transform: translate(-10%, 0);
   }
   100% {
-    transform: translateX(200%);
+    transform: translate(200%, 0);
   }
 }
 

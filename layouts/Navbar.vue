@@ -43,6 +43,13 @@ const isActive = (path) => {
           >Contact</NuxtLink
         >
       </li>
+      <li>
+        <NuxtLink
+          :class="['nav-item', { active: isActive('/onepage') }]"
+          to="/onepage"
+          >Onepage</NuxtLink
+        >
+      </li>
     </ul>
     <ul
       class="md:hidden relative flex justify-around p-2 w-[100%] text-white text-xl"

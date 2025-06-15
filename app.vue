@@ -4,7 +4,10 @@ import Navbar from "./layouts/Navbar.vue";
 
 <template>
   <BubbleBlue
-    class="xl:flex hidden fixed top-[150px] right-[0] w-[40em] h-[25em] z-[-10] homepage-bg"
+    class="xl:flex hidden fixed bottom-[150px] right-[0] w-[40em] h-[25em] z-[-10] homepage-bg"
+  />
+  <BubbleBluet
+    class="xl:flex hidden fixed top-[-450px] left-[50%] -translate-x-1/2 w-[50em] h-[50em] z-[-100]"
   />
 
   <Navbar />

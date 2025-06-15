@@ -16,46 +16,6 @@
   }
 }
 
-@keyframes change-text {
-  0% {
-    content: "Chauffage";
-  }
-  10% {
-    content: "Électronique";
-  }
-  20% {
-    content: "Électricité";
-  }
-  30% {
-    content: "Garagiste";
-  }
-  40% {
-    content: "Plomberie";
-  }
-  50% {
-    content: "Toiture";
-  }
-  60% {
-    content: "Piscine";
-  }
-
-  70% {
-    content: "Serrurerie";
-  }
-
-  80% {
-    content: "Travaux";
-  }
-
-  90% {
-    content: "Ménage";
-  }
-
-  100% {
-    content: "Informatique";
-  }
-}
-
 @keyframes Bounce {
   0% {
     transform: translate(-50%, 100%);
