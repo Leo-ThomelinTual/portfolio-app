@@ -1,6 +1,6 @@
 <template>
-  <TagTemplates id="next">
+  <TagsTemplates id="next">
     <template #frameworkName>NextJS</template>
     <template #frameworkIcon><Icon name="devicon:nextjs" /></template>
-  </TagTemplates>
+  </TagsTemplates>
 </template>

@@ -5,7 +5,6 @@ useHead({
 </script>
 <template>
   <main>
-    <EasterEgg1 />
     <Competence />
     <Wrapper class="hidden md:flex" />
     <section class="flex flex-col gap-20 md:gap-[30em]">
@@ -33,6 +32,4 @@ useHead({
   </main>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

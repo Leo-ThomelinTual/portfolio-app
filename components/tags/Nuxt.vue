@@ -1,6 +1,6 @@
 <template>
-  <TagTemplates id="nuxt">
+  <TagsTemplates id="nuxt">
     <template #frameworkName>NuxtJS</template>
     <template #frameworkIcon><Icon name="devicon:nuxtjs" /></template>
-  </TagTemplates>
+  </TagsTemplates>
 </template>

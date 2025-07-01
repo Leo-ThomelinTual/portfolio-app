@@ -1,28 +1,28 @@
 <template>
   <section class="wrapper-content flex flex-col">
     <section class="wrapper mx-auto my-auto border-2">
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-1">HTML</article>
       </NuxtLink>
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-2">CSS</article>
       </NuxtLink>
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-3">PHP</article>
       </NuxtLink>
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-4">Javascript</article>
       </NuxtLink>
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-5">Bootstrap</article>
       </NuxtLink>
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-6">Webdesign</article>
       </NuxtLink>
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-7">SQL</article>
       </NuxtLink>
-      <NuxtLink aria-hidden="true" tabindex="-1" to="../php/accueil.php">
+      <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-8">Symfony</article>
       </NuxtLink>
     </section>

@@ -1,18 +1,15 @@
-button,
 .button {
   display: flex;
   width: max-content;
   align-items: center;
   vertical-align: middle;
   outline: 2px solid var(--primaryColor);
-  cursor: url(../ico/cursor-grab.svg), pointer;
   height: 40px;
   color: var(--dark-contrast);
   padding: 0 10px;
   border-radius: var(--border-radius);
   transition: all 0.5s ease;
 }
-button:hover,
 .button:hover {
   outline-offset: 3px;
   shape-outside: 50px;

@@ -5,8 +5,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
-    layoutTransition: { name: "layout", mode: "out-in" },
     head: {
       title: "Portfolio -",
       charset: "utf-8",

@@ -1,6 +1,8 @@
+<script setup></script>
+
 <template>
-  <TagTemplates id="symfony">
+  <TagsTemplates id="symfony">
     <template #frameworkName>Symfony</template>
     <template #frameworkIcon><Icon name="skill-icons:symfony-dark" /></template>
-  </TagTemplates>
+  </TagsTemplates>
 </template>

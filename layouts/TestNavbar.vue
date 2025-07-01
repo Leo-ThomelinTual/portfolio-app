@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <section
     class="triggerSec fixed top-[50%] -translate-y-1/2 rounded-r-md z-[1000] opacity-25 hover:opacity-100 left-[-5px] hover:left-0 group"
@@ -52,6 +54,11 @@
   padding-inline-start: 0.5em;
   padding-block: 2em;
   background-color: #121212;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 18, 18, 1) 30%,
+    rgba(0, 0, 0, 0) 100%
+  );
   transition: all 0.5s ease;
 }
 .triggerSec:hover {

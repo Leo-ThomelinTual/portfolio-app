@@ -1,5 +1,5 @@
 <script setup>
-import ContactLayout from "~/layouts/ContactLayout.vue";
+import ContactLayout from "~/NotUsed/ContactLayout.vue";
 
 useHead({
   titleTemplate: "%s Contact",

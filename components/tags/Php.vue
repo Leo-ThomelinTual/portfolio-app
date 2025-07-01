@@ -1,6 +1,6 @@
 <template>
-  <TagTemplates id="php">
+  <TagsTemplates id="php">
     <template #frameworkName>PHP</template>
     <template #frameworkIcon><Icon name="devicon:php" /></template>
-  </TagTemplates>
+  </TagsTemplates>
 </template>

@@ -33,7 +33,6 @@ strong {
 }
 
 * {
-  cursor: url(../ico/dot-pointer.svg), default;
   padding: 0;
   margin: 0;
   box-sizing: border-box;

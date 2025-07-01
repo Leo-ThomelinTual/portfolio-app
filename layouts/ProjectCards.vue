@@ -1,14 +1,20 @@
 <script setup>
 import { ref } from "vue";
+import Bootstrap from "~/components/Tags/Bootstrap.vue";
+import Next from "~/components/Tags/Next.vue";
+import Nuxt from "~/components/Tags/Nuxt.vue";
+import Php from "~/components/Tags/Php.vue";
+import Professionnal from "~/components/Tags/Professionnal.vue";
+import React from "~/components/Tags/React.vue";
+import Symfony from "~/components/Tags/Symfony.vue";
+import Tailwindcss from "~/components/Tags/Tailwindcss.vue";
 
 const cards = ref([1, 2, 3, 4, 5, 6, 7]);
 </script>
 
 <template>
-  <section class="flex flex-col items-center gap-[2em] mt-[10em]">
-    <h2 class="p-3 border-b-2 text-center px-5 uppercase">
-      Mes projets
-    </h2>
+  <section class="flex flex-col items-center gap-[2em]">
+    <h2 class="p-3 border-b-2 text-center px-5 uppercase">Mes projets</h2>
   </section>
   <Filter />
   <section
@@ -41,14 +47,14 @@ const cards = ref([1, 2, 3, 4, 5, 6, 7]);
         excepturi atque aut. Dicta.
       </template>
       <template #fortag>
-        <TagTailwindcss />
-        <TagPhp />
-        <TagNuxt />
-        <TagSymfony />
-        <TagReact />
-        <TagNext />
-        <TagBootstrap />
-        <TagProfessionnal />
+        <Tailwindcss />
+        <Php />
+        <Nuxt />
+        <Symfony />
+        <React />
+        <Next />
+        <Bootstrap />
+        <Professionnal />
       </template>
     </CardProject>
   </section>

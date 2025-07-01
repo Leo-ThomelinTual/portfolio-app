@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import Bootstrap from "./tags/Bootstrap.vue";
-import Next from "./tags/Next.vue";
-import Nuxt from "./tags/Nuxt.vue";
-import Php from "./tags/Php.vue";
-import Professionnal from "./tags/Professionnal.vue";
-import React from "./tags/React.vue";
-import Symfony from "./tags/Symfony.vue";
-import Tailwindcss from "./tags/Tailwindcss.vue";
+import Bootstrap from "./Tags/Bootstrap.vue";
+import Next from "./Tags/Next.vue";
+import Nuxt from "./Tags/Nuxt.vue";
+import Personnel from "./Tags/Personnel.vue";
+import Php from "./Tags/Php.vue";
+import Professionnal from "./Tags/Professionnal.vue";
+import React from "./Tags/React.vue";
+import Symfony from "./Tags/Symfony.vue";
+import Tailwindcss from "./Tags/Tailwindcss.vue";
 
 function filterList(event: Event) {
   const clickedElement = event.currentTarget as HTMLElement;
@@ -25,7 +26,7 @@ function filterList(event: Event) {
       <Icon size="1.5rem" name="material-symbols:filter-list"></Icon>
     </article>
     <p>Crée avec :</p>
-    <article class="flex flex-wrap gap-1 md:gap-3">
+    <article class="flex flex-wrap gap-1">
       <Bootstrap @click="filterList" data-tag="bootstrap" />
       <Next @click="filterList" data-tag="next" />
       <Nuxt @click="filterList" data-tag="nuxt" />
@@ -34,6 +35,7 @@ function filterList(event: Event) {
       <Symfony @click="filterList" data-tag="symfony" />
       <Tailwindcss @click="filterList" data-tag="tailwindcss" />
       <Professionnal @click="filterList" data-tag="pro" />
+      <Personnel />
     </article>
   </section>
 </template>

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import SocialLink from "./SocialLink.vue";
+</script>
+
 <template>
   <section
     class="flex md:items-center h-[100vh] w-full md:w-1/2 px-2 md:px-0 md:mx-5 transition-blur-md duration-500"
@@ -52,6 +56,7 @@
             </NuxtLink>
           </article>
         </article>
+        <SocialLink class="flex flex-row flex-wrap" />
       </article>
     </section>
   </section>

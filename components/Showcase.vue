@@ -49,7 +49,7 @@ function toggleHomepageShowcase() {
   <section
     @click="toggleHomepageShowcase"
     id="showcase"
-    class="showcase group w-[40%] h-[95%] border border-gray-500 hover:border-x-white hover:border-t-white hidden md:flex bg-black rounded-md fixed top-2/4 right-10 transform -translate-y-1/2 bg-cover bg-center bg-no-repeat SlideInFrom_Right-Bounce"
+    class="showcase group w-[40%] h-[95%] border-2 border-gray-500 hover:border-x-white hover:border-t-white hidden md:flex bg-black rounded-md fixed top-2/4 right-10 transform -translate-y-1/2 bg-cover bg-center bg-no-repeat SlideInFrom_Right-Bounce"
   >
     <article
       class="flex items-center ml-auto gap-2 hover:gap-4 p-3 border-2 rounded-md bg-black w-max h-max m-3 opacity-50 group-hover:opacity-100"
