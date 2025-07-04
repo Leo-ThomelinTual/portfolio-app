@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   css: ["~/assets/css/app.css"],
   devtools: { enabled: true },
+  icon: {
+    size: "24px", // default <Icon> size applied
+    mode: "svg", // default <Icon> mode applied
+  },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
   app: {
     head: {

@@ -1,7 +1,6 @@
 body {
   background-color: var(--backgroundColor);
   color: var(--dark-contrast);
-  height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -33,32 +32,14 @@ strong {
 }
 
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
   vertical-align: middle;
-  font-family: Jetbrains Mono, monospace;
+  font-family:
+    Jetbrains Mono,
+    monospace;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: var(--ls-h);
-}
-
-h1 {
-  font-size: clamp(2em, 2vw, var(--fs-h1));
-}
-h2 {
-  font-size: clamp(2em, 2vw, var(--fs-h2));
-}
-h3 {
-  font-size: clamp(2em, 2vw, var(--fs-h3));
-}
-p {
-  font-size: clamp(1em, 1vw, var(--fs-p));
-  line-height: var(--lh-p);
-  letter-spacing: var(--ls-p);
+.text-4xl {
+  font-size: 3rem;
+  line-height: 3.5rem;
 }
