@@ -10,8 +10,8 @@ function filterList(event: Event) {
 </script>
 
 <template>
-  <section class="flex flex-col gap-3 mx-auto w-[90%] md:w-[50%]">
-    <article class="flex gap-2 items-center border-b-2 p-2 w-[200px]">
+  <section class="mx-auto flex w-[90%] flex-col gap-3 md:w-[65%]">
+    <article class="flex w-[200px] items-center gap-2 border-b-2 p-2">
       <p>Filtre</p>
       <Icon size="1.5rem" name="material-symbols:filter-list"></Icon>
     </article>

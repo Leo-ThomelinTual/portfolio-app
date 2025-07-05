@@ -1,15 +1,15 @@
 <script setup>
 definePageMeta({
-  layout: "onepage",
+  layout: "desktop-onepage",
 });
 </script>
 
 <template>
   <UtilsBubbleBluet
-    class="fixed right-[0] bottom-[150px] z-[-10] h-[25em] w-[40em]"
+    class="fixed bottom-[150px] right-[0] z-[-10] h-[25em] w-[40em]"
   />
   <UtilsBubbleBluet
-    class="fixed top-[-450px] left-[50%] z-[-100] h-[50em] w-[50em] -translate-x-1/2"
+    class="fixed left-[50%] top-[-450px] z-[-100] h-[50em] w-[50em] -translate-x-1/2"
   />
   <UtilsBubbleBlue
     class="fixed bottom-[0] left-[100px] z-[-10] h-[25em] w-[35em]"

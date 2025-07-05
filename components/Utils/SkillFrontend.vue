@@ -4,7 +4,7 @@ function functiontest() {
 }
 </script>
 <template>
-  <section class="flex h-max w-[100%] flex-row flex-wrap gap-2 rounded-md">
+  <section class="flex h-max w-max flex-row flex-wrap gap-2 rounded-md">
     <UtilsSkillFrame class="html" id="html" @click="functiontest">
       <template #skill-icon>
         <Icon size="7em" name="vscode-icons:file-type-html" />

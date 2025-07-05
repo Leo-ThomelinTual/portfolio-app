@@ -10,16 +10,16 @@ function toggleConcept(manual = false) {
   if (frontend && backend) {
     frontend.classList.toggle("opacity-100");
     frontend.classList.toggle("opacity-35");
-    frontend.classList.toggle("top-0");
-    frontend.classList.toggle("top-5");
-    frontend.classList.toggle("z-0");
-    frontend.classList.toggle("z-1");
+    frontend.classList.toggle("mt-0");
+    frontend.classList.toggle("mt-20");
+    frontend.classList.toggle("z-[0]");
+    frontend.classList.toggle("z-[1]");
     backend.classList.toggle("opacity-100");
     backend.classList.toggle("opacity-35");
-    backend.classList.toggle("top-0");
-    backend.classList.toggle("top-5");
-    backend.classList.toggle("z-1");
-    backend.classList.toggle("z-0");
+    backend.classList.toggle("mt-0");
+    backend.classList.toggle("mt-20");
+    backend.classList.toggle("z-[1]");
+    backend.classList.toggle("z-[0]");
 
     if (conceptTimeout) clearTimeout(conceptTimeout);
 
@@ -70,8 +70,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="relative mx-auto flex h-[100%] w-full flex-col gap-2">
-    <article class="z-[10] flex w-max flex-row gap-2 text-nowrap">
+  <section
+    class="relative flex h-[max-content] w-1/2 flex-row flex-wrap gap-2 xl:justify-center"
+  >
+    <article class="z-[10] hidden w-max flex-col gap-2 text-nowrap md:flex">
       <button
         @click="EnableColumn"
         class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-1 hover:w-[100px]"
@@ -95,10 +97,10 @@ onMounted(() => {
       </button>
     </article>
 
-    <section @click="handleManualToggle" id="overlap" class="flex h-120">
+    <section @click="handleManualToggle" id="overlap" class="w-max">
       <article
         id="frontend"
-        class="absolute top-5 left-65 z-1 flex h-120 w-2/3 flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black backdrop-blur-sm"
+        class="absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black backdrop-blur-sm"
       >
         <h2
           class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"
@@ -109,7 +111,7 @@ onMounted(() => {
       </article>
       <article
         id="backend"
-        class="absolute top-0 left-60 z-0 flex h-120 w-2/3 flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-35 shadow-lg shadow-black backdrop-blur-sm"
+        class="absolute z-[0] mt-[0] flex w-max flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-35 shadow-lg shadow-black backdrop-blur-sm"
       >
         <h2
           class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"
@@ -120,9 +122,10 @@ onMounted(() => {
       </article>
     </section>
 
-    <section id="column" class="hidden flex-wrap gap-3">
+    <!-- Column section -->
+    <section id="column" class="hidden flex-row justify-center gap-2">
       <article
-        class="flex h-120 w-max flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3"
+        class="flex w-max flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3"
       >
         <h2
           class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"
@@ -132,7 +135,7 @@ onMounted(() => {
         <UtilsSkillFrontend />
       </article>
       <article
-        class="flex h-120 w-max flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3"
+        class="flex w-max flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3"
       >
         <h2
           class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"

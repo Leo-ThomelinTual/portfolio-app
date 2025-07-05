@@ -1,12 +1,12 @@
 <template>
   <section
     id="contact"
-    class="grid w-full grid-cols-[1fr_max-content] grid-rows-[1fr_1fr] gap-2"
+    class="grid w-full grid-cols-1 grid-rows-3 gap-2 lg:grid-cols-[1fr_max-content] lg:grid-rows-[1fr_1fr]"
   >
     <article
       class="col-span-1 row-span-1 flex h-full flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2"
     >
-      <h2>Other Projects</h2>
+      <h2>Mes projects futurs</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
         corporis molestias incidunt voluptates numquam minus distinctio
@@ -39,21 +39,42 @@
       </p>
     </article>
     <article
-      class="col-span-1 row-span-3 flex h-full flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2"
+      class="row-span-1 flex h-full h-max items-center gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2 lg:col-span-1 lg:row-span-3 lg:h-full lg:flex-col lg:items-start"
     >
+      <h2
+        class="mx-auto flex flex-wrap items-center gap-3 border-b-2 border-white px-4 py-2 text-2xl"
+      >
+        Liens utils <Icon name="mdi:link" />
+      </h2>
       <NuxtLink
-        class="flex w-max gap-2 rounded-md border-2 border-white p-2"
+        class="flex h-max w-max gap-2 rounded-md border-2 border-white p-2"
+        to="/CV.pdf"
+        external
+        download
+      >
+        <Icon name="mdi:download" />
+        Téléchargé CV - Version papier
+      </NuxtLink>
+      <NuxtLink
+        class="flex h-max w-max gap-2 rounded-md border-2 border-white p-2"
         to="/"
       >
         <Icon name="mdi:github" />
-        Download paper CV
+        Mon repository GitHub
       </NuxtLink>
       <NuxtLink
-        class="flex w-max gap-2 rounded-md border-2 border-white p-2"
+        class="flex h-max w-max gap-2 rounded-md border-2 border-white p-2"
         to="/"
       >
         <Icon name="mdi:github" />
         Source code
+      </NuxtLink>
+      <NuxtLink
+        class="flex w-max gap-2 rounded-md border-2 border-white p-2"
+        to="/portfolio-history"
+      >
+        <Icon name="mdi:github" />
+        Historique visuel du portfolio
       </NuxtLink>
     </article>
     <article

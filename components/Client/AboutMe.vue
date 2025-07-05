@@ -1,10 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="flex h-[100vh] w-full px-2 md:w-1/2 md:items-center">
-    <section class="SlideInFrom_Left-Bounce py-8 pl-3 md:border-l-2">
+  <section class="flex h-[100vh] w-1/2 items-center px-2">
+    <article class="SlideInFrom_Left-Bounce py-8 pl-3 md:border-l-2">
       <article class="flex flex-col gap-3">
-        <h1 class="gap-2 text-4xl font-bold md:flex">
+        <h1 class="flex flex-row flex-wrap gap-2 text-4xl font-bold">
           Bonjour, je m'appelle <strong>Léo</strong>
         </h1>
         <h2
@@ -14,19 +14,19 @@
           <strong class="homepage-skillshow"></strong>
         </h2>
 
-        <article class="flex flex-wrap gap-3 text-4xl">
-          <Icon name="line-md:chevron-small-right" />
-          <Icon name="vscode-icons:file-type-html" />
-          <Icon name="vscode-icons:file-type-css2" />
-          <Icon name="vscode-icons:file-type-php" />
-          <Icon name="vscode-icons:file-type-mysql" />
-          <Icon name="devicon:javascript" />
-          <Icon name="material-icon-theme:figma" />
-          <Icon name="octicon:mark-github-16" />
-          <Icon name="skill-icons:symfony-dark" />
-          <Icon name="devicon:bootstrap" />
-          <Icon name="devicon:tailwindcss" />
-          <Icon name="line-md:chevron-small-left" />
+        <article class="flex flex-wrap gap-3">
+          <Icon size="2em" name="line-md:chevron-small-right" />
+          <Icon size="2em" name="vscode-icons:file-type-html" />
+          <Icon size="2em" name="vscode-icons:file-type-css2" />
+          <Icon size="2em" name="vscode-icons:file-type-php" />
+          <Icon size="2em" name="vscode-icons:file-type-mysql" />
+          <Icon size="2em" name="devicon:javascript" />
+          <Icon size="2em" name="material-icon-theme:figma" />
+          <Icon size="2em" name="octicon:mark-github-16" />
+          <Icon size="2em" name="skill-icons:symfony-dark" />
+          <Icon size="2em" name="devicon:bootstrap" />
+          <Icon size="2em" name="devicon:tailwindcss" />
+          <Icon size="2em" name="line-md:chevron-small-left" />
         </article>
 
         <article class="flex flex-col gap-3 text-xl">
@@ -56,7 +56,7 @@
         </article>
         <ClientSocialLink class="flex flex-row flex-wrap" />
       </article>
-    </section>
+    </article>
   </section>
 </template>
 

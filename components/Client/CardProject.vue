@@ -1,6 +1,6 @@
 <template>
   <section
-    class="group case flex w-[450px] flex-col gap-3 overflow-hidden rounded-xl border-2 border-gray-500/25 p-2 md:p-5 md:hover:border-white"
+    class="case group relative flex w-[450px] flex-col gap-3 overflow-hidden rounded-xl border-2 border-gray-500/25 p-2 md:p-5 md:hover:border-white"
   >
     <NuxtLink
       name="cardProject-link"
@@ -9,17 +9,17 @@
     >
       <slot name="cardProject-img"></slot>
       <p
-        class="absolute top-[50%] left-[50%] w-max -translate-x-1/2 -translate-y-1/2 group-hover:flex md:hidden"
+        class="absolute left-[50%] top-[50%] w-max -translate-x-1/2 -translate-y-1/2 group-hover:flex md:hidden"
       >
         Click pour accéder projet
       </p>
     </NuxtLink>
 
-    <div
+    <article
       class="absolute top-5 z-[1000] m-1 flex w-max translate-x-[-200%] gap-3 rounded-md bg-black/50 p-1 group-hover:translate-x-[0]"
     >
       <slot name="cardProject-iconlink"></slot>
-    </div>
+    </article>
 
     <h3 class="border-b border-indigo-700 pb-2 text-2xl">
       <slot name="cardProject-title"></slot>

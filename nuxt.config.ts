@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  devServer: {
+    host: "0.0.0.0", // ← indispensable en conteneur
+    port: 3000,
+  },
   compatibilityDate: "2024-11-01",
   css: ["~/assets/css/app.css"],
   devtools: { enabled: true },
@@ -7,7 +11,7 @@ export default defineNuxtConfig({
     size: "24px", // default <Icon> size applied
     mode: "svg", // default <Icon> mode applied
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxt/image"],
   app: {
     head: {
       title: "Portfolio -",

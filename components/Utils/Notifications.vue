@@ -16,7 +16,7 @@ function hideNotification() {
     class="notification group cursor-pointer shadow-xl shadow-green-900"
   >
     <article
-      class="invisible absolute top-0 right-3 flex h-max w-max items-center gap-3 overflow-hidden rounded-md bg-black p-3 shadow-lg shadow-black group-hover:visible group-hover:-top-9"
+      class="invisible absolute right-3 top-0 flex h-max w-max items-center gap-3 overflow-hidden rounded-md bg-black p-3 shadow-lg shadow-black group-hover:visible group-hover:-top-9"
     >
       <p>Click to hide</p>
       <Icon size="1rem" name="mdi:mouse-right-click" />
@@ -35,8 +35,6 @@ function hideNotification() {
 <style scoped>
 .notification {
   position: fixed;
-  top: 150px;
-  /* box-shadow: darkgreen 0px 0px 20px 2px; */
   right: 0.2em;
   z-index: 1000;
   margin: 10px;

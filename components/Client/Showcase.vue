@@ -49,17 +49,17 @@ function toggleHomepageShowcase() {
   <section
     @click="toggleHomepageShowcase"
     id="showcase"
-    class="showcase group SlideInFrom_Right-Bounce absolute top-2/4 right-10 hidden h-[95%] w-[40%] -translate-y-1/2 transform rounded-md border-2 border-gray-500 bg-black bg-cover bg-center bg-no-repeat shadow-xl shadow-black hover:border-x-white hover:border-t-white md:flex"
+    class="showcase SlideInFrom_Right-Bounce group absolute right-10 top-2/4 h-[95%] w-[40%] -translate-y-1/2 transform rounded-md border-2 border-gray-500 bg-black bg-cover bg-center bg-no-repeat shadow-xl shadow-black hover:border-x-white hover:border-t-white"
   >
     <section
-      class="m-3 ml-auto flex h-max w-max items-center gap-2 rounded-md border-2 bg-black p-3 opacity-50 group-hover:opacity-100 hover:gap-4"
+      class="m-3 ml-auto flex h-max w-max items-center gap-2 rounded-md border-2 bg-black p-3 opacity-50 hover:gap-4 group-hover:opacity-100"
     >
       <p id="text-box-expand">Click to expand</p>
       <Icon size="1.5rem" name="mdi:mouse-right-click" />
     </section>
     <div
       id="social-test"
-      class="bg-opacity-50 absolute right-0 bottom-0 m-1 hidden w-max flex-col gap-3 rounded-md bg-black p-1"
+      class="absolute bottom-0 right-0 m-1 hidden w-max flex-col gap-3 rounded-md bg-black bg-opacity-50 p-1"
     >
       <NuxtLink
         class="flex items-center gap-2 text-red-500 hover:text-white"

@@ -25,6 +25,11 @@
         Projet
       </NuxtLink>
 
+      <NuxtLink class="flex items-center gap-2 p-2 hover:ml-1" to="#project">
+        <Icon size="2rem" name="pajamas:project" />
+        Centre d'înterêt
+      </NuxtLink>
+
       <NuxtLink class="flex items-center gap-2 p-2 hover:ml-1" to="#contact">
         <Icon size="2rem" name="material-symbols:call-outline" />
         Contact

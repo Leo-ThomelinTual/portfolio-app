@@ -5,7 +5,7 @@ function toggleOptions() {
   const open = document.querySelector("#open");
   if (options) {
     options.classList.toggle("-bottom-3");
-    options.classList.toggle("-bottom-25");
+    options.classList.toggle("-bottom-[100px]");
 
     close.style.display = close.style.display === "flex" ? "none" : "flex";
     open.style.display = open.style.display === "none" ? "flex" : "none";
@@ -13,9 +13,9 @@ function toggleOptions() {
 }
 </script>
 <template>
-  <article
+  <section
     id="options"
-    class="bg-opacity-50 fixed -bottom-25 left-[30px] z-[1000] m-2 flex w-max flex-col rounded-md p-3"
+    class="fixed -bottom-[100px] left-[30px] z-[1000] m-2 flex w-max flex-col rounded-md bg-opacity-50 p-3"
   >
     <article class="mb-1 flex flex-row gap-1">
       <p class="w-max rounded-md bg-black px-5 py-2 font-bold">Options</p>
@@ -76,6 +76,6 @@ function toggleOptions() {
         />
       </article>
     </section>
-  </article>
+  </section>
 </template>
 <style scoped></style>
