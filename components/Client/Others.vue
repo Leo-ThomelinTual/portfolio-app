@@ -1,7 +1,7 @@
 <template>
   <section
     id="contact"
-    class="grid w-full grid-cols-1 grid-rows-3 gap-2 lg:grid-cols-[1fr_max-content] lg:grid-rows-[1fr_1fr]"
+    class="grid w-[100%] grid-cols-1 grid-rows-3 gap-2 md:w-full lg:grid-cols-[1fr_max-content] lg:grid-rows-[auto_auto]"
   >
     <article
       class="col-span-1 row-span-1 flex h-full flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2"
@@ -39,7 +39,7 @@
       </p>
     </article>
     <article
-      class="row-span-1 flex h-full h-max items-center gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2 lg:col-span-1 lg:row-span-3 lg:h-full lg:flex-col lg:items-start"
+      class="col-span-1 row-span-1 row-span-3 flex h-max flex-col flex-wrap items-start gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2 md:h-full"
     >
       <h2
         class="mx-auto flex flex-wrap items-center gap-3 border-b-2 border-white px-4 py-2 text-2xl"
@@ -78,10 +78,10 @@
       </NuxtLink>
     </article>
     <article
-      class="col-span-1 row-span-2 flex h-full flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-4"
+      class="col-span-1 row-span-2 flex h-max w-full flex-col flex-wrap gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-4"
     >
       <h2 class="text-2xl">Me contactez par email :</h2>
-      <article class="grid grid-cols-[65%_max-content_max-content] gap-5">
+      <article class="grid w-full grid-cols-[1fr] gap-10">
         <form class="flex w-1/2 flex-col gap-5" action="">
           <label for="subject">Sujet :</label>
           <input
@@ -112,7 +112,9 @@
 
           <button class="button button-primary mx-auto">Envoyer le mail</button>
         </form>
-        <p class="flex items-center border-l-2 border-white px-2">OU</p>
+        <p class="mr-auto flex items-center border-t-2 border-white px-40">
+          OU
+        </p>
         <article class="flex flex-col gap-5">
           <NuxtLink
             class="flex w-max gap-2 rounded-md border-2 border-white p-2 hover:bg-gray-700/50"

@@ -1,10 +1,10 @@
 <template>
   <section
-    class="case group relative flex w-[450px] flex-col gap-3 overflow-hidden rounded-xl border-2 border-gray-500/25 p-2 md:p-5 md:hover:border-white"
+    class="case group relative flex w-[450px] flex-col gap-3 overflow-hidden rounded-xl border-2 border-gray-500/25 p-5 hover:border-white"
   >
     <NuxtLink
       name="cardProject-link"
-      class="relative overflow-hidden"
+      class="relative overflow-hidden rounded-md"
       to="https://www.youtube.com/"
     >
       <slot name="cardProject-img"></slot>
@@ -16,7 +16,7 @@
     </NuxtLink>
 
     <article
-      class="absolute top-5 z-[1000] m-1 flex w-max translate-x-[-200%] gap-3 rounded-md bg-black/50 p-1 group-hover:translate-x-[0]"
+      class="absolute bottom-0 top-5 z-[1000] m-1 flex h-max w-max translate-x-[-200%] gap-3 rounded-md bg-black/50 p-1 group-hover:translate-x-[0]"
     >
       <slot name="cardProject-iconlink"></slot>
     </article>

@@ -1,5 +1,5 @@
 <template>
-  <div class="gap-2">
+  <article>
     <NuxtLink class="social p-2" to="/">
       <Icon size="2em" name="mdi:facebook" />
     </NuxtLink>
@@ -12,7 +12,7 @@
     <NuxtLink class="social p-2" to="/">
       <Icon size="2em" name="mdi:email" />
     </NuxtLink>
-  </div>
+  </article>
 </template>
 
 <style scoped>

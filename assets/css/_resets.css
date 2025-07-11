@@ -43,3 +43,10 @@ strong {
   font-size: 3rem;
   line-height: 3.5rem;
 }
+
+.dark {
+  background-color: #121212;
+}
+.light {
+  background-color: #d9d9d9;
+}

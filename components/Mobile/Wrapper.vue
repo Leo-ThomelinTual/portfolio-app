@@ -1,8 +1,6 @@
 <template>
   <section class="wrapper-content flex flex-col">
-    <section
-      class="wrapper mx-auto my-auto border-y-2 border-gray-500/25 hover:border-gray-500/50"
-    >
+    <section class="wrapper border-y-2 border-gray-500/35">
       <NuxtLink aria-hidden="true" tabindex="-1" to="/">
         <article class="item item-1">HTML</article>
       </NuxtLink>
@@ -33,40 +31,28 @@
 
 <style scoped>
 .wrapper-content {
-  margin: auto;
-  min-width: 85vw;
-  max-width: 85vw;
-  min-height: 350px;
-  max-height: 350px;
+  width: 100vw;
+  height: 250px;
 }
 
 .wrapper {
-  width: 90%;
-  max-width: 1800px;
   position: relative;
   height: 100px;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 1) 15%,
-    rgba(0, 0, 0, 1) 75%,
-    rgba(0, 0, 0, 0)
-  );
   transition: all 0.5s ease;
 }
 
 .item {
-  width: 200px;
+  width: max-content;
   height: 100px;
   display: flex;
-  justify-content: center;
+  text-transform: uppercase;
   align-items: center;
   position: absolute;
-  left: max(calc(200px * 8), 100%);
+  left: max(calc(150px * 8), 100%);
   animation: scroll 30s linear infinite;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: gray;
 }

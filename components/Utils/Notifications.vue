@@ -40,12 +40,10 @@ function hideNotification() {
   margin: 10px;
   padding: 10px;
   width: 450px;
-  display: flex;
   flex-direction: row;
   gap: 10px;
   color: #d9d9d9;
   border-radius: 5px;
-  animation: SlideInFrom_Right-Bounce 1s ease forwards;
   transition: transform 1s ease;
 }
 .notification-success {

@@ -10,12 +10,11 @@ function filterList(event: Event) {
 </script>
 
 <template>
-  <section class="mx-auto flex w-[90%] flex-col gap-3 md:w-[65%]">
+  <section class="flex w-[85%] flex-col gap-3 md:w-[65%]">
     <article class="flex w-[200px] items-center gap-2 border-b-2 p-2">
       <p>Filtre</p>
       <Icon size="1.5rem" name="material-symbols:filter-list"></Icon>
     </article>
-    <p>Crée avec :</p>
     <article class="flex flex-wrap gap-1">
       <UtilsTagsBootstrap @click="filterList" data-tag="bootstrap" />
       <UtilsTagsNext @click="filterList" data-tag="next" />

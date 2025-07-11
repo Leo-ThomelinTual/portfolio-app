@@ -70,10 +70,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <section
-    class="relative flex h-[max-content] w-1/2 flex-row flex-wrap gap-2 xl:justify-center"
-  >
-    <article class="z-[10] hidden w-max flex-col gap-2 text-nowrap md:flex">
+  <section class="relative flex h-[max-content] flex-row flex-wrap gap-2">
+    <article
+      class="absolute -top-10 left-0 z-[10] flex w-max flex-row gap-2 text-nowrap"
+    >
       <button
         @click="EnableColumn"
         class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-1 hover:w-[100px]"
@@ -90,14 +90,14 @@ onMounted(() => {
       </button>
       <button
         @click="EnableAnimation"
-        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-1 hover:w-[210px]"
+        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-1 hover:w-[200px]"
       >
         <Icon name="material-symbols:animated-images" />
         <p class="hidden group-hover:flex">Enable Animation</p>
       </button>
     </article>
 
-    <section @click="handleManualToggle" id="overlap" class="w-max">
+    <section @click="handleManualToggle" id="overlap" class="w-full">
       <article
         id="frontend"
         class="absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black backdrop-blur-sm"
@@ -123,7 +123,7 @@ onMounted(() => {
     </section>
 
     <!-- Column section -->
-    <section id="column" class="hidden flex-row justify-center gap-2">
+    <section id="column" class="hidden flex-row flex-wrap gap-2">
       <article
         class="flex w-max flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3"
       >
