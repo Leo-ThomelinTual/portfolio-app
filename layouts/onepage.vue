@@ -7,11 +7,11 @@ const cards = ref([1, 2, 3]);
 
 <template>
   <main class="w-full">
-    <section class="flex flex-col gap-20 md:mx-20">
+    <section class="flex flex-col gap-20 mb-20 md:mx-20">
       <Transition name="fade">
         <MobileSidebar v-if="isMobile" />
         <!-- <DesktopSidebar v-else /> -->
-        <DesktopNewSidebar v-else />
+        <DesktopSidebar v-else />
       </Transition>
 
       <Transition name="fade">
@@ -20,13 +20,16 @@ const cards = ref([1, 2, 3]);
       </Transition>
 
       <Transition name="slide-in">
-        <UtilsNotifications class="notification-success flex lg:bottom-[10px]">
-          <template #notification-title>Success</template>
-          <template #notification-text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-            voluptatum eos natus tempore laborum.
-          </template>
-        </UtilsNotifications>
+        <div v-if="isMobile"></div>
+        <section class="fixed right-0 z-[1000] hidden flex-col gap-3" v-else>
+          <UtilsNotifications class="notification-success">
+            <template #notification-title>Success</template>
+            <template #notification-text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+              voluptatum eos natus tempore laborum.
+            </template>
+          </UtilsNotifications>
+        </section>
       </Transition>
 
       <slot />
@@ -44,27 +47,27 @@ const cards = ref([1, 2, 3]);
         <Transition name="fade">
           <!-- TODO Need to be reworked to allow both video and image -->
           <DesktopShowcase class="hidden lg:flex" />
-
-          <!-- <DesktopShowcase v-else class="bg-[url('/img/nomansky.jpg')]" /> -->
         </Transition>
       </section>
 
       <!-- Wrapper section -->
-      <Transition id="skill" name="fade">
+      <Transition id="skills" name="fade">
         <MobileWrapper v-if="isMobile" />
         <DesktopWrapper class="flex self-center" v-else />
       </Transition>
 
       <!-- Skill section -->
-      <section class="mb-[300px] flex h-max w-full flex-col gap-5">
+      <section class="flex h-max w-full flex-col gap-5">
         <div v-if="isMobile"></div>
         <DesktopCompetenceShowcase class="flex w-full justify-center" v-else />
       </section>
 
       <!-- Projects Section -->
 
-      <section id="project" class="flex w-full flex-col items-center gap-[5em]">
-        <h2 class="mx-20 flex border-b-2 py-3 text-3xl uppercase md:text-4xl">
+      <section id="project" class="flex w-full flex-col gap-[5em]">
+        <h2
+          class="mx-2 flex border-b-2 py-3 text-3xl uppercase md:mx-20 md:text-4xl"
+        >
           Mes projets
         </h2>
 

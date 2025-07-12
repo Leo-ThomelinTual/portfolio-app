@@ -13,7 +13,7 @@ function hideNotification() {
 <template>
   <article
     @click="hideNotification"
-    class="notification group cursor-pointer shadow-xl shadow-green-900"
+    class="notification group relative cursor-pointer"
   >
     <article
       class="invisible absolute right-3 top-0 flex h-max w-max items-center gap-3 overflow-hidden rounded-md bg-black p-3 shadow-lg shadow-black group-hover:visible group-hover:-top-9"
@@ -34,13 +34,9 @@ function hideNotification() {
 
 <style scoped>
 .notification {
-  position: fixed;
-  right: 0.2em;
-  z-index: 1000;
-  margin: 10px;
   padding: 10px;
   width: 450px;
-  flex-direction: row;
+  display: flex;
   gap: 10px;
   color: #d9d9d9;
   border-radius: 5px;
@@ -48,15 +44,19 @@ function hideNotification() {
 }
 .notification-success {
   background: var(--success);
+  box-shadow: 0 5px 20px 5px darkgreen;
 }
 .notification-error {
   background-color: var(--alert);
+  box-shadow: 0 5px 20px 5px darkred;
 }
 .notification-warning {
   background-color: var(--warning);
+  box-shadow: 0 5px 20px 5px darkgoldenrod;
 }
 .notification-information {
   background-color: var(--info);
+  box-shadow: 0 5px 20px 5px darkcyan;
 }
 
 .animations-closing {

@@ -32,7 +32,7 @@
 <style scoped>
 .wrapper-content {
   width: 100vw;
-  height: 250px;
+  height: max-content;
 }
 
 .wrapper {

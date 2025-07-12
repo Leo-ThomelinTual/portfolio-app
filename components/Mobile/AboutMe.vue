@@ -4,12 +4,12 @@
   <article class="SlideInFrom_Left-Bounce px-1">
     <article class="flex flex-col gap-3">
       <h1 class="just flex flex-row flex-wrap gap-2 px-3 text-2xl font-bold">
-        Bonjour, je m'appelle <strong>Léo</strong>
+        {{ $t("aboutme") }} <strong>Léo</strong>
       </h1>
       <h2
         class="flex gap-2 border-b-2 border-gray-500 px-3 pb-3 text-lg font-bold"
       >
-        Je suis
+        {{ $t("aboutme2") }}
         <strong class="homepage-skillshow"></strong>
       </h2>
 
@@ -28,25 +28,25 @@
 
       <article class="text-md w-6/7 flex flex-col gap-5">
         <p>
-          J'ai appris à développer en <strong>autodidact</strong>, grâce à
-          divers vidéo et cours en libre accès. Mon bût est d'élargir mes
-          compétences partie <strong>front-end</strong> et la partie
-          <strong>back-end</strong> et même d'apprendre d'autre langage dans le
-          temps. J'ai aussi de <strong>bonne base en Web Design</strong> et
-          j'essais d'apprendre <strong>UI/UX</strong>.
+          {{ $t("text1") }} <strong>{{ $t("autodidacte") }}</strong
+          >, {{ $t("text2") }} <strong>frontend</strong> {{ $t("text3") }}
+          <strong>backend</strong> {{ $t("text4") }}
+          <strong>{{ $t("goodbase") }}</strong> {{ $t("text5") }}
+          <strong>UI/UX</strong>.
         </p>
-        <article class="flex justify-center gap-5">
+        <article class="flex flex-row flex-wrap justify-center gap-5">
           <NuxtLink
             class="button button-secondary gap-1 font-bold hover:gap-2"
             to="#skills"
           >
             Vidéo de présentation
+            <Icon name="material-symbols:youtube-activity" />
           </NuxtLink>
           <NuxtLink
             class="button button-secondary gap-1 font-bold hover:gap-2"
             to="#skills"
           >
-            View more
+            {{ $t("seeMore") }}
           </NuxtLink>
           <NuxtLink
             class="button button-primary gap-1 font-bold hover:gap-2"

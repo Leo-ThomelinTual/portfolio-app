@@ -66,16 +66,24 @@ function toggleNightLight() {
       class="rounded-y-md flex w-max flex-row items-center gap-[1em] rounded-l-md border-y-2 border-l-2 border-gray-500 bg-black px-2 py-1"
     >
       <article class="group flex flex-row gap-1 text-center">
-        <Icon
-          class="transition-all ease-in-out hover:scale-105"
-          size="2rem"
-          name="twemoji:flag-france"
-        />
-        <Icon
-          class="transition-all ease-in-out hover:scale-105"
-          size="2rem"
-          name="twemoji:flag-for-flag-united-kingdom"
-        />
+        <NuxtLink to="/" class="group flex flex-col text-center">
+          <Icon
+            class="transition-all ease-in-out hover:scale-105"
+            size="2rem"
+            name="twemoji:flag-france"
+          />
+        </NuxtLink>
+        <NuxtLink
+          to="/en"
+          @click="setLocale(locale.code)"
+          class="group flex flex-col text-center"
+        >
+          <Icon
+            class="transition-all ease-in-out hover:scale-105"
+            size="2rem"
+            name="twemoji:flag-for-flag-united-kingdom"
+          />
+        </NuxtLink>
       </article>
 
       <button

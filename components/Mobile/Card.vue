@@ -6,6 +6,7 @@
       name="cardProject-link"
       class="relative overflow-hidden"
       to="https://www.youtube.com/"
+      target="_blank"
     >
       <slot name="cardProject-img"></slot>
       <p

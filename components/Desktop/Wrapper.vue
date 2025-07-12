@@ -33,10 +33,8 @@
 
 <style scoped>
 .wrapper-content {
-  min-width: 85vw;
-  max-width: 85vw;
-  min-height: 350px;
-  max-height: 350px;
+  width: 85vw;
+  height: max-content;
 }
 
 .wrapper {

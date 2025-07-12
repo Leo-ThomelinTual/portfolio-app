@@ -70,7 +70,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="relative flex h-[max-content] flex-row flex-wrap gap-2">
+  <section class="relative flex h-[max-content] mb-[250px] flex-row flex-wrap gap-2">
     <article
       class="absolute -top-10 left-0 z-[10] flex w-max flex-row gap-2 text-nowrap"
     >

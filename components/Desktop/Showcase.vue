@@ -36,7 +36,7 @@ function toggleHomepageShowcase() {
   <article
     @click="toggleHomepageShowcase"
     id="showcase"
-    class="showcase SlideInFrom_Right-Bounce group absolute right-10 top-1/2 h-[95vh] w-[40%] -translate-y-1/2 overflow-hidden rounded-md border-2 border-gray-500 bg-[url(/img/)] bg-cover bg-no-repeat shadow-xl shadow-black transition-all duration-500 ease-in-out hover:border-x-white hover:border-t-white"
+    class="showcase SlideInFrom_Right-Bounce group absolute right-10 top-1/2 h-[95vh] w-[40%] -translate-y-1/2 cursor-pointer overflow-hidden rounded-md border-2 border-gray-500 bg-[url(/img/)] bg-cover bg-no-repeat shadow-xl shadow-black transition-all duration-500 ease-in-out hover:border-x-white hover:border-t-white"
   >
     <!-- EXPAND LABEL -->
     <section
@@ -57,7 +57,7 @@ function toggleHomepageShowcase() {
         target="_blank"
       >
         <Icon size="1.5em" name="mdi:youtube" />
-        {{ $t("SeeYoutube")}}
+        {{ $t("SeeYoutube") }}
       </NuxtLink>
     </div>
 

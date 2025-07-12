@@ -38,26 +38,25 @@
 
       <article class="flex w-full flex-col gap-3 text-xl">
         <p>
-          {{ $t("text1") }} <strong>{{ $t("autodidacte") }}</strong>,
-          {{ $t("text2") }} <strong>frontend</strong> {{ $t("text3") }}
+          {{ $t("text1") }} <strong>{{ $t("autodidacte") }}</strong
+          >, {{ $t("text2") }} <strong>frontend</strong> {{ $t("text3") }}
           <strong>backend</strong> {{ $t("text4") }}
           <strong>{{ $t("goodbase") }}</strong> {{ $t("text5") }}
           <strong>UI/UX</strong>.
         </p>
         <article class="flex gap-[1em]">
-          <NuxtLink
-            class="button button-secondary gap-1 font-bold hover:gap-2"
-            to="#skills"
-          >
-            {{ $t("seeMore") }}
-          </NuxtLink>
-          <NuxtLink
-            class="button button-primary gap-1 font-bold hover:gap-2"
-            to="#skills"
-          >
-            Hire me
-            <Icon size="1.5em" name="material-symbols:arrow-forward" />
-          </NuxtLink>
+          <UtilsButtonSecondary to="#skills">
+            <template #ButtonContent>
+              {{ $t("seeMore") }}
+            </template>
+          </UtilsButtonSecondary>
+
+          <UtilsButtonPrimary to="#contact">
+            <template #ButtonContent>
+              Hire me
+              <Icon size="1.5em" name="material-symbols:arrow-forward" />
+            </template>
+          </UtilsButtonPrimary>
         </article>
       </article>
       <ClientSocialLink class="flex flex-row flex-wrap gap-5 md:gap-3" />

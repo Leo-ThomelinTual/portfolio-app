@@ -9,8 +9,11 @@ function toggleDesktopOptions() {
     options.classList.toggle("-bottom-3");
     options.classList.toggle("-bottom-[100px]");
 
-    close.style.display = close.style.display === "flex" ? "none" : "flex";
-    open.style.display = open.style.display === "none" ? "flex" : "none";
+    close.classList.toggle("hidden");
+    close.classList.toggle("flex");
+
+    open.classList.toggle("flex");
+    open.classList.toggle("hidden");
   }
 }
 </script>
@@ -22,20 +25,20 @@ function toggleDesktopOptions() {
     <article class="mb-1 flex flex-row gap-1">
       <p class="w-max rounded-md bg-black px-5 py-2 font-bold">Options</p>
       <button
-        class="w-max rounded-md bg-black px-2 py-2 font-bold"
+        class="group w-max rounded-md bg-black px-2 py-2 font-bold"
         @click="toggleDesktopOptions"
       >
         <Icon
+          class="hidden text-red-500 group-hover:rotate-90"
           id="desktopClose"
           name="material-symbols:close"
-          size="1.5em"
-          style="display: none; color: red"
+          size="1.3em"
         />
         <Icon
+          class="flex group-hover:rotate-90"
           id="desktopOpen"
           name="material-symbols:settings"
-          size="1.5em"
-          style="display: flex"
+          size="1.3em"
         />
       </button>
     </article>
