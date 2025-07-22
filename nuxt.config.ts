@@ -1,15 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devServer: {
-    host: "0.0.0.0", // ← indispensable en conteneur
     port: 3000,
-  },
-  vite: {
-    server: {
-      watch: {
-        usePolling: true,
-        interval: 100,
-      },
+    host: "0.0.0.0",
+    watch: {
+      usePolling: true,
     },
   },
   compatibilityDate: "2024-11-01",
@@ -31,8 +26,8 @@ export default defineNuxtConfig({
     },
     defaultLocale: "fr",
     locales: [
-      { code: "en", name: "English", file: "en.json" },
-      { code: "fr", name: "Français", file: "fr.json" },
+      { code: "en", name: "English", file: "en-US.json" },
+      { code: "fr", name: "Français", file: "fr-FR.json" },
     ],
   },
   app: {
@@ -42,6 +37,9 @@ export default defineNuxtConfig({
       viewport: "width=device-width, initial-scale=1, maximum-scale=1",
       htmlAttrs: {
         lang: "fr",
+      },
+      bodyAttrs: {
+        class: "dark",
       },
       link: [{ rel: "icon", type: "image/svg", href: "/favicon.svg" }],
     },

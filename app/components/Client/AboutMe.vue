@@ -1,0 +1,103 @@
+<script setup lang="ts"></script>
+
+<template>
+  <article
+    class="SlideInFrom_Left-Bounce px-1 lg:h-max lg:w-full lg:border-l-2 lg:px-3 lg:py-8"
+  >
+    <article class="flex flex-col gap-3">
+      <h1
+        class="flex flex-row flex-wrap gap-2 px-3 text-2xl font-bold md:text-4xl lg:px-0"
+      >
+        {{ $t("aboutme") }} <strong>Léo</strong>
+      </h1>
+      <h2
+        class="flex gap-2 border-b-2 border-gray-500 px-3 pb-3 text-lg font-bold md:text-2xl lg:px-0"
+      >
+        {{ $t("aboutme2") }}
+        <strong class="homepage-skillshow"></strong>
+      </h2>
+
+      <article
+        class="lg:w-100 flex w-2/3 flex-wrap justify-center gap-3 self-center lg:justify-start lg:self-start"
+      >
+        <Icon
+          class="hidden lg:flex"
+          size="2em"
+          name="line-md:chevron-small-right"
+        />
+        <Icon size="2em" name="vscode-icons:file-type-html" />
+        <Icon size="2em" name="vscode-icons:file-type-css2" />
+        <Icon size="2em" name="vscode-icons:file-type-php" />
+        <Icon size="2em" name="vscode-icons:file-type-mysql" />
+        <Icon size="2em" name="devicon:javascript" />
+        <Icon size="2em" name="material-icon-theme:figma" />
+        <Icon size="2em" name="octicon:mark-github-16" />
+        <Icon size="2em" name="skill-icons:symfony-dark" />
+        <Icon size="2em" name="devicon:bootstrap" />
+        <Icon size="2em" name="devicon:tailwindcss" />
+        <Icon
+          class="hidden lg:flex"
+          size="2em"
+          name="line-md:chevron-small-left"
+        />
+      </article>
+
+      <article
+        class="w-6/7 text-md flex flex-col gap-5 lg:w-full lg:gap-3 lg:text-xl"
+      >
+        <p>
+          {{ $t("text1") }} <strong>{{ $t("autodidacte") }}</strong
+          >, {{ $t("text2") }} <strong>frontend</strong> {{ $t("text3") }}
+          <strong>backend</strong> {{ $t("text4") }}
+          <strong>{{ $t("goodbase") }}</strong> {{ $t("text5") }}
+          <strong>UI/UX</strong>.
+        </p>
+        <article
+          class="flex flex-row flex-wrap justify-center gap-[1em] lg:justify-start"
+        >
+          <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
+            <template #ButtonContent>
+              Vidéo de présentation
+              <Icon name="material-symbols:youtube-activity" />
+            </template>
+          </UtilsButtonSecondary>
+
+          <UtilsButtonSecondary to="#skills">
+            <template #ButtonContent>
+              {{ $t("seeMore") }}
+            </template>
+          </UtilsButtonSecondary>
+
+          <UtilsButtonPrimary to="#contact">
+            <template #ButtonContent>
+              Hire me
+              <Icon size="1.5em" name="material-symbols:arrow-forward" />
+            </template>
+          </UtilsButtonPrimary>
+        </article>
+      </article>
+      <ClientSocialLink
+        class="my-5 flex flex-row flex-wrap gap-5 self-center lg:my-0 lg:gap-3 lg:self-start"
+      />
+    </article>
+  </article>
+</template>
+
+<style scoped>
+.homepage-skillshow::after {
+  content: "";
+  animation: homepageSkillshow 10s linear infinite;
+}
+
+@keyframes homepageSkillshow {
+  0% {
+    content: "Développeur Front-end.";
+  }
+  50% {
+    content: "Développeur Web Junior.";
+  }
+  100% {
+    content: "Web Designer.";
+  }
+}
+</style>
