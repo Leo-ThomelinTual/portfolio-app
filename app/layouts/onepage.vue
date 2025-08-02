@@ -1,7 +1,10 @@
 <script setup lang="ts">
-onMounted(() => {
-  const elements = document.querySelectorAll('[data-tag="fade-up"]');
+const { t } = useI18n({
+  useScope: "local",
+});
 
+function fadeInView() {
+  const elements = document.querySelectorAll('[data-tag="fade-up"]');
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -14,11 +17,15 @@ onMounted(() => {
       });
     },
     {
-      threshold: 0.2, // commence l'animation quand 10% de l'élément est visible
+      threshold: 0.2, // commence l'animation quand 30% de l'élément est visible
     },
   );
 
   elements.forEach((el) => observer.observe(el));
+}
+
+onMounted(() => {
+  fadeInView();
 });
 
 const cards = ref([1, 2]);
@@ -26,7 +33,7 @@ const cards = ref([1, 2]);
 
 <template>
   <main class="w-full">
-    <section class="mb-20 flex flex-col gap-20 lg:mx-20 lg:gap-60">
+    <section class="mb-20 flex flex-col gap-10 lg:mx-20 lg:gap-60">
       <MobileSidebar class="flex lg:hidden" />
       <DesktopSidebar class="hidden lg:flex" />
 
@@ -34,8 +41,15 @@ const cards = ref([1, 2]);
       <DesktopOptions class="hidden lg:flex" />
 
       <section
-        class="fixed right-3 z-[1000] my-20 hidden flex-col gap-3 md:flex"
+        class="fixed right-3 top-20 z-[1000] hidden flex-col gap-[1.5em] md:flex"
       >
+        <UtilsNotifications class="notification-success">
+          <template #notification-title>Success</template>
+          <template #notification-text>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
+            voluptatum eos natus tempore laborum.
+          </template>
+        </UtilsNotifications>
         <UtilsNotifications class="notification-success">
           <template #notification-title>Success</template>
           <template #notification-text>
@@ -60,87 +74,142 @@ const cards = ref([1, 2]);
         </section>
       </section>
 
-      <!-- Wrapper section -->
-      <section id="skill">
-        <ClientWrapper data-tag="fade-up" class="lg:mx-auto" />
+      <!-- Wrapper/Skill section -->
+      <section class="relative">
+        <div class="absolute -top-20" id="skill" />
+        <ClientWrapper data-tag="fade-up" class="hidden lg:mx-auto" />
       </section>
 
-      <!-- Skill section -->
-      <section data-tag="fade-up" class="flex h-max w-full flex-col gap-5">
-        <DesktopCompetenceShowcase class="flex w-full justify-center" />
-      </section>
-
-      <!-- Projects Section -->
-
-      <section id="project" class="flex w-full flex-col gap-[5em]">
-        <h2
+      <section class="flex flex-col gap-[20em] xl:gap-0">
+        <!-- Skill section -->
+        <section
           data-tag="fade-up"
-          class="mx-2 flex border-b-2 py-3 text-3xl uppercase md:mx-20 md:text-4xl"
+          class="flex h-[100vh] w-full flex-col gap-5 lg:h-max"
         >
-          Mes projets
-        </h2>
+          <DesktopCompetenceShowcase class="flex w-full justify-center" />
+        </section>
 
-        <article data-tag="fade-up" class="flex flex-col gap-[5em]">
-          <ClientFilter class="mx-auto" />
-          <article
-            class="mx-auto flex flex-col items-center gap-[2em] lg:w-2/4 lg:grid-cols-[1fr_1fr] lg:justify-center xl:grid 2xl:grid-cols-[1fr_1fr_1fr]"
+        <!-- Projects Section -->
+
+        <section
+          data-tag="fade-up"
+          class="relative flex w-full flex-col gap-[5em]"
+        >
+          <div class="absolute -top-20" id="project" />
+          <h2
+            class="mx-2 flex border-b-2 py-3 text-3xl uppercase md:mx-20 md:text-4xl"
           >
-            <ClientCard v-for="card in cards" :key="card">
-              <template #></template>
-              <template #cardProject-img>
-                <NuxtImg
-                  class="group-hover:opacity-50"
-                  src="/img/Frame-3.png"
-                />
-              </template>
+            {{ t("MyProject") }}
+          </h2>
 
-              <template #cardProject-iconlink>
-                <NuxtLink to="https://github.com/trending" target="_blank">
-                  <Icon size="1.5em" name="mdi:github" />
-                </NuxtLink>
-                <NuxtLink to="https://github.com/trending" target="_blank">
-                  <Icon size="1.5em" name="majesticons:external-link-line" />
-                </NuxtLink>
-              </template>
+          <article class="flex flex-col gap-[5em]">
+            <ClientFilter class="mx-auto" />
+            <article
+              class="mx-auto flex flex-col items-center justify-center gap-[2em] lg:w-2/4 lg:grid-cols-[1fr_1fr] xl:grid 2xl:grid-cols-[1fr_1fr_1fr]"
+            >
+              <ClientCard v-for="card in cards" :key="card">
+                <template #></template>
+                <template #cardProject-img>
+                  <NuxtImg
+                    class="group-hover:opacity-50"
+                    src="/img/Frame-3.png"
+                  />
+                </template>
 
-              <template #cardProject-dateStart> 2021 </template>
+                <template #cardProject-iconlink>
+                  <NuxtLink to="https://github.com/trending" target="_blank">
+                    <Icon size="1.5em" name="mdi:github" />
+                  </NuxtLink>
+                  <NuxtLink to="https://github.com/trending" target="_blank">
+                    <Icon size="1.5em" name="majesticons:external-link-line" />
+                  </NuxtLink>
+                </template>
 
-              <template #cardProject-dateEnd> 2022 </template>
+                <template #cardProject-dateStart> 2021 </template>
 
-              <template #cardProject-title> TitleMobile </template>
+                <template #cardProject-dateEnd> 2022 </template>
 
-              <template #cardProject-desc>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
-                tempora eaque dolorem magnam odio placeat officiis omnis officia
-                voluptatum voluptates consequuntur ad consequatur itaque, quos
-                et deleniti sed porro ducimus!
-              </template>
+                <template #cardProject-title> TitleMobile </template>
 
-              <template #fortag>
-                <UtilsTagsTailwindcss />
-                <UtilsTagsNuxt />
-                <UtilsTagsBootstrap />
-              </template>
-            </ClientCard>
+                <template #cardProject-desc>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                  tempora eaque dolorem magnam odio placeat officiis omnis
+                  officia voluptatum voluptates consequuntur ad consequatur
+                  itaque, quos et deleniti sed porro ducimus!
+                </template>
 
-            <ClientDefaultCard>
-              <template #cardProject-title
-                >Que sera mon prochain projet ?
-              </template>
-              <template #cardProject-desc>
-                Contactez moi si vous êtes intérèsser pour travailler avec moi.
-                <br />
-                Vous pouvez me contacter sur Linkedin, Facebook et GitHub avec
-                les boutons ci-dessous.
-              </template>
-              <template #fortag>
-                <UtilsTagsFacebook to="www.facebook.com" />
-                <UtilsTagsLinkedin to="www.facebook.com" />
-                <UtilsTagsGitHub to="www.facebook.com" />
-              </template>
-            </ClientDefaultCard>
+                <template #fortag>
+                  <UtilsTagsTailwindcss />
+                  <UtilsTagsNuxt />
+                  <UtilsTagsBootstrap />
+                </template>
+              </ClientCard>
+
+              <ClientCard>
+                <template #></template>
+                <template #cardProject-img>
+                  <NuxtImg
+                    class="group-hover:opacity-50"
+                    src="/img/Frame-3.png"
+                  />
+                </template>
+
+                <template #cardProject-iconlink>
+                  <NuxtLink to="https://github.com/trending" target="_blank">
+                    <Icon size="1.5em" name="mdi:github" />
+                  </NuxtLink>
+                  <NuxtLink to="https://github.com/trending" target="_blank">
+                    <Icon size="1.5em" name="majesticons:external-link-line" />
+                  </NuxtLink>
+                </template>
+
+                <template #cardProject-dateStart> 2021 </template>
+
+                <template #cardProject-dateEnd> 2022 </template>
+
+                <template #cardProject-title> TitleMobile </template>
+
+                <template #cardProject-desc>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+                  tempora eaque dolorem magnam odio placeat officiis omnis
+                  officia voluptatum voluptates consequuntur ad consequatur
+                  itaque, quos et deleniti sed porro ducimus!
+                </template>
+
+                <template #fortag>
+                  <UtilsTagsTailwindcss />
+                  <UtilsTagsNext />
+                  <UtilsTagsPersonnel />
+                </template>
+              </ClientCard>
+
+              <ClientDefaultCard>
+                <template #cardProject-title>
+                  {{ t("MyNextProject") }}
+                </template>
+                <template #cardProject-desc>
+                  {{ t("MyNextProject-Desc1") }}
+                  <br />
+                  {{ t("MyNextProject-Desc2") }}
+                </template>
+                <template #fortag>
+                  <UtilsTagsFacebook
+                    to="https://www.facebook.com"
+                    target="_blank"
+                  />
+                  <UtilsTagsLinkedin
+                    to="https://www.facebook.com"
+                    target="_blank"
+                  />
+                  <UtilsTagsGitHub
+                    to="https://www.facebook.com"
+                    target="_blank"
+                  />
+                </template>
+              </ClientDefaultCard>
+            </article>
           </article>
-        </article>
+        </section>
       </section>
 
       <section
@@ -150,10 +219,31 @@ const cards = ref([1, 2]);
         <ClientPointofInterest />
       </section>
 
-      <ClientOthers data-tag="fade-up" />
+      <!-- Contact section -->
+      <section class="relative" data-tag="fade-up">
+        <div class="absolute -top-20" id="contact" />
+        <ClientOthers />
+      </section>
     </section>
   </main>
 </template>
+
+<i18n lang="json">
+{
+  "en": {
+    "MyProject": "My projects",
+    "MyNextProject": "What would be my next project ?",
+    "MyNextProject-Desc1": "Contact me if you are intressed to work with me.",
+    "MyNextProject-Desc2": "You can contact me on Linkedin, Facebook and GitHub with the buttons under here."
+  },
+  "fr": {
+    "MyProject": "Mes projects",
+    "MyNextProject": "Que sera mon prochain projet ?",
+    "MyNextProject-Desc1": "Contactez moi si vous êtes intérèsser pour travailler avec moi.",
+    "MyNextProject-Desc2": "Vous pouvez me contacter sur Linkedin, Facebook et GitHub avec les boutons ci-dessous."
+  }
+}
+</i18n>
 
 <style scoped>
 main {
@@ -161,16 +251,20 @@ main {
   overflow-x: hidden;
 }
 
-[data-tag="fade-up"] {
-  opacity: 0;
-  transform: translateY(90px);
-  transition:
-    opacity 1s ease,
-    transform 0.5s ease;
-}
+@media screen and (min-width: 1280px) {
+  [data-tag="fade-up"] {
+    will-change: transform, opacity;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 1s ease,
+      transform 0.5s ease;
+  }
 
-[data-tag="fade-up"].visible {
-  opacity: 1;
-  transform: translateY(0);
+  [data-tag="fade-up"].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

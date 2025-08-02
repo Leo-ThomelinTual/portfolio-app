@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const { t } = useI18n({
+  useScope: "local",
+});
+</script>
+
 <template>
   <section
     id="card"
@@ -16,7 +22,7 @@
       <p
         class="absolute left-[50%] top-[50%] w-max -translate-x-1/2 -translate-y-1/2 group-hover:flex lg:hidden"
       >
-        Click pour accéder projet
+        {{ t("ClickToAccess") }}
       </p>
     </NuxtLink>
 
@@ -53,7 +59,18 @@
   </section>
 </template>
 
-<style>
+<i18n lang="json">
+{
+  "en": {
+    "ClickToAccess": "Click to get access to the project"
+  },
+  "fr": {
+    "ClickToAccess": "Click pour accéder projet"
+  }
+}
+</i18n>
+
+<style scoped>
 * {
   transition: all 0.5s ease;
 }

@@ -3,8 +3,13 @@ export default defineNuxtConfig({
   devServer: {
     port: 3000,
     host: "0.0.0.0",
-    watch: {
-      usePolling: true,
+  },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 100, // Poll files every 100ms
+      },
     },
   },
   compatibilityDate: "2024-11-01",
@@ -16,9 +21,6 @@ export default defineNuxtConfig({
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxt/image", "@nuxtjs/i18n"],
   i18n: {
-    bundle: {
-      optimizeTranslationDirective: false,
-    },
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: "i18n_redirected",

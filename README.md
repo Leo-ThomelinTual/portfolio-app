@@ -2,6 +2,8 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+docker run -p 3000:3000 portfolio-app-app [Laucnch docker]
+
 ## Setup
 
 Make sure to install dependencies:

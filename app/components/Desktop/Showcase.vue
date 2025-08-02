@@ -1,4 +1,8 @@
 <script setup>
+const { t } = useI18n({
+  useScope: "local",
+});
+
 function toggleHomepageShowcase() {
   const showcase = document.querySelector("#showcase");
   const sections = document.querySelectorAll("article:not(#showcase)");
@@ -34,13 +38,16 @@ function toggleHomepageShowcase() {
     }, 0);
   }
 }
+
+// let vid = document.getElementById("myVideo");
+// vid.volume = 0.2;
 </script>
 
 <template>
   <article
     @click="toggleHomepageShowcase"
     id="showcase"
-    class="showcase SlideInFrom_Right-Bounce group absolute right-10 top-1/2 z-10 h-[95vh] w-[40%] -translate-y-1/2 cursor-pointer rounded-md border-2 border-gray-500 bg-[url(/img/)] bg-cover bg-no-repeat shadow-xl shadow-black transition-all duration-500 ease-in-out hover:border-white"
+    class="showcase SlideInFrom_Right-Bounce group absolute right-10 top-1/2 z-10 h-[95vh] w-[40%] -translate-y-1/2 cursor-pointer rounded-md border-2 border-gray-500 shadow-xl shadow-black transition-all duration-500 ease-in-out hover:border-white"
   >
     <!-- EXPAND LABEL -->
     <section
@@ -53,7 +60,7 @@ function toggleHomepageShowcase() {
     <!-- SOCIAL -->
     <div
       id="social-test"
-      class="absolute bottom-0 right-0 z-10 m-1 hidden w-max flex-col gap-3 rounded-md bg-black bg-opacity-50 p-1"
+      class="absolute bottom-10 right-0 z-10 m-1 hidden w-max flex-col gap-3 rounded-md bg-black bg-opacity-50 p-1"
     >
       <NuxtLink
         class="flex items-center gap-2 text-red-500 hover:text-white"
@@ -61,22 +68,34 @@ function toggleHomepageShowcase() {
         target="_blank"
       >
         <Icon size="1.5em" name="mdi:youtube" />
-        {{ $t("SeeYoutube") }}
+        {{ t("SeeYoutube") }}
       </NuxtLink>
     </div>
 
     <!-- VIDEO -->
+
     <div class="relative flex h-full w-full">
       <video
         class="absolute left-0 top-0 h-full w-full object-cover"
-        src="/video/showcase3.mp4"
+        src="/video/showcase2.mp4"
         autoplay
-        muted
         loop
+        controls
       ></video>
     </div>
   </article>
 </template>
+
+<i18n lang="json">
+{
+  "en": {
+    "SeeYoutube": "See on Youtube"
+  },
+  "fr": {
+    "SeeYoutube": "Voir sur Youtube"
+  }
+}
+</i18n>
 
 <style scoped>
 .showcase {

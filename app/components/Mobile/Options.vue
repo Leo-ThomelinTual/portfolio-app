@@ -6,7 +6,7 @@ function toggleMobileOptions() {
   const button = document.querySelector("#button");
   if (options) {
     options.classList.toggle("right-[0]");
-    options.classList.toggle("right-[-138px]");
+    options.classList.toggle("right-[-232px]");
     button.classList.toggle("rounded-y-md", "rounded-l-md");
     button.classList.toggle("rounded-md");
     button.classList.toggle("border-y-2", "border-l-2");
@@ -20,29 +20,38 @@ function toggleMobileOptions() {
   }
 }
 
-function toggleNightLight() {
-  const dark = document.querySelector("#dark");
-  const light = document.querySelector("#light");
+function toggleTheme() {
+  const light = document.querySelector("#themeLight");
+  const night = document.querySelector("#themeNight");
+  const neon = document.querySelector("#themeNeon");
+  const halloween = document.querySelector("#themeHalloween");
+  const body = document.body;
 
-  if (body.classList.contains == "dark") {
-    body.classList.toggle("light");
-    dark.classList.toggle("hidden");
-    dark.classList.toggle("flex");
-    light.classList.toggle("flex");
-    light.classList.toggle("hidden");
-  } else if (body.classList.contains == "light") {
-    body.classList.toggle("dark");
-    dark.classList.toggle("hidden");
-    dark.classList.toggle("flex");
-    light.classList.toggle("flex");
-    light.classList.toggle("hidden");
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+    body.classList.add("light");
+
+    night.classList.add("hidden");
+    night.classList.remove("flex");
+
+    light.classList.remove("hidden");
+    light.classList.add("flex");
+  } else {
+    body.classList.remove("light");
+    body.classList.add("dark");
+
+    light.classList.add("hidden");
+    light.classList.remove("flex");
+
+    night.classList.remove("hidden");
+    night.classList.add("flex");
   }
 }
 </script>
 <template>
   <section
     id="mobileOptions"
-    class="fixed bottom-[10px] right-[-138px] z-[1000] flex w-max flex-row items-center gap-1 rounded-md"
+    class="fixed bottom-[10px] right-[-232px] z-[1000] flex w-max flex-row items-center gap-1 rounded-md"
   >
     <button
       id="button"
@@ -86,24 +95,38 @@ function toggleNightLight() {
         </NuxtLink>
       </article>
 
-      <button
-        @click="toggleNightLight"
-        class="group flex flex-row gap-1 text-center"
-      >
+      <article @click="toggleTheme" class="group flex flex-row text-center">
         <Icon
-          id="light"
+          id="themeLight"
           class="hidden transition-all ease-in-out hover:scale-105"
           size="2rem"
           name="material-symbols:lightbulb-2-rounded"
         />
         <Icon
-          id="dark"
+          id="themeNight"
           class="flex transition-all ease-in-out hover:scale-105"
           size="2rem"
           name="material-symbols:lightbulb-2-outline-sharp"
         />
-      </button>
+        <Icon
+          id="neon"
+          size="2rem"
+          class="flex transition-all ease-in hover:scale-105"
+          name="basil:lightning-solid"
+        />
+        <Icon
+          id="halloween"
+          size="2rem"
+          class="flex text-orange-500 transition-all ease-in hover:scale-105"
+          name="tabler:pumpkin-scary"
+        />
+        <Icon
+          id="noel"
+          size="2rem"
+          class="flex text-green-500 transition-all ease-in hover:scale-105"
+          name="tabler:christmas-tree"
+        />
+      </article>
     </section>
   </section>
 </template>
-<style scoped></style>

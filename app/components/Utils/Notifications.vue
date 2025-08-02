@@ -10,13 +10,16 @@ function hideNotification() {
 }
 
 function timeBeforeHiding() {
-  const notification = document.querySelector(".notification");
-  setTimeout(() => {
-    notification.classList.add("animations-closing");
-  }, 9000);
-  setTimeout(() => {
-    notification.remove();
-  }, 10000);
+  const notification = document.querySelectorAll(".notification");
+  notification.forEach((el) => {
+    setTimeout(() => {
+      el.classList.add("animations-closing");
+    }, 9000);
+
+    setTimeout(() => {
+      el.remove();
+    }, 10000);
+  });
 }
 
 onMounted(() => {
@@ -58,7 +61,8 @@ onMounted(() => {
   display: flex;
   gap: 10px;
   color: #d9d9d9;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  animation: animations-opening 1s ease 1 forwards;
   transition: transform 1s ease;
 }
 .notification-success {
@@ -96,6 +100,17 @@ onMounted(() => {
   }
   100% {
     transform: translateX(200%);
+  }
+}
+@keyframes animations-opening {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 

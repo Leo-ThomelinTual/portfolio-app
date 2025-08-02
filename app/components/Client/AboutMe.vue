@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { t } = useI18n({
+  useScope: "local",
+});
+</script>
 
 <template>
   <article
@@ -8,12 +12,12 @@
       <h1
         class="flex flex-row flex-wrap gap-2 px-3 text-2xl font-bold md:text-4xl lg:px-0"
       >
-        {{ $t("aboutme") }} <strong>Léo</strong>
+        {{ t("aboutme") }} <strong>Léo</strong>
       </h1>
       <h2
         class="flex gap-2 border-b-2 border-gray-500 px-3 pb-3 text-lg font-bold md:text-2xl lg:px-0"
       >
-        {{ $t("aboutme2") }}
+        {{ t("aboutme2") }}
         <strong class="homepage-skillshow"></strong>
       </h2>
 
@@ -46,10 +50,10 @@
         class="w-6/7 text-md flex flex-col gap-5 lg:w-full lg:gap-3 lg:text-xl"
       >
         <p>
-          {{ $t("text1") }} <strong>{{ $t("autodidacte") }}</strong
-          >, {{ $t("text2") }} <strong>frontend</strong> {{ $t("text3") }}
-          <strong>backend</strong> {{ $t("text4") }}
-          <strong>{{ $t("goodbase") }}</strong> {{ $t("text5") }}
+          {{ t("text1") }} <strong>{{ t("autodidacte") }}</strong
+          >, {{ t("text2") }} <strong>frontend</strong> {{ t("text3") }}
+          <strong>backend</strong> {{ t("text4") }}
+          <strong>{{ t("goodbase") }}</strong> {{ t("text5") }}
           <strong>UI/UX</strong>.
         </p>
         <article
@@ -57,20 +61,20 @@
         >
           <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
             <template #ButtonContent>
-              Vidéo de présentation
+              {{ t("videoShowcase") }}
               <Icon name="material-symbols:youtube-activity" />
             </template>
           </UtilsButtonSecondary>
 
           <UtilsButtonSecondary to="#skills">
             <template #ButtonContent>
-              {{ $t("seeMore") }}
+              {{ t("seeMore") }}
             </template>
           </UtilsButtonSecondary>
 
           <UtilsButtonPrimary to="#contact">
             <template #ButtonContent>
-              Hire me
+              {{ t("HireMe") }}
               <Icon size="1.5em" name="material-symbols:arrow-forward" />
             </template>
           </UtilsButtonPrimary>
@@ -82,6 +86,39 @@
     </article>
   </article>
 </template>
+
+<i18n lang="json">
+{
+  "en": {
+    "aboutme": "Welcome, my name is",
+    "aboutme2": "I am ",
+    "autodidacte": "autodidact",
+    "goodbase": "good bases in Web Design",
+    "text1": "I learn web developpement in",
+    "text2": "grâce à divers vidéo et cours en libre accès. Mon but est d'élargir mes compétences partie",
+    "text3": "and the",
+    "text4": "part and also learn others language in the time. I have also",
+    "text5": "and i trying to learn",
+    "seeMore": "See more",
+    "videoShowcase": "See the presentation video",
+    "HireMe": "Hire Me"
+  },
+  "fr": {
+    "aboutme": "Bonjour, je m'appelle",
+    "aboutme2": "Je suis",
+    "autodidacte": "autodidacte",
+    "goodbase": "bonnes bases en Web Design",
+    "text1": "J'ai appris à développer en",
+    "text2": "grâce à divers vidéo et cours en libre accès. Mon but est d'élargir mes compétences partie",
+    "text3": "et la partie",
+    "text4": "et même d'apprendre d'autres langages dans le temps. J'ai aussi de",
+    "text5": "et j'essaye d'apprendre",
+    "seeMore": "Voir plus",
+    "videoShowcase": "Vidéo de présentation",
+    "HireMe": "Me Recruter"
+  }
+}
+</i18n>
 
 <style scoped>
 .homepage-skillshow::after {

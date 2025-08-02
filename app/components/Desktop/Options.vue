@@ -1,7 +1,7 @@
 <script setup>
-import { Body } from "#components";
-
-const { locales, setLocale } = useI18n();
+const { t } = useI18n({
+  useScope: "local",
+});
 
 function toggleDesktopOptions() {
   const options = document.querySelector("#desktopOptions");
@@ -53,7 +53,9 @@ function toggleTheme() {
     class="fixed -bottom-[100px] left-[30px] z-[1000] m-2 flex w-max flex-col rounded-md bg-opacity-50 p-3"
   >
     <article class="mb-1 flex flex-row gap-1">
-      <p class="w-max rounded-md bg-black px-5 py-2 font-bold">Options</p>
+      <p class="rounded-md bg-black px-5 py-2 font-bold">
+        {{ t("Settings") }}
+      </p>
       <button
         class="group w-max rounded-md bg-black px-2 py-2 font-bold"
         @click="toggleDesktopOptions"
@@ -76,7 +78,7 @@ function toggleTheme() {
     <section
       class="flex w-max items-center gap-[1em] rounded-t-md rounded-br-md bg-black px-2 py-1"
     >
-      <p>Langue :</p>
+      <p>{{ t("Language") }}</p>
 
       <NuxtLink to="/" class="group flex flex-col text-center">
         <Icon
@@ -130,8 +132,26 @@ function toggleTheme() {
           class="flex text-orange-500 transition-all ease-in hover:scale-105"
           name="tabler:pumpkin-scary"
         />
+        <Icon
+          id="noel"
+          size="2rem"
+          class="flex text-green-500 transition-all ease-in hover:scale-105"
+          name="tabler:christmas-tree"
+        />
       </article>
     </section>
   </section>
 </template>
-<style scoped></style>
+
+<i18n lang="json">
+{
+  "en": {
+    "Settings": "Settings",
+    "Language": "Languages"
+  },
+  "fr": {
+    "Settings": "Options",
+    "Language": "Langages"
+  }
+}
+</i18n>

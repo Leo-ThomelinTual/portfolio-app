@@ -42,7 +42,9 @@
       >
         <Icon class="flex-shrink-0" size="2rem" name="pajamas:project" />
 
-        <p class="opacity-0 group-hover:opacity-100">Centre d'înterêt</p>
+        <p class="text-wrap opacity-0 group-hover:opacity-100">
+          Centre d'înterêt
+        </p>
       </NuxtLink>
 
       <NuxtLink
