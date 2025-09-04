@@ -23,6 +23,5 @@ logs
 .env.*
 !.env.example
 public/video/showcase.mp4
-public/video/showcase2.mp4
 public/video/showcase3.mp4
 public/video/animexplosion.mp4
