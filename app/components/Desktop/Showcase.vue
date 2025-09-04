@@ -63,7 +63,7 @@ onMounted(() => {
   >
     <!-- EXPAND LABEL -->
     <section
-      class="absolute right-0 z-[1000] m-3 flex h-max w-max items-center gap-2 rounded-md border-2 bg-black p-3 opacity-50 hover:gap-4 group-hover:opacity-100"
+      class="absolute right-0 z-[1000] m-3 flex h-max w-max items-center gap-2 rounded-md border-2 bg-black p-3 opacity-50 transition-all ease-out hover:gap-4 group-hover:opacity-100"
     >
       <p id="text-box-expand">Click to expand</p>
       <Icon size="1.5rem" name="mdi:mouse-right-click" />
@@ -72,7 +72,7 @@ onMounted(() => {
     <!-- SOCIAL -->
     <div
       id="social-test"
-      class="absolute bottom-10 right-0 z-10 m-1 hidden w-max flex-col gap-3 rounded-md bg-black bg-opacity-50 p-1"
+      class="absolute bottom-10 right-1 z-10 m-1 hidden w-max flex-col gap-3 rounded-sm bg-black bg-opacity-50 p-1"
     >
       <NuxtLink
         class="flex items-center gap-2 text-red-500 hover:text-white"

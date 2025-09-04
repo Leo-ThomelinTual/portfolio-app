@@ -9,7 +9,7 @@ function toggleDesktopOptions() {
   const open = document.querySelector("#desktopOpen");
   if (options) {
     options.classList.toggle("-bottom-3");
-    options.classList.toggle("-bottom-[100px]");
+    options.classList.toggle("-bottom-[60px]");
 
     close.classList.toggle("hidden");
     close.classList.toggle("flex");
@@ -19,14 +19,13 @@ function toggleDesktopOptions() {
   }
 }
 
-function toggleTheme() {
-  const light = document.querySelector("#themeLight");
-  const night = document.querySelector("#themeNight");
+function toggleTheme(theme) {
   const neon = document.querySelector("#themeNeon");
   const halloween = document.querySelector("#themeHalloween");
+  const noel = document.querySelector("#noel");
   const body = document.body;
 
-  if (body.classList.contains("dark")) {
+  if (theme === neon) {
     body.classList.remove("dark");
     body.classList.add("light");
 
@@ -35,7 +34,7 @@ function toggleTheme() {
 
     light.classList.remove("hidden");
     light.classList.add("flex");
-  } else {
+  } else if (theme === halloween) {
     body.classList.remove("light");
     body.classList.add("dark");
 
@@ -44,13 +43,14 @@ function toggleTheme() {
 
     night.classList.remove("hidden");
     night.classList.add("flex");
+  } else if (theme === noel) {
   }
 }
 </script>
 <template>
   <section
     id="desktopOptions"
-    class="fixed -bottom-[100px] left-[30px] z-[1000] m-2 flex w-max flex-col rounded-md bg-opacity-50 p-3"
+    class="fixed -bottom-[60px] left-[30px] z-[1000] m-2 flex w-max flex-col rounded-md bg-opacity-50 p-3"
   >
     <article class="mb-1 flex flex-row gap-1">
       <p class="rounded-md bg-black px-5 py-2 font-bold">
@@ -102,37 +102,28 @@ function toggleTheme() {
     </section>
 
     <section
-      class="rounded-t-0 flex w-max items-center gap-[1em] rounded-b-md bg-black px-2 py-1"
+      class="rounded-t-0 flex hidden w-max items-center gap-[1em] rounded-b-md bg-black px-2 py-1"
     >
       <!-- TODO Make theme WORK -->
 
       <p>Theme :</p>
-      <article @click="toggleTheme" class="group flex flex-row text-center">
+      <article class="group flex flex-row text-center">
         <Icon
-          id="themeLight"
-          class="hidden transition-all ease-in-out hover:scale-105"
-          size="2rem"
-          name="material-symbols:lightbulb-2-rounded"
-        />
-        <Icon
-          id="themeNight"
-          class="flex transition-all ease-in-out hover:scale-105"
-          size="2rem"
-          name="material-symbols:lightbulb-2-outline-sharp"
-        />
-        <Icon
+          @click="toggleTheme(neon)"
           id="neon"
           size="2rem"
           class="flex transition-all ease-in hover:scale-105"
           name="basil:lightning-solid"
         />
         <Icon
+          @click="toggleTheme(halloween)"
           id="halloween"
           size="2rem"
           class="flex text-orange-500 transition-all ease-in hover:scale-105"
           name="tabler:pumpkin-scary"
         />
         <Icon
+          @click="toggleTheme(noel)"
           id="noel"
           size="2rem"
           class="flex text-green-500 transition-all ease-in hover:scale-105"
@@ -142,6 +133,12 @@ function toggleTheme() {
     </section>
   </section>
 </template>
+
+<style scoped>
+* {
+  transition: all 0.4s ease;
+}
+</style>
 
 <i18n lang="json">
 {

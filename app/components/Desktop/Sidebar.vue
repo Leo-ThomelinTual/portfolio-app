@@ -37,17 +37,6 @@
         <p class="opacity-0 group-hover:opacity-100">Projet</p>
       </NuxtLink>
 
-      <!-- <NuxtLink
-        class="flex items-center gap-2 overflow-hidden hover:pl-1 hover:text-white"
-        to="#project"
-      >
-        <Icon class="flex-shrink-0" size="2rem" name="pajamas:project" />
-
-        <p class="text-wrap opacity-0 group-hover:opacity-100">
-          Centre d'înterêt
-        </p>
-      </NuxtLink> -->
-
       <NuxtLink
         class="group/item flex items-center gap-2 overflow-hidden hover:pl-1 hover:text-white"
         to="#contact"
@@ -66,17 +55,12 @@
     <article
       class="fixed right-0 flex h-full w-[20px] items-center rounded-r-md border-y-2 border-r-2"
     >
-      <div class="arrow-left"></div>
-      <!-- <Icon
-        class="flex group-hover/switch:hidden"
-        size="2rem"
-        name="line-md:chevron-small-right"
+      <div
+        class="arrow-left absolute hidden group-hover/switch:flex"
       />
-      <Icon
-        class="hidden group-hover/switch:flex"
-        size="2rem"
-        name="line-md:chevron-small-left"
-      /> -->
+      <div
+        class="arrow-right absolute flex group-hover/switch:hidden"
+      />
     </article>
   </section>
 </template>

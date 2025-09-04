@@ -40,25 +40,6 @@ const cards = ref([1, 2]);
       <MobileOptions class="flex lg:hidden" />
       <DesktopOptions class="hidden lg:flex" />
 
-      <section
-        class="fixed right-3 top-20 z-[1000] hidden flex-col gap-[1.5em] md:flex"
-      >
-        <UtilsNotifications class="notification-success">
-          <template #notification-title>Success</template>
-          <template #notification-text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-            voluptatum eos natus tempore laborum.
-          </template>
-        </UtilsNotifications>
-        <UtilsNotifications class="notification-success">
-          <template #notification-title>Success</template>
-          <template #notification-text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-            voluptatum eos natus tempore laborum.
-          </template>
-        </UtilsNotifications>
-      </section>
-
       <slot />
 
       <!-- Landing section -->
@@ -107,7 +88,6 @@ const cards = ref([1, 2]);
             <article
               class="flex flex-col items-center justify-center gap-[2em] md:mx-auto lg:w-2/4 lg:grid-cols-[1fr_1fr] xl:grid 2xl:grid-cols-[1fr_1fr_1fr]"
             >
-              <ClientCardHorizontal />
               <ClientCard v-for="card in cards" :key="card">
                 <template #cardProject-img>
                   <NuxtImg
@@ -184,13 +164,6 @@ const cards = ref([1, 2]);
             </article>
           </article>
         </section>
-      </section>
-
-      <section
-        id="point-of-interest"
-        class="my-20 flex hidden w-full gap-2 md:justify-center"
-      >
-        <ClientPointofInterest />
       </section>
 
       <!-- Contact section -->

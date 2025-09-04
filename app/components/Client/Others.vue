@@ -53,19 +53,24 @@ const { t } = useI18n({
         {{ t("UtilityLink") }} <Icon name="mdi:link" />
       </h2>
 
-      <UtilsButtonTertiary to="/CV.pdf" external download target="_blank">
+      <UtilsButtonTertiary
+        to="/CV - Léo Thomelin-Tual.pdf"
+        external
+        download
+        target="_blank"
+      >
         <template #ButtonContent>
           <Icon name="mdi:download" />
           {{ t("Download") }}
         </template>
       </UtilsButtonTertiary>
 
-      <UtilsButtonTertiary to="/portfolio-history">
+      <!-- <UtilsButtonTertiary to="/portfolio-history">
         <template #ButtonContent>
           <Icon name="material-symbols-light:history" />
           {{ t("VisualHistory") }}
         </template>
-      </UtilsButtonTertiary>
+      </UtilsButtonTertiary> -->
 
       <UtilsButtonTertiary
         to="https://github.com/Leo-ThomelinTual"

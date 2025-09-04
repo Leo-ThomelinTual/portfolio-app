@@ -17,13 +17,15 @@
         <Icon size="1.3em" name="pajamas:project" />
       </NuxtLink>
 
-      <!-- <NuxtLink class="p-1 hover:ml-[-5px]" to="#project">
-        <Icon size="1.3em" name="pajamas:project" />
-      </NuxtLink> -->
-
       <NuxtLink class="p-1 hover:ml-[-5px]" to="#contact">
         <Icon size="1.3em" name="material-symbols:call-outline" />
       </NuxtLink>
     </nav>
   </section>
 </template>
+
+<style scoped>
+* {
+  transition: all 0.4s ease;
+}
+</style>
