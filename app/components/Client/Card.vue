@@ -7,15 +7,14 @@ const { t } = useI18n({
 <template>
   <section
     id="card"
-    class="case group relative flex w-[395px] flex-col gap-3 overflow-hidden rounded-xl border-2 border-gray-500/25 p-2 hover:border-white lg:w-[450px] lg:p-5"
+    class="case group relative flex w-[390px] flex-col gap-5 overflow-hidden rounded-xl border-2 border-gray-500/25 p-5 hover:border-white md:w-[450px]"
   >
     <NuxtLink
       name="cardProject-link"
-      class="relative overflow-hidden rounded-md"
+      class="relative w-[100%] overflow-hidden rounded-md"
       to="/"
       target="_blank"
     >
-      <!-- <slot class="group-hover:bg-opacity-25" name="cardProject-img"></slot> -->
       <slot name="cardProject-img">
         <NuxtImg src="/img/nomansky.jpg" />
       </slot>
@@ -40,19 +39,21 @@ const { t } = useI18n({
     </article>
     <!-- --------------------------------- -->
 
-    <h3 class="border-b border-indigo-700 pb-2 text-2xl">
-      <slot name="cardProject-title"></slot>
-    </h3>
+    <article class="flex flex-col gap-2">
+      <h3 class="border-b border-indigo-700 pb-2 text-2xl">
+        <slot name="cardProject-title"></slot>
+      </h3>
 
-    <p class="flex justify-center gap-2">
-      <slot name="cardProject-dateStart"></slot>
-      <Icon size="1.3em" name="material-symbols:arrow-forward" />
-      <slot name="cardProject-dateEnd"></slot>
-    </p>
+      <p class="flex justify-center gap-2">
+        <slot name="cardProject-dateStart"></slot>
+        <Icon size="1.3em" name="material-symbols:arrow-forward" />
+        <slot name="cardProject-dateEnd"></slot>
+      </p>
 
-    <p>
-      <slot name="cardProject-desc"></slot>
-    </p>
+      <p>
+        <slot name="cardProject-desc"></slot>
+      </p>
+    </article>
     <article class="flex flex-row flex-wrap gap-1">
       <slot name="fortag"></slot>
     </article>

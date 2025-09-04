@@ -87,61 +87,26 @@ const { t } = useI18n({
         </template>
       </UtilsButtonTertiary>
     </article>
+
     <article
       class="col-span-1 row-span-2 flex h-max w-full flex-col flex-wrap gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-4"
     >
       <h2 class="text-2xl">{{ t("MailContact") }}</h2>
-      <article class="grid w-full grid-cols-[1fr] gap-10">
-        <form class="flex w-full flex-col gap-5 md:w-1/2" action="">
-          <label for="subject">{{ t("Subject") }}</label>
-          <input
-            class="h-9 rounded-md bg-gray-500/50 p-2 text-white"
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="sujet de votre email"
-            required
-          />
-          <label for="email">Email :</label>
-          <input
-            class="h-9 rounded-md bg-gray-500/50 p-2 text-white md:w-1/2"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="votre email"
-            required
-          />
-          <label for="message">Message :</label>
-          <textarea
-            class="h-40 rounded-md bg-gray-500/50 p-2 text-white"
-            id="message"
-            name="message"
-            placeholder="Votre message"
-            required
-          ></textarea>
 
-          <UtilsButtonPrimary to="/" class="mx-auto">
-            <template #ButtonContent>{{ t("SendEmail") }}</template>
-          </UtilsButtonPrimary>
-        </form>
-        <p class="mr-auto flex items-center border-t-2 border-white px-40">
-          OU
-        </p>
-        <article class="flex flex-col gap-2">
-          <UtilsButtonTertiary to="/" target="_blank">
-            <template #ButtonContent>
-              <Icon name="mdi:linkedin" />
-              Me contacter par LinkedIn
-            </template>
-          </UtilsButtonTertiary>
+      <article class="flex flex-wrap gap-2">
+        <UtilsButtonTertiary to="/" target="_blank">
+          <template #ButtonContent>
+            <Icon name="mdi:linkedin" />
+            LinkedIn
+          </template>
+        </UtilsButtonTertiary>
 
-          <UtilsButtonTertiary to="/" target="_blank">
-            <template #ButtonContent>
-              <Icon name="mdi:facebook" />
-              Me contacter par Facebook
-            </template>
-          </UtilsButtonTertiary>
-        </article>
+        <UtilsButtonTertiary to="/" target="_blank">
+          <template #ButtonContent>
+            <Icon name="mdi:facebook" />
+            Facebook
+          </template>
+        </UtilsButtonTertiary>
       </article>
     </article>
   </section>
@@ -155,7 +120,7 @@ const { t } = useI18n({
     "VisualHistory": "Visual History of the portfolio",
     "MyRepo": "My Github repository",
     "SourceCode": "Source code",
-    "MailContact": "Contact me by email :",
+    "MailContact": "Contact me by :",
     "Subject": "Subject",
     "SendEmail": "Send an Email"
   },
@@ -165,7 +130,7 @@ const { t } = useI18n({
     "VisualHistory": "Historique visuel du portfolio",
     "MyRepo": "Mon repository GitHub",
     "SourceCode": "Code source",
-    "MailContact": "Me contactez par email :",
+    "MailContact": "Me contactez par :",
     "Subject": "Sujet",
     "SendEmail": "Envoyer un email"
   }

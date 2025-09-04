@@ -17,9 +17,9 @@
         <Icon size="1.3em" name="pajamas:project" />
       </NuxtLink>
 
-      <NuxtLink class="p-1 hover:ml-[-5px]" to="#project">
+      <!-- <NuxtLink class="p-1 hover:ml-[-5px]" to="#project">
         <Icon size="1.3em" name="pajamas:project" />
-      </NuxtLink>
+      </NuxtLink> -->
 
       <NuxtLink class="p-1 hover:ml-[-5px]" to="#contact">
         <Icon size="1.3em" name="material-symbols:call-outline" />

@@ -17,7 +17,7 @@ function fadeInView() {
       });
     },
     {
-      threshold: 0.2, // commence l'animation quand 30% de l'élément est visible
+      threshold: 0.2, // commence l'animation quand 20% de l'élément est visible
     },
   );
 
@@ -105,13 +105,13 @@ const cards = ref([1, 2]);
           <article class="flex flex-col gap-[5em]">
             <ClientFilter class="mx-auto" />
             <article
-              class="mx-auto flex flex-col items-center justify-center gap-[2em] lg:w-2/4 lg:grid-cols-[1fr_1fr] xl:grid 2xl:grid-cols-[1fr_1fr_1fr]"
+              class="flex flex-col items-center justify-center gap-[2em] md:mx-auto lg:w-2/4 lg:grid-cols-[1fr_1fr] xl:grid 2xl:grid-cols-[1fr_1fr_1fr]"
             >
+              <ClientCardHorizontal />
               <ClientCard v-for="card in cards" :key="card">
-                <template #></template>
                 <template #cardProject-img>
                   <NuxtImg
-                    class="group-hover:opacity-50"
+                    class="h-[100%] group-hover:opacity-50"
                     src="/img/Frame-3.png"
                   />
                 </template>
@@ -146,7 +146,6 @@ const cards = ref([1, 2]);
               </ClientCard>
 
               <ClientCard>
-                <template #></template>
                 <template #cardProject-img>
                   <NuxtImg
                     class="group-hover:opacity-50"
@@ -182,31 +181,6 @@ const cards = ref([1, 2]);
                   <UtilsTagsPersonnel />
                 </template>
               </ClientCard>
-
-              <ClientDefaultCard>
-                <template #cardProject-title>
-                  {{ t("MyNextProject") }}
-                </template>
-                <template #cardProject-desc>
-                  {{ t("MyNextProject-Desc1") }}
-                  <br />
-                  {{ t("MyNextProject-Desc2") }}
-                </template>
-                <template #fortag>
-                  <UtilsTagsFacebook
-                    to="https://www.facebook.com"
-                    target="_blank"
-                  />
-                  <UtilsTagsLinkedin
-                    to="https://www.facebook.com"
-                    target="_blank"
-                  />
-                  <UtilsTagsGitHub
-                    to="https://www.facebook.com"
-                    target="_blank"
-                  />
-                </template>
-              </ClientDefaultCard>
             </article>
           </article>
         </section>

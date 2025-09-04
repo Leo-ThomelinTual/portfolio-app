@@ -22,13 +22,8 @@ const { t } = useI18n({
       </h2>
 
       <article
-        class="lg:w-100 flex w-2/3 flex-wrap justify-center gap-3 self-center lg:justify-start lg:self-start"
+        class="lg:w-100 flex w-3/4 flex-wrap justify-center gap-3 self-center lg:justify-start lg:self-start"
       >
-        <Icon
-          class="hidden lg:flex"
-          size="2em"
-          name="line-md:chevron-small-right"
-        />
         <Icon size="2em" name="vscode-icons:file-type-html" />
         <Icon size="2em" name="vscode-icons:file-type-css2" />
         <Icon size="2em" name="vscode-icons:file-type-php" />
@@ -39,15 +34,10 @@ const { t } = useI18n({
         <Icon size="2em" name="skill-icons:symfony-dark" />
         <Icon size="2em" name="devicon:bootstrap" />
         <Icon size="2em" name="devicon:tailwindcss" />
-        <Icon
-          class="hidden lg:flex"
-          size="2em"
-          name="line-md:chevron-small-left"
-        />
       </article>
 
       <article
-        class="w-6/7 text-md flex flex-col gap-5 lg:w-full lg:gap-3 lg:text-xl"
+        class="w-6/7 text-md flex text-center md:text-left flex-col gap-5 lg:w-full lg:gap-3 lg:text-xl"
       >
         <p>
           {{ t("text1") }} <strong>{{ t("autodidacte") }}</strong
@@ -57,15 +47,8 @@ const { t } = useI18n({
           <strong>UI/UX</strong>.
         </p>
         <article
-          class="flex flex-row flex-wrap justify-center gap-[1em] lg:justify-start"
+          class="flex flex-wrap justify-center gap-[1em] lg:justify-start"
         >
-          <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
-            <template #ButtonContent>
-              {{ t("videoShowcase") }}
-              <Icon name="material-symbols:youtube-activity" />
-            </template>
-          </UtilsButtonSecondary>
-
           <UtilsButtonSecondary to="#skills">
             <template #ButtonContent>
               {{ t("seeMore") }}
@@ -78,10 +61,17 @@ const { t } = useI18n({
               <Icon size="1.5em" name="material-symbols:arrow-forward" />
             </template>
           </UtilsButtonPrimary>
+
+          <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
+            <template #ButtonContent>
+              {{ t("videoShowcase") }}
+              <Icon name="material-symbols:youtube-activity" />
+            </template>
+          </UtilsButtonSecondary>
         </article>
       </article>
       <ClientSocialLink
-        class="my-5 flex flex-row flex-wrap gap-5 self-center lg:my-0 lg:gap-3 lg:self-start"
+        class="my-5 flex flex-wrap gap-3 self-center lg:my-0 lg:self-start"
       />
     </article>
   </article>
@@ -95,7 +85,7 @@ const { t } = useI18n({
     "autodidacte": "autodidact",
     "goodbase": "good bases in Web Design",
     "text1": "I learn web developpement in",
-    "text2": "grâce à divers vidéo et cours en libre accès. Mon but est d'élargir mes compétences partie",
+    "text2": "grace at a divers video and course in free access. My goal is to expand my skill part",
     "text3": "and the",
     "text4": "part and also learn others language in the time. I have also",
     "text5": "and i trying to learn",

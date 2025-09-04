@@ -29,7 +29,7 @@ onMounted(() => {
 
 <template>
   <article
-    @click="hideNotification"
+    @click="hideNotification()"
     class="notification group relative cursor-pointer"
   >
     <article

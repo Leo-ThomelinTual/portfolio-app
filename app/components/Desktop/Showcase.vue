@@ -21,6 +21,12 @@ function toggleHomepageShowcase() {
     showcase.classList.toggle("w-[40%]", isExpanded);
     showcase.classList.toggle("w-[95%]", !isExpanded);
 
+    if (!isExpanded) {
+      setVolume(0.06);
+    } else {
+      setVolume(0.01);
+    }
+
     document.getElementById("text-box-expand").textContent = isExpanded
       ? "Click to expand"
       : "Click to reduce";
@@ -39,8 +45,14 @@ function toggleHomepageShowcase() {
   }
 }
 
-// let vid = document.getElementById("myVideo");
-// vid.volume = 0.2;
+function setVolume(volume) {
+  let vid = document.getElementById("myVideo");
+  vid.volume = volume;
+}
+
+onMounted(() => {
+  setVolume(0.01);
+});
 </script>
 
 <template>
@@ -76,12 +88,12 @@ function toggleHomepageShowcase() {
 
     <div class="relative flex h-full w-full">
       <video
+        id="myVideo"
         class="absolute left-0 top-0 h-full w-full object-cover"
         src="/video/showcase2.mp4"
         autoplay
-        loop
         controls
-      ></video>
+      />
     </div>
   </article>
 </template>
