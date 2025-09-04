@@ -37,7 +37,7 @@ const { t } = useI18n({
       </article>
 
       <article
-        class="w-6/7 text-md flex text-center md:text-left flex-col gap-5 lg:w-full lg:gap-3 lg:text-xl"
+        class="w-6/7 text-md flex flex-col gap-5 text-center md:text-left lg:w-full lg:gap-3 lg:text-xl"
       >
         <p>
           {{ t("text1") }} <strong>{{ t("autodidacte") }}</strong
@@ -49,7 +49,7 @@ const { t } = useI18n({
         <article
           class="flex flex-wrap justify-center gap-[1em] lg:justify-start"
         >
-          <UtilsButtonSecondary to="#skills">
+          <UtilsButtonSecondary to="#skill">
             <template #ButtonContent>
               {{ t("seeMore") }}
             </template>

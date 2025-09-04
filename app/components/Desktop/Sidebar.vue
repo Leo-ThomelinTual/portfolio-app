@@ -1,3 +1,9 @@
+<script setup>
+const { t } = useI18n({
+  useScope: "local",
+});
+</script>
+
 <template>
   <section
     class="sidebar group/switch group fixed left-0 top-[50%] z-[1000] flex w-[60px] -translate-y-1/2 items-center overflow-hidden rounded-r-md py-10 opacity-25 backdrop-blur-[2px] hover:w-[200px] hover:opacity-100"
@@ -14,7 +20,7 @@
           name="material-symbols:home-outline-rounded"
         />
 
-        <p class="opacity-0 group-hover:opacity-100">Landing</p>
+        <p class="opacity-0 group-hover:opacity-100">{{ t("Landing") }}</p>
       </NuxtLink>
 
       <NuxtLink
@@ -24,7 +30,9 @@
         <div class="arrow-right hidden group-hover/item:flex" />
         <Icon class="flex-shrink-0" size="2rem" name="material-symbols:check" />
 
-        <p class="opacity-0 group-hover:opacity-100">Compétences</p>
+        <p class="opacity-0 group-hover:opacity-100">
+          {{ t("Skills") }}
+        </p>
       </NuxtLink>
 
       <NuxtLink
@@ -34,7 +42,7 @@
         <div class="arrow-right hidden group-hover/item:flex" />
         <Icon class="flex-shrink-0" size="2rem" name="pajamas:project" />
 
-        <p class="opacity-0 group-hover:opacity-100">Projet</p>
+        <p class="opacity-0 group-hover:opacity-100">{{ t("Projects") }}</p>
       </NuxtLink>
 
       <NuxtLink
@@ -48,22 +56,35 @@
           name="material-symbols:call-outline"
         />
 
-        <p class="opacity-0 group-hover:opacity-100">Contact</p>
+        <p class="opacity-0 group-hover:opacity-100">{{ t("Contacts") }}</p>
       </NuxtLink>
     </nav>
 
     <article
       class="fixed right-0 flex h-full w-[20px] items-center rounded-r-md border-y-2 border-r-2"
     >
-      <div
-        class="arrow-left absolute hidden group-hover/switch:flex"
-      />
-      <div
-        class="arrow-right absolute flex group-hover/switch:hidden"
-      />
+      <div class="arrow-left absolute hidden group-hover/switch:flex" />
+      <div class="arrow-right absolute flex group-hover/switch:hidden" />
     </article>
   </section>
 </template>
+
+<i18n lang="json">
+{
+  "en": {
+    "Landing": "Landing",
+    "Skills": "Skills",
+    "Projects": "Projects",
+    "Contacts": "Contacts"
+  },
+  "fr": {
+    "Landing": "Accueil",
+    "Skills": "Compétences",
+    "Projects": "Projets",
+    "Contacts": "Contacts"
+  }
+}
+</i18n>
 
 <style scoped>
 * {

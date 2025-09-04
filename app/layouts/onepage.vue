@@ -58,7 +58,7 @@ const cards = ref([1, 2]);
       <!-- Wrapper/Skill section -->
       <section class="relative">
         <div class="absolute -top-20" id="skill" />
-        <ClientWrapper data-tag="fade-up" class="hidden lg:mx-auto" />
+        <ClientWrapper data-tag="fade-up" class="lg:mx-auto" />
       </section>
 
       <section class="flex flex-col gap-[20em] xl:gap-0">
@@ -88,11 +88,11 @@ const cards = ref([1, 2]);
             <article
               class="flex flex-col items-center justify-center gap-[2em] md:mx-auto lg:w-2/4 lg:grid-cols-[1fr_1fr] xl:grid 2xl:grid-cols-[1fr_1fr_1fr]"
             >
-              <ClientCard v-for="card in cards" :key="card">
+              <ClientCard>
                 <template #cardProject-img>
                   <NuxtImg
-                    class="h-[100%] group-hover:opacity-50"
-                    src="/img/Frame-3.png"
+                    class="group-hover:opacity-50"
+                    src="/img/fluxrss.png"
                   />
                 </template>
 
@@ -105,59 +105,19 @@ const cards = ref([1, 2]);
                   </NuxtLink>
                 </template>
 
-                <template #cardProject-dateStart> 2021 </template>
+                <template #cardProject-dateStart> 2025 </template>
 
-                <template #cardProject-dateEnd> 2022 </template>
+                <template #cardProject-dateEnd> 2026 </template>
 
-                <template #cardProject-title> TitleMobile </template>
+                <template #cardProject-title> FluxRSS </template>
 
                 <template #cardProject-desc>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
-                  tempora eaque dolorem magnam odio placeat officiis omnis
-                  officia voluptatum voluptates consequuntur ad consequatur
-                  itaque, quos et deleniti sed porro ducimus!
+                  {{ t("fluxrss") }}
                 </template>
 
                 <template #fortag>
                   <UtilsTagsTailwindcss />
                   <UtilsTagsNuxt />
-                  <UtilsTagsBootstrap />
-                </template>
-              </ClientCard>
-
-              <ClientCard>
-                <template #cardProject-img>
-                  <NuxtImg
-                    class="group-hover:opacity-50"
-                    src="/img/Frame-3.png"
-                  />
-                </template>
-
-                <template #cardProject-iconlink>
-                  <NuxtLink to="https://github.com/trending" target="_blank">
-                    <Icon size="1.5em" name="mdi:github" />
-                  </NuxtLink>
-                  <NuxtLink to="https://github.com/trending" target="_blank">
-                    <Icon size="1.5em" name="majesticons:external-link-line" />
-                  </NuxtLink>
-                </template>
-
-                <template #cardProject-dateStart> 2021 </template>
-
-                <template #cardProject-dateEnd> 2022 </template>
-
-                <template #cardProject-title> TitleMobile </template>
-
-                <template #cardProject-desc>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
-                  tempora eaque dolorem magnam odio placeat officiis omnis
-                  officia voluptatum voluptates consequuntur ad consequatur
-                  itaque, quos et deleniti sed porro ducimus!
-                </template>
-
-                <template #fortag>
-                  <UtilsTagsTailwindcss />
-                  <UtilsTagsNext />
                   <UtilsTagsPersonnel />
                 </template>
               </ClientCard>
@@ -181,13 +141,15 @@ const cards = ref([1, 2]);
     "MyProject": "My projects",
     "MyNextProject": "What would be my next project ?",
     "MyNextProject-Desc1": "Contact me if you are intressed to work with me.",
-    "MyNextProject-Desc2": "You can contact me on Linkedin, Facebook and GitHub with the buttons under here."
+    "MyNextProject-Desc2": "You can contact me on Linkedin, Facebook and GitHub with the buttons under here.",
+    "fluxrss": "The goal to this project is to construct a rss flux custom on the content and the interface allowing me to have the total controle of what information i need or what content prioritise."
   },
   "fr": {
     "MyProject": "Mes projects",
     "MyNextProject": "Que sera mon prochain projet ?",
     "MyNextProject-Desc1": "Contactez moi si vous êtes intérèsser pour travailler avec moi.",
-    "MyNextProject-Desc2": "Vous pouvez me contacter sur Linkedin, Facebook et GitHub avec les boutons ci-dessous."
+    "MyNextProject-Desc2": "Vous pouvez me contacter sur Linkedin, Facebook et GitHub avec les boutons ci-dessous.",
+    "fluxrss": "Le but de ce projet est de me construire en flux rss customiser autant par le contenu que par l'interface me permettant d'avoir le controle total sur qu'elle information j'ai besoin ou qu'elle contenu priorisé."
   }
 }
 </i18n>
