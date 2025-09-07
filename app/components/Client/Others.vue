@@ -12,7 +12,7 @@ const { t } = useI18n({
     <article
       class="col-span-1 row-span-1 flex h-full flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2"
     >
-      <h2>Mes projects futurs</h2>
+      <h2 class="text-bold text-2xl">Mes projects futurs</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
         corporis molestias incidunt voluptates numquam minus distinctio
@@ -25,6 +25,7 @@ const { t } = useI18n({
         perferendis harum ad magnam itaque saepe totam qui dolores nostrum
         pariatur esse. Iste, autem.
       </p>
+      <h2 class="text-bold text-2xl">Qui je suis ?</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
         corporis molestias incidunt voluptates numquam minus distinctio

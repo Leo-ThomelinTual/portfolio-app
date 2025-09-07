@@ -90,7 +90,7 @@ onMounted(() => {
       <video
         id="myVideo"
         class="absolute left-0 top-0 h-full w-full object-cover"
-        src="/video/showcase2.mp4"
+        src=""
         autoplay
         controls
       />
