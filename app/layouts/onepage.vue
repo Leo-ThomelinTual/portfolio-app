@@ -96,7 +96,10 @@ onMounted(() => {
                 </template>
 
                 <template #cardProject-iconlink>
-                  <NuxtLink to="https://github.com/trending" target="_blank">
+                  <NuxtLink
+                    to="https://github.com/Leo-ThomelinTual/FluxRSS"
+                    target="_blank"
+                  >
                     <Icon size="1.5em" name="mdi:github" />
                   </NuxtLink>
                 </template>
