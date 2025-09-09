@@ -72,7 +72,7 @@ onMounted(() => {
     <!-- SOCIAL -->
     <div
       id="social-test"
-      class="absolute bottom-10 right-1 z-10 m-1 hidden w-max flex-col gap-3 rounded-sm bg-black bg-opacity-50 p-1"
+      class="absolute bottom-10 right-1 z-10 m-1 hidden w-max flex-col gap-3 rounded-sm bg-black p-1"
     >
       <NuxtLink
         class="flex items-center gap-2 text-red-500 hover:text-white"

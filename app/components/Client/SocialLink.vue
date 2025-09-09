@@ -1,59 +1,40 @@
 <template>
-  <article>
-    <NuxtLink
-      class="social group w-[50px] gap-2 px-2 hover:w-[230px] hover:px-4"
-      to="/"
+  <article class="h-[3em]">
+    <UtilsButtonSweet
+      to="https://www.facebook.com/profile.php?id=61564035716349"
     >
-      <Icon class="flex-shrink-0" size="2em" name="mdi:facebook" />
-      <p class="opacity-0 group-hover:opacity-100">Léo Thomelin-Tual</p>
-    </NuxtLink>
+      <template #icon>
+        <Icon class="flex-shrink-0" size="2em" name="mdi:facebook" />
+      </template>
 
-    <NuxtLink
-      class="social group w-[50px] gap-2 p-2 hover:w-[230px] hover:px-4"
-      to="/"
-    >
-      <Icon class="flex-shrink-0" size="2em" name="mdi:github" />
-      <p class="opacity-0 group-hover:opacity-100">Léo Thomelin-Tual</p>
-    </NuxtLink>
+      <template #SocialName>Léo Thomelin-Tual</template>
+    </UtilsButtonSweet>
 
-    <NuxtLink
-      class="social group w-[50px] gap-2 p-2 hover:w-[230px] hover:px-4"
-      to="/"
-    >
-      <Icon class="flex-shrink-0" size="2em" name="mdi:linkedin" />
-      <p class="opacity-0 group-hover:opacity-100">Léo Thomelin-Tual</p>
-    </NuxtLink>
+    <UtilsButtonSweet to="https://github.com/Leo-ThomelinTual">
+      <template #icon>
+        <Icon class="flex-shrink-0" size="2em" name="mdi:github" />
+      </template>
 
-    <NuxtLink
-      class="social group w-[50px] gap-2 p-2 hover:w-[320px] hover:px-4"
-      to="/"
+      <template #SocialName>Léo Thomelin-Tual</template>
+    </UtilsButtonSweet>
+
+    <UtilsButtonSweet to="https://www.linkedin.com/in/leo-thomelintual/">
+      <template #icon>
+        <Icon class="flex-shrink-0" size="2em" name="mdi:linkedin" />
+      </template>
+
+      <template #SocialName>Léo Thomelin-Tual</template>
+    </UtilsButtonSweet>
+
+    <UtilsButtonSweet
+      class="hover:w-[320px]"
+      to="mailto:leo.thomelintual@gmail.com"
     >
-      <Icon class="flex-shrink-0" size="2em" name="mdi:email" />
-      <p class="opacity-0 group-hover:opacity-100">
-        leo.thomelintual@gmail.com
-      </p>
-    </NuxtLink>
+      <template #icon>
+        <Icon class="flex-shrink-0" size="2em" name="mdi:email" />
+      </template>
+
+      <template #SocialName>leo.thomelintual@gmail.com</template>
+    </UtilsButtonSweet>
   </article>
 </template>
-
-<style scoped>
-.social {
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  flex-direction: row;
-  text-wrap: nowrap;
-  border-radius: 50%;
-  background: var(--secondaryColor);
-  outline-offset: 0;
-  transition: all 0.5s ease;
-}
-.social:hover {
-  border-radius: 5px;
-  background: var(--dark-contrast);
-  color: var(--light-contrast);
-  outline-offset: 3px;
-  outline: 2px solid var(--primaryColor);
-  box-shadow: 0px 0px 15px var(--light-var1);
-}
-</style>

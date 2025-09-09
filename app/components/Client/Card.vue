@@ -16,7 +16,7 @@ const { t } = useI18n({
       target="_blank"
     >
       <slot name="cardProject-img">
-        <NuxtImg src="/img/nomansky.jpg" />
+        <NuxtImg src="/img/placeholder.png" />
       </slot>
       <p
         class="absolute left-[50%] top-[50%] w-max -translate-x-1/2 -translate-y-1/2 group-hover:flex lg:hidden"

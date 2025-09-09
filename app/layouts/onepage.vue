@@ -3,6 +3,7 @@ const { t } = useI18n({
   useScope: "local",
 });
 
+// TODO Move this in js file
 function fadeInView() {
   const elements = document.querySelectorAll('[data-tag="fade-up"]');
   const observer = new IntersectionObserver(
@@ -27,8 +28,6 @@ function fadeInView() {
 onMounted(() => {
   fadeInView();
 });
-
-const cards = ref([1, 2]);
 </script>
 
 <template>
@@ -50,8 +49,8 @@ const cards = ref([1, 2]);
         <ClientAboutMe />
 
         <section>
-          <DesktopShowcase class="hidden lg:flex" />
-          <UtilsEasterEggPong class="hidden" />
+          <!-- TODO make the presentation video -->
+          <!-- <DesktopShowcase class="hidden lg:flex" /> -->
         </section>
       </section>
 
@@ -92,16 +91,13 @@ const cards = ref([1, 2]);
                 <template #cardProject-img>
                   <NuxtImg
                     class="group-hover:opacity-50"
-                    src="/img/fluxrss.png"
+                    src="img/fluxrss.png"
                   />
                 </template>
 
                 <template #cardProject-iconlink>
                   <NuxtLink to="https://github.com/trending" target="_blank">
                     <Icon size="1.5em" name="mdi:github" />
-                  </NuxtLink>
-                  <NuxtLink to="https://github.com/trending" target="_blank">
-                    <Icon size="1.5em" name="majesticons:external-link-line" />
                   </NuxtLink>
                 </template>
 
@@ -140,7 +136,7 @@ const cards = ref([1, 2]);
   "en": {
     "MyProject": "My projects",
     "MyNextProject": "What would be my next project ?",
-    "MyNextProject-Desc1": "Contact me if you are intressed to work with me.",
+    "MyNextProject-Desc1": "Contact me if you are interest to work with me.",
     "MyNextProject-Desc2": "You can contact me on Linkedin, Facebook and GitHub with the buttons under here.",
     "fluxrss": "The goal to this project is to construct a rss flux custom on the content and the interface allowing me to have the total controle of what information i need or what content prioritise."
   },
@@ -159,6 +155,8 @@ main {
   height: 100%;
   overflow-x: hidden;
 }
+
+/* TODO Move this in specific file */
 
 @media screen and (min-width: 1280px) {
   [data-tag="fade-up"] {

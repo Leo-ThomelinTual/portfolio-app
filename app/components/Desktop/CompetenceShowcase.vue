@@ -7,7 +7,7 @@ const { t } = useI18n({
 
 let conceptTimeout = null;
 
-function toggleConcept(manual = false) {
+function toggleConcept() {
   const frontend = document.querySelector("#frontend");
   const backend = document.querySelector("#backend");
 
@@ -50,14 +50,8 @@ function toggleConcept(manual = false) {
 
     if (conceptTimeout) clearTimeout(conceptTimeout);
 
-    if (!manual) {
-      conceptTimeout = setTimeout(() => toggleConcept(), 6000);
-    }
+    conceptTimeout = setTimeout(() => toggleConcept(), 6000);
   }
-}
-
-function handleManualToggle() {
-  toggleConcept(true); // True : Manual / False : Auto
 }
 
 function EnableColumn() {
@@ -70,7 +64,6 @@ function EnableColumn() {
 
     overlapSection.classList.remove("flex");
     overlapSection.classList.add("hidden");
-    toggleConcept(true);
   }
 }
 function EnableOverlap() {
@@ -83,12 +76,7 @@ function EnableOverlap() {
 
     columnSection.classList.remove("flex");
     columnSection.classList.add("hidden");
-    toggleConcept(false);
   }
-}
-
-function EnableAnimation() {
-  toggleConcept(false);
 }
 
 function checkDim() {
@@ -131,22 +119,9 @@ onBeforeUnmount(() => {
         />
         <p class="opacity-0 group-hover:opacity-100">{{ t("Overlap") }}</p>
       </button>
-      <button
-        @click="EnableAnimation"
-        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-500/50 bg-gray-800 p-1 hover:w-[210px]"
-      >
-        <Icon class="flex-shrink-0" name="material-symbols:animated-images" />
-        <p class="opacity-0 group-hover:opacity-100">
-          {{ t("EnableAnimation") }}
-        </p>
-      </button>
     </article>
 
-    <section
-      @click="handleManualToggle"
-      id="overlap"
-      class="relative flex w-full"
-    >
+    <section id="overlap" class="relative flex w-full">
       <article
         id="frontend"
         class="absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black/50 backdrop-blur-sm"
@@ -204,13 +179,11 @@ onBeforeUnmount(() => {
 {
   "en": {
     "Column": "Column",
-    "Overlap": "Overlap",
-    "EnableAnimation": "Enable Animation"
+    "Overlap": "Overlap"
   },
   "fr": {
     "Column": "Colonne",
-    "Overlap": "Ampiler",
-    "EnableAnimation": "Activer animation"
+    "Overlap": "Ampiler"
   }
 }
 </i18n>

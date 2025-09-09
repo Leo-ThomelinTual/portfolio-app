@@ -40,11 +40,17 @@ const { t } = useI18n({
         class="w-6/7 text-md flex flex-col gap-5 text-center md:text-left lg:w-full lg:gap-3 lg:text-xl"
       >
         <p>
-          {{ t("text1") }} <strong>{{ t("autodidacte") }}</strong
-          >, {{ t("text2") }} <strong>frontend</strong> {{ t("text3") }}
-          <strong>backend</strong> {{ t("text4") }}
-          <strong>{{ t("goodbase") }}</strong> {{ t("text5") }}
-          <strong>UI/UX</strong>.
+          <i18n-t keypath="about.full" tag="p">
+            <template #auto>
+              <strong>{{ t("about.autodidacte") }}</strong>
+            </template>
+            <template #fe><strong>frontend</strong></template>
+            <template #be><strong>backend</strong></template>
+            <template #gb
+              ><strong>{{ t("about.goodbase") }}</strong></template
+            >
+            <template #ui><strong>UI/UX</strong></template>
+          </i18n-t>
         </p>
         <article
           class="flex flex-wrap justify-center gap-[1em] lg:justify-start"
@@ -80,32 +86,37 @@ const { t } = useI18n({
 <i18n lang="json">
 {
   "en": {
+    "about": {
+      "autodidacte": "autodidact",
+      "goodbase": "good bases in Web Design",
+      "full": "I learned web development in {auto}, thanks to various videos and free courses. My goal is to grow my skills in {fe} and {be}, and also learn other languages over time. I also have {gb} and I'm learning {ui}."
+    }
+  },
+  "fr": {
+    "about": {
+      "autodidacte": "autodidacte",
+      "goodbase": "bonnes bases en Web Design",
+      "full": "J’ai appris à développer en {auto}, grâce à diverses vidéos et cours en libre accès. Mon but est d’élargir mes compétences en {fe} et en {be}, et d’apprendre d’autres langages avec le temps. J’ai aussi de {gb} et j’apprends {ui}."
+    }
+  }
+}
+</i18n>
+
+<i18n lang="json">
+{
+  "en": {
     "aboutme": "Welcome, my name is",
     "aboutme2": "I am ",
-    "autodidacte": "autodidact",
-    "goodbase": "good bases in Web Design",
-    "text1": "I learn web developpement in",
-    "text2": "grace at a divers video and course in free access. My goal is to expand my skill part",
-    "text3": "and the",
-    "text4": "part and also learn others language in the time. I have also",
-    "text5": "and i trying to learn",
     "seeMore": "See more",
     "videoShowcase": "See the presentation video",
-    "HireMe": "Hire Me"
+    "HireMe": "Contact me"
   },
   "fr": {
     "aboutme": "Bonjour, je m'appelle",
     "aboutme2": "Je suis",
-    "autodidacte": "autodidacte",
-    "goodbase": "bonnes bases en Web Design",
-    "text1": "J'ai appris à développer en",
-    "text2": "grâce à divers vidéo et cours en libre accès. Mon but est d'élargir mes compétences partie",
-    "text3": "et la partie",
-    "text4": "et même d'apprendre d'autres langages dans le temps. J'ai aussi de",
-    "text5": "et j'essaye d'apprendre",
     "seeMore": "Voir plus",
     "videoShowcase": "Vidéo de présentation",
-    "HireMe": "Me Recruter"
+    "HireMe": "Me contacter"
   }
 }
 </i18n>
@@ -113,18 +124,15 @@ const { t } = useI18n({
 <style scoped>
 .homepage-skillshow::after {
   content: "";
-  animation: homepageSkillshow 10s linear infinite;
+  animation: homepageSkillshow 7s linear infinite;
 }
 
 @keyframes homepageSkillshow {
   0% {
     content: "Développeur Front-end.";
   }
-  50% {
-    content: "Développeur Web Junior.";
-  }
   100% {
-    content: "Web Designer.";
+    content: "Développeur Web Junior.";
   }
 }
 </style>

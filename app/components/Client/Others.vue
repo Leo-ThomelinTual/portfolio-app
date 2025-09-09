@@ -12,37 +12,20 @@ const { t } = useI18n({
     <article
       class="col-span-1 row-span-1 flex h-full flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2"
     >
-      <h2 class="text-bold text-2xl">Mes projects futurs</h2>
+      <h2 class="text-bold text-2xl">{{ t("WhoAmI") }}</h2>
+
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
-        corporis molestias incidunt voluptates numquam minus distinctio
-        perferendis harum ad magnam itaque saepe totam qui dolores nostrum
-        pariatur esse. Iste, autem.
+        {{ t("para1") }}
       </p>
+
+      <h2 class="text-bold text-2xl">{{ t("AndNow") }}</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
-        corporis molestias incidunt voluptates numquam minus distinctio
-        perferendis harum ad magnam itaque saepe totam qui dolores nostrum
-        pariatur esse. Iste, autem.
+        {{ t("para2") }}
       </p>
-      <h2 class="text-bold text-2xl">Qui je suis ?</h2>
+
+      <h2 class="text-bold text-2xl">{{ t("MyFutureProject") }}</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
-        corporis molestias incidunt voluptates numquam minus distinctio
-        perferendis harum ad magnam itaque saepe totam qui dolores nostrum
-        pariatur esse. Iste, autem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
-        corporis molestias incidunt voluptates numquam minus distinctio
-        perferendis harum ad magnam itaque saepe totam qui dolores nostrum
-        pariatur esse. Iste, autem.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
-        corporis molestias incidunt voluptates numquam minus distinctio
-        perferendis harum ad magnam itaque saepe totam qui dolores nostrum
-        pariatur esse. Iste, autem.
+        {{ t("para3") }}
       </p>
     </article>
     <article
@@ -66,12 +49,15 @@ const { t } = useI18n({
         </template>
       </UtilsButtonTertiary>
 
-      <!-- <UtilsButtonTertiary to="/portfolio-history">
+      <UtilsButtonTertiary
+        to="https://github.com/Leo-ThomelinTual/portfolio-app"
+        target="_blank"
+      >
         <template #ButtonContent>
-          <Icon name="material-symbols-light:history" />
-          {{ t("VisualHistory") }}
+          <Icon name="mdi:github" />
+          {{ t("SourceCode") }}
         </template>
-      </UtilsButtonTertiary> -->
+      </UtilsButtonTertiary>
 
       <UtilsButtonTertiary
         to="https://github.com/Leo-ThomelinTual"
@@ -82,16 +68,6 @@ const { t } = useI18n({
           {{ t("MyRepo") }}
         </template>
       </UtilsButtonTertiary>
-
-      <UtilsButtonTertiary
-        to="https://github.com/Leo-ThomelinTual/portfolio-app"
-        target="_blank"
-      >
-        <template #ButtonContent>
-          <Icon name="mdi:github" />
-          {{ t("SourceCode") }}
-        </template>
-      </UtilsButtonTertiary>
     </article>
 
     <article
@@ -100,17 +76,33 @@ const { t } = useI18n({
       <h2 class="text-2xl">{{ t("MailContact") }}</h2>
 
       <article class="flex flex-wrap gap-2">
-        <UtilsButtonTertiary to="/" target="_blank">
+        <UtilsButtonTertiary
+          to="https://www.linkedin.com/in/leo-thomelintual/"
+          target="_blank"
+        >
           <template #ButtonContent>
             <Icon name="mdi:linkedin" />
             LinkedIn
           </template>
         </UtilsButtonTertiary>
 
-        <UtilsButtonTertiary to="/" target="_blank">
+        <UtilsButtonTertiary
+          to="https://www.facebook.com/profile.php?id=61564035716349"
+          target="_blank"
+        >
           <template #ButtonContent>
             <Icon name="mdi:facebook" />
             Facebook
+          </template>
+        </UtilsButtonTertiary>
+
+        <UtilsButtonTertiary
+          to="mailto:leo.thomelintual@gmail.com"
+          target="_blank"
+        >
+          <template #ButtonContent>
+            <Icon name="mdi:email" />
+            Email
           </template>
         </UtilsButtonTertiary>
       </article>
@@ -124,21 +116,33 @@ const { t } = useI18n({
     "UtilityLink": "Utility link",
     "Download": "Download CV - Paper version",
     "VisualHistory": "Visual History of the portfolio",
-    "MyRepo": "My Github repository",
+    "MyRepo": "My Github",
     "SourceCode": "Source code",
     "MailContact": "Contact me by :",
     "Subject": "Subject",
-    "SendEmail": "Send an Email"
+    "SendEmail": "Send an Email",
+    "WhoAmI": "Who am I?",
+    "para1": "My name is Léo, and I started getting interested in web development when I was in high school. I began learning through online and freely accessible courses, which allowed me to acquire the basics of web development. After high school, I turned to a training program in web and mobile development, which enabled me to obtain a two-year degree, and left me with a few sleepless nights to catch up on.",
+    "AndNow": "And now?",
+    "para2": "Today, I create small personal projects out of curiosity, necessity, or simply for fun. On my GitHub, I share these projects, especially the ones I’m proud of. These projects also help me track my personal and professional growth, showing me what I’ve improved on and what I still need to work on. I always keep all my projects, from my very first HTML pages to the ones I’m not very proud of or that I don’t find visually or technically interesting.",
+    "MyFutureProject": "My future projects",
+    "para3": "Now, I am looking to gain experience in the professional world."
   },
   "fr": {
     "UtilityLink": "Liens Utils",
     "Download": "Téléchargé CV - Version papier",
     "VisualHistory": "Historique visuel du portfolio",
-    "MyRepo": "Mon repository GitHub",
+    "MyRepo": "Mon GitHub",
     "SourceCode": "Code source",
-    "MailContact": "Me contactez par :",
+    "MailContact": "Me contacter par :",
     "Subject": "Sujet",
-    "SendEmail": "Envoyer un email"
+    "SendEmail": "Envoyer un email",
+    "WhoAmI": "Qui je suis ?",
+    "para1": "Je m'appelle Léo et j'ai commencé à m'intéresser au développement web quand j'étais au lycée. J'ai donc appris avec des cours en ligne et en libre accès, ce qui m'a permis d'acquérir les bases du développement web. Après le lycée, je me suis tourné vers une formation en développement web et web mobile, qui m'a permis d'obtenir un diplôme bac+2, et quelques nuits blanches à rattraper.",
+    "AndNow": "Et maintenant ?",
+    "para2": "Aujourd'hui, je crée des petits projets personnels par curiosité, par besoin ou par simple envie. Sur mon GitHub, je partage ces mêmes projets, surtout ceux dont je suis fier. Ces projets me permettent également de me situer dans mon évolution personnelle et professionnelle et de voir sur quoi je me suis amélioré et sur quoi je dois encore progresser. Je garde toujours tous mes projets, des toutes premières pages HTML aux projets dont je ne suis pas très fier ou que je ne trouve pas intéressants visuellement et techniquement.",
+    "MyFutureProject": "Mes futurs projets",
+    "para3": "À présent, je cherche à gagner de l'expérience dans le monde du travail."
   }
 }
 </i18n>
