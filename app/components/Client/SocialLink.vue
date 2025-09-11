@@ -1,5 +1,5 @@
 <template>
-  <article class="h-[3em]">
+  <article>
     <UtilsButtonSweet
       to="https://www.facebook.com/profile.php?id=61564035716349"
     >

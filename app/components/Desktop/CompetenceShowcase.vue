@@ -104,14 +104,14 @@ onBeforeUnmount(() => {
     >
       <button
         @click="EnableColumn"
-        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-500/50 bg-gray-800 p-1 hover:w-[110px]"
+        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-gray-800 p-1 hover:w-[110px]"
       >
         <Icon class="flex-shrink-0" name="material-symbols:view-column-2" />
         <p class="opacity-0 group-hover:opacity-100">{{ t("Column") }}</p>
       </button>
       <button
         @click="EnableOverlap"
-        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-500/50 bg-gray-800 p-1 hover:w-[110px]"
+        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-gray-800 p-1 hover:w-[110px]"
       >
         <Icon
           class="flex-shrink-0"
@@ -124,10 +124,10 @@ onBeforeUnmount(() => {
     <section id="overlap" class="relative flex w-full">
       <article
         id="frontend"
-        class="absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black/50 backdrop-blur-sm"
+        class="absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black/50 backdrop-blur-sm"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
         >
           Frontend
         </h2>
@@ -135,10 +135,10 @@ onBeforeUnmount(() => {
       </article>
       <article
         id="backend"
-        class="absolute z-[0] ml-0 mt-0 flex w-max flex-col gap-5 rounded-md border-2 border-gray-500/50 bg-gray-500/25 p-3 opacity-35 shadow-none shadow-black/50 backdrop-blur-none"
+        class="absolute z-[0] ml-0 mt-0 flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-35 shadow-none shadow-black/50 backdrop-blur-none"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
         >
           Backend
         </h2>
@@ -152,20 +152,20 @@ onBeforeUnmount(() => {
       class="m-3 hidden h-max w-max flex-row flex-wrap gap-1"
     >
       <article
-        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-500/50 lg:bg-gray-500/25"
+        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-700 lg:bg-gray-500/25"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
         >
           Frontend
         </h2>
         <UtilsSkillFrontend />
       </article>
       <article
-        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-500/50 lg:bg-gray-500/25"
+        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-700 lg:bg-gray-500/25"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-300/25 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
         >
           Backend
         </h2>
@@ -183,7 +183,7 @@ onBeforeUnmount(() => {
   },
   "fr": {
     "Column": "Colonne",
-    "Overlap": "Ampiler"
+    "Overlap": "Empiler"
   }
 }
 </i18n>

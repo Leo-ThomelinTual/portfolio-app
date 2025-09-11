@@ -1,38 +1,17 @@
 <script setup lang="ts">
+import { fadeInView } from "~/assets/AddonsAnimation/js/Basic/function";
 const { t } = useI18n({
   useScope: "local",
 });
 
-// TODO Move this in js file
-function fadeInView() {
-  const elements = document.querySelectorAll('[data-tag="fade-up"]');
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const el = entry.target as HTMLElement;
-        if (entry.isIntersecting) {
-          el.classList.add("visible");
-        } else {
-          el.classList.remove("visible");
-        }
-      });
-    },
-    {
-      threshold: 0.2, // commence l'animation quand 20% de l'élément est visible
-    },
-  );
-
-  elements.forEach((el) => observer.observe(el));
-}
-
 onMounted(() => {
-  fadeInView();
+  fadeInView(0.2);
 });
 </script>
 
 <template>
   <main class="w-full">
-    <section class="mb-20 flex flex-col gap-10 lg:mx-20 lg:gap-60">
+    <section class="lg:gap-30 mb-20 flex flex-col gap-10 lg:mx-20">
       <MobileSidebar class="flex lg:hidden" />
       <DesktopSidebar class="hidden lg:flex" />
 
@@ -48,20 +27,15 @@ onMounted(() => {
       >
         <ClientAboutMe />
 
-        <section>
-          <!-- TODO make the presentation video -->
-          <!-- <DesktopShowcase class="hidden lg:flex" /> -->
-        </section>
+        <!-- <section>
+          TODO make the presentation video
+          <DesktopShowcase class="hidden lg:flex" />
+        </section> -->
       </section>
 
-      <!-- Wrapper/Skill section -->
-      <section class="relative">
-        <div class="absolute -top-20" id="skill" />
-        <ClientWrapper data-tag="fade-up" class="lg:mx-auto" />
-      </section>
-
-      <section class="flex flex-col gap-[20em] xl:gap-0">
-        <!-- Skill section -->
+      <!-- Skill section -->
+      <section class="relative flex flex-col gap-[20em] xl:gap-20">
+        <div aria-hidden="true" class="absolute -top-20" id="skill" />
         <section
           data-tag="fade-up"
           class="flex h-[100vh] w-full flex-col gap-5 lg:h-max"
@@ -75,7 +49,7 @@ onMounted(() => {
           data-tag="fade-up"
           class="relative flex w-full flex-col gap-[5em]"
         >
-          <div class="absolute -top-20" id="project" />
+          <div aria-hidden="true" class="absolute -top-20" id="project" />
           <h2
             class="mx-2 flex border-b-2 py-3 text-3xl uppercase md:mx-20 md:text-4xl"
           >
@@ -87,12 +61,11 @@ onMounted(() => {
             <article
               class="flex flex-col items-center justify-center gap-[2em] md:mx-auto lg:w-2/4 lg:grid-cols-[1fr_1fr] xl:grid 2xl:grid-cols-[1fr_1fr_1fr]"
             >
+              <ClientNoFound class="col-span-3" />
+
               <ClientCard>
                 <template #cardProject-img>
-                  <NuxtImg
-                    class="group-hover:opacity-50"
-                    src="img/fluxrss.png"
-                  />
+                  <NuxtImg src="img/fluxrss.png" />
                 </template>
 
                 <template #cardProject-iconlink>
@@ -126,8 +99,8 @@ onMounted(() => {
       </section>
 
       <!-- Contact section -->
-      <section class="relative" data-tag="fade-up">
-        <div class="absolute -top-20" id="contact" />
+      <section class="relative">
+        <div aria-hidden="true" class="absolute -top-20" id="contact" />
         <ClientOthers />
       </section>
     </section>
@@ -157,24 +130,5 @@ onMounted(() => {
 main {
   height: 100%;
   overflow-x: hidden;
-}
-
-/* TODO Move this in specific file */
-
-@media screen and (min-width: 1280px) {
-  [data-tag="fade-up"] {
-    will-change: transform, opacity;
-    position: relative;
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-      opacity 1s ease,
-      transform 0.5s ease;
-  }
-
-  [data-tag="fade-up"].visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>

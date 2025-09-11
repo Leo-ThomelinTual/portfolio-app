@@ -10,7 +10,7 @@ const { t } = useI18n({
     class="grid w-[100%] grid-cols-1 grid-rows-1 gap-2 md:w-full lg:grid-cols-[1fr_max-content] lg:grid-rows-[auto_auto]"
   >
     <article
-      class="col-span-1 row-span-1 flex h-full flex-col gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2"
+      class="col-span-1 row-span-1 flex h-full flex-col gap-3 rounded-md border-2 border-gray-700 bg-black p-2 md:bg-black/30"
     >
       <h2 class="text-bold text-2xl">{{ t("WhoAmI") }}</h2>
 
@@ -29,7 +29,7 @@ const { t } = useI18n({
       </p>
     </article>
     <article
-      class="col-span-1 row-span-3 flex h-max flex-col flex-wrap items-start gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-2 md:h-full"
+      class="col-span-1 row-span-3 flex h-max flex-col flex-wrap items-start gap-3 rounded-md border-2 border-gray-700 bg-black/100 p-2 md:h-full md:bg-black/30"
     >
       <h2
         class="mx-auto flex flex-wrap items-center gap-3 border-b-2 border-white px-4 py-2 text-2xl"
@@ -71,7 +71,7 @@ const { t } = useI18n({
     </article>
 
     <article
-      class="col-span-1 row-span-2 flex h-max w-full flex-col flex-wrap gap-3 rounded-md border-2 border-gray-500/50 bg-black/30 p-4"
+      class="col-span-1 row-span-2 flex h-max w-full flex-col flex-wrap gap-3 rounded-md border-2 border-gray-700 bg-black p-4 md:bg-black/30"
     >
       <h2 class="text-2xl">{{ t("MailContact") }}</h2>
 

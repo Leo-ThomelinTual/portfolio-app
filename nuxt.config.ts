@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: "2024-11-01",
-  css: ["~/assets/css/app.css"],
+  css: ["~/assets/css/app.css", "~/assets/AddonsAnimation/Animations/All.css"],
   devtools: { enabled: true },
   icon: {
     size: "24px", // default <Icon> size applied
@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Portfolio -",
+      title: "Portfolio - Léo Thomelin",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, maximum-scale=1",
       htmlAttrs: {

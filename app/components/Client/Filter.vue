@@ -13,26 +13,41 @@ function filterList(event: Event) {
 
   // Récupère toute les cards avec un id #card
 
+  let foundOne = false;
+
   cards.forEach((card) => {
     const excludedCard = card.querySelector("#excludeCard");
     const hasGoodTag = card.querySelector("p[id^=" + tagName + "]");
 
-    if (!excludedCard) {
-      if (!hasGoodTag) {
-        card.classList.toggle("hidden");
-      }
+    if (!hasGoodTag && !excludedCard) {
+      card.classList.toggle("hidden");
+    } else if (hasGoodTag) {
+      foundOne = true;
     }
   });
+
+  const noFound = document.getElementById("NoFound");
+
+  if (!foundOne) {
+    noFound?.classList.add("flex");
+    noFound?.classList.remove("hidden");
+  } else {
+    noFound?.classList.add("hidden");
+    noFound?.classList.remove("flex");
+  }
 }
 
 function ShowAll() {
   const cards = document.querySelectorAll("#card");
   const excluded = document.querySelectorAll("#excluder");
+  const noFound = document.getElementById("NoFound");
 
   excluded.forEach((exclude) => {
     exclude.classList.remove("bg-red-500");
     exclude.classList.remove("hover:bg-red-700");
   });
+  noFound?.classList.remove("flex");
+  noFound?.classList.add("hidden");
 
   cards.forEach((card) => {
     card.classList.remove("hidden");

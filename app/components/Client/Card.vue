@@ -1,29 +1,11 @@
-<script setup lang="ts">
-const { t } = useI18n({
-  useScope: "local",
-});
-</script>
-
 <template>
   <section
     id="card"
-    class="case group relative flex w-[390px] flex-col gap-5 overflow-hidden rounded-xl border-2 border-gray-500/25 p-5 hover:border-white md:w-[450px]"
+    class="case group relative flex w-[390px] flex-col gap-2 overflow-hidden rounded-xl border-2 border-gray-500/25 p-3 hover:border-white md:w-[450px] md:gap-5 md:p-5"
   >
-    <NuxtLink
-      name="cardProject-link"
-      class="relative w-[100%] overflow-hidden rounded-md"
-      to="/"
-      target="_blank"
-    >
-      <slot name="cardProject-img">
-        <NuxtImg src="/img/placeholder.png" />
-      </slot>
-      <p
-        class="absolute left-[50%] top-[50%] w-max -translate-x-1/2 -translate-y-1/2 group-hover:flex lg:hidden"
-      >
-        {{ t("ClickToAccess") }}
-      </p>
-    </NuxtLink>
+    <slot name="cardProject-img">
+      <NuxtImg src="/img/placeholder.png" />
+    </slot>
 
     <!-- Link display for Mobile -->
     <article class="flex w-max gap-3 rounded-md bg-black/50 p-1 lg:hidden">
@@ -59,17 +41,6 @@ const { t } = useI18n({
     </article>
   </section>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "ClickToAccess": "Click to get access to the project"
-  },
-  "fr": {
-    "ClickToAccess": "Click pour accéder projet"
-  }
-}
-</i18n>
 
 <style scoped>
 * {

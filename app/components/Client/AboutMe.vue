@@ -68,16 +68,16 @@ const { t } = useI18n({
             </template>
           </UtilsButtonPrimary>
 
-          <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
+          <!-- <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
             <template #ButtonContent>
               {{ t("videoShowcase") }}
               <Icon name="material-symbols:youtube-activity" />
             </template>
-          </UtilsButtonSecondary>
+          </UtilsButtonSecondary> -->
         </article>
       </article>
       <ClientSocialLink
-        class="my-5 flex flex-wrap gap-3 self-center lg:my-0 lg:self-start"
+        class="my-5 flex h-[3em] flex-wrap gap-3 self-center lg:my-0 lg:self-start"
       />
     </article>
   </article>
