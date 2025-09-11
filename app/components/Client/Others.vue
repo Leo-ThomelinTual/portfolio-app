@@ -38,6 +38,7 @@ const { t } = useI18n({
       </h2>
 
       <UtilsButtonTertiary
+        class="w-full"
         to="/CV - Léo Thomelin-Tual.pdf"
         external
         download
@@ -50,6 +51,7 @@ const { t } = useI18n({
       </UtilsButtonTertiary>
 
       <UtilsButtonTertiary
+        class="w-full"
         to="https://github.com/Leo-ThomelinTual/portfolio-app"
         target="_blank"
       >
@@ -60,6 +62,7 @@ const { t } = useI18n({
       </UtilsButtonTertiary>
 
       <UtilsButtonTertiary
+        class="w-full"
         to="https://github.com/Leo-ThomelinTual"
         target="_blank"
       >
@@ -68,45 +71,50 @@ const { t } = useI18n({
           {{ t("MyRepo") }}
         </template>
       </UtilsButtonTertiary>
+
+      <h2
+        class="mx-auto flex flex-wrap items-center gap-3 border-b-2 border-white px-4 py-2 text-2xl"
+      >
+        {{ t("MailContact") }} <Icon name="mdi:link" />
+      </h2>
+
+      <UtilsButtonTertiary
+        class="w-full"
+        to="https://www.linkedin.com/in/leo-thomelintual/"
+        target="_blank"
+      >
+        <template #ButtonContent>
+          <Icon name="mdi:linkedin" />
+          LinkedIn
+        </template>
+      </UtilsButtonTertiary>
+
+      <UtilsButtonTertiary
+        class="w-full"
+        to="https://www.facebook.com/profile.php?id=61564035716349"
+        target="_blank"
+      >
+        <template #ButtonContent>
+          <Icon name="mdi:facebook" />
+          Facebook
+        </template>
+      </UtilsButtonTertiary>
+
+      <UtilsButtonTertiary
+        class="w-full"
+        to="mailto:leo.thomelintual@gmail.com"
+        target="_blank"
+      >
+        <template #ButtonContent>
+          <Icon name="mdi:email" />
+          Email
+        </template>
+      </UtilsButtonTertiary>
     </article>
 
     <article
       class="col-span-1 row-span-2 flex h-max w-full flex-col flex-wrap gap-3 rounded-md border-2 border-gray-700 bg-black p-4 md:bg-black/30"
-    >
-      <h2 class="text-2xl">{{ t("MailContact") }}</h2>
-
-      <article class="flex flex-wrap gap-2">
-        <UtilsButtonTertiary
-          to="https://www.linkedin.com/in/leo-thomelintual/"
-          target="_blank"
-        >
-          <template #ButtonContent>
-            <Icon name="mdi:linkedin" />
-            LinkedIn
-          </template>
-        </UtilsButtonTertiary>
-
-        <UtilsButtonTertiary
-          to="https://www.facebook.com/profile.php?id=61564035716349"
-          target="_blank"
-        >
-          <template #ButtonContent>
-            <Icon name="mdi:facebook" />
-            Facebook
-          </template>
-        </UtilsButtonTertiary>
-
-        <UtilsButtonTertiary
-          to="mailto:leo.thomelintual@gmail.com"
-          target="_blank"
-        >
-          <template #ButtonContent>
-            <Icon name="mdi:email" />
-            Email
-          </template>
-        </UtilsButtonTertiary>
-      </article>
-    </article>
+    ></article>
   </section>
 </template>
 
@@ -114,11 +122,11 @@ const { t } = useI18n({
 {
   "en": {
     "UtilityLink": "Utility link",
-    "Download": "Download CV - Paper version",
+    "Download": "Download CV",
     "VisualHistory": "Visual History of the portfolio",
     "MyRepo": "My Github",
     "SourceCode": "Source code",
-    "MailContact": "Contact me by :",
+    "MailContact": "Contact me",
     "Subject": "Subject",
     "SendEmail": "Send an Email",
     "WhoAmI": "Who am I?",
@@ -130,11 +138,11 @@ const { t } = useI18n({
   },
   "fr": {
     "UtilityLink": "Liens Utils",
-    "Download": "Téléchargé CV - Version papier",
+    "Download": "Téléchargé CV",
     "VisualHistory": "Historique visuel du portfolio",
     "MyRepo": "Mon GitHub",
     "SourceCode": "Code source",
-    "MailContact": "Me contacter par :",
+    "MailContact": "Me contacter",
     "Subject": "Sujet",
     "SendEmail": "Envoyer un email",
     "WhoAmI": "Qui je suis ?",
