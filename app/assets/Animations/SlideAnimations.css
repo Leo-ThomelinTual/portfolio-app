@@ -1,0 +1,232 @@
+/*
+############################################
+#          -- SlideInFrom Animation --     #   
+############################################
+###-----------------Start----------------###
+*/
+
+/* #          -- Top Animation --             # */
+
+@keyframes slideInFrom_Top-Safe {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFrom_Top-Safe-Blur {
+  from {
+    transform: translateY(-50%);
+    filter: blur(20px);
+  }
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes SlideInFrom_Top-Bounce {
+  0% {
+    transform: translate(0, -100%);
+  }
+  50% {
+    transform: translate(0, 5%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* #          -- Bottom Animation --             # */
+
+@keyframes slideInFrom_Bottom-Safe-Blur {
+  from {
+    transform: translateY(50%);
+    filter: blur(20px);
+  }
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes slideInFrom_Bottom-Safe {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* #          -- Right Animation --             # */
+
+@keyframes slideInFrom_Right-Safe-Blur {
+  from {
+    transform: translateX(-50%);
+    filter: blur(20px);
+  }
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+@keyframes slideInFrom_Right-Safe {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFrom_Right-Blur {
+  from {
+    transform: translateX(-100%);
+    filter: blur(20px);
+  }
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+@keyframes slideInFrom_Right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideInFrom_Right-Soft-Scale-Bounce {
+  0% {
+    transform: translate(100%, 0) scale(90%);
+  }
+  50% {
+    transform: translate(-5%, 0) scale(110%);
+  }
+  75% {
+    transform: translate(0, 0) scale(90%);
+  }
+  100% {
+    transform: translate(0, 0) scale(100%);
+  }
+}
+
+@keyframes SlideInFrom_Right-Scale-Bounce {
+  0% {
+    transform: translate(100%, 0) scale(80%);
+  }
+  50% {
+    transform: translate(-5%, 0) scale(120%);
+  }
+  75% {
+    transform: translate(0, 0) scale(80%);
+  }
+  100% {
+    transform: translate(0, 0) scale(100%);
+  }
+}
+
+@keyframes SlideInFrom_Right-Scale {
+  0% {
+    transform: translate(100%, 0) scale(80%);
+  }
+  50% {
+    transform: translate(-5%, 0) scale(100%);
+  }
+  100% {
+    transform: translate(0, 0) scale(100%);
+  }
+}
+
+/* #          -- Left Animation --             # */
+
+@keyframes slideInFrom_Left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFrom_Left-Blur {
+  from {
+    transform: translateX(100%);
+    filter: blur(20px);
+  }
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInFrom_Left-Safe-Blur {
+  from {
+    transform: translateX(50%);
+    filter: blur(20px);
+  }
+  to {
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+@keyframes slideInFrom_Left-Safe {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideInFrom_Left-Scale-Bounce {
+  0% {
+    transform: translate(-100%, 0) scale(80%);
+  }
+  50% {
+    transform: translate(5%, 0) scale(120%);
+  }
+  75% {
+    transform: translate(0, 0) scale(80%);
+  }
+  100% {
+    transform: translate(0, 0) scale(100%);
+  }
+}
+
+@keyframes SlideInFrom_Left-Soft-Scale-Bounce {
+  0% {
+    transform: translate(-100%, 0) scale(90%);
+  }
+  50% {
+    transform: translate(5%, 0) scale(110%);
+  }
+  75% {
+    transform: translate(0, 0) scale(90%);
+  }
+  100% {
+    transform: translate(0, 0) scale(100%);
+  }
+}
+
+@keyframes SlideInFrom_Left-Scale {
+  0% {
+    transform: translate(-100%, 0) scale(80%);
+  }
+  50% {
+    transform: translate(5%, 0) scale(100%);
+  }
+  100% {
+    transform: translate(0, 0) scale(100%);
+  }
+}
+/*
+  ###-----------------END------------------###
+  ############################################
+  #          -- SlideInFrom Animation --             #   
+  ############################################
+  */

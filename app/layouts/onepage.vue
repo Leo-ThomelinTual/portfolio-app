@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { fadeInView } from "~/assets/AddonsAnimation/js/Basic/function";
+import { fadeInView } from "~/assets/js/Basic/function";
 import { Analytics } from "@vercel/analytics/nuxt";
 const { t } = useI18n({
   useScope: "local",
