@@ -1,6 +1,6 @@
 <script setup lang="ts">
+// import { Analytics } from "@vercel/analytics/nuxt";
 import { fadeInView } from "~/assets/js/Basic/function";
-import { Analytics } from "@vercel/analytics/nuxt";
 const { t } = useI18n({
   useScope: "local",
 });
@@ -27,6 +27,7 @@ onMounted(() => {
         id="landing"
       >
         <ClientAboutMe />
+
         <Analytics />
 
         <!-- <section>

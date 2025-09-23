@@ -52,17 +52,6 @@ const { t } = useI18n({
 
       <UtilsButtonTertiary
         class="w-full"
-        to="https://github.com/Leo-ThomelinTual/portfolio-app"
-        target="_blank"
-      >
-        <template #ButtonContent>
-          <Icon name="mdi:github" />
-          {{ t("SourceCode") }}
-        </template>
-      </UtilsButtonTertiary>
-
-      <UtilsButtonTertiary
-        class="w-full"
         to="https://github.com/Leo-ThomelinTual"
         target="_blank"
       >
