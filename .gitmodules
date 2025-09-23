@@ -1,0 +1,3 @@
+[submodule "app/assets/app/assets/AddonsAnimation"]
+	path = app/assets/app/assets/AddonsAnimation
+	url = https://github.com/Leo-ThomelinTual/AddonsAnimation.git
