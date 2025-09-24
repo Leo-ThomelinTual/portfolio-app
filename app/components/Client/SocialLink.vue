@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="my-5 flex flex-wrap gap-4 self-center lg:my-0 lg:self-start">
     <UtilsButtonSweet
       to="https://www.facebook.com/profile.php?id=61564035716349"
     >

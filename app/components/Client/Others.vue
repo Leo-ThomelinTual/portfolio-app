@@ -103,7 +103,7 @@ const { t } = useI18n({
 
     <article
       class="col-span-1 row-span-2 flex h-max w-full flex-col flex-wrap gap-3 rounded-md border-2 border-gray-700 bg-black p-4 md:bg-black/30"
-    ></article>
+    />
   </section>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    class="social group w-[50px] gap-2 px-2 hover:w-[230px] hover:px-4"
+    class="social group h-[3em] w-[50px] gap-2 px-2 hover:w-[230px] hover:px-4"
     to="/"
     target="_blank"
   >

@@ -6,80 +6,58 @@ const { t } = useI18n({
 
 <template>
   <article
-    class="SlideInFrom_Left-Bounce px-1 lg:h-max lg:w-full lg:border-l-2 lg:px-3 lg:py-8"
+    class="ssorbo aboutme flex flex-col gap-3 px-1 lg:h-max lg:w-full lg:border-l-2 lg:px-3 lg:py-8"
   >
-    <article class="flex flex-col gap-3">
-      <h1
-        class="flex flex-row flex-wrap gap-2 px-3 text-2xl font-bold md:text-4xl lg:px-0"
-      >
-        {{ t("aboutme") }} <strong>Léo</strong>
-      </h1>
-      <h2
-        class="flex gap-2 border-b-2 border-gray-500 px-3 pb-3 text-lg font-bold md:text-2xl lg:px-0"
-      >
-        {{ t("aboutme2") }}
-        <strong class="homepage-skillshow"></strong>
-      </h2>
+    <h1
+      class="flex flex-wrap gap-2 px-3 text-2xl font-bold md:text-4xl lg:px-0"
+    >
+      {{ t("aboutme") }} <strong>Léo</strong>
+    </h1>
+    <h2
+      class="flex gap-2 border-b-2 border-gray-500 px-3 pb-3 text-lg font-bold md:text-2xl lg:px-0"
+    >
+      {{ t("aboutme2") }}
+      <strong class="homepage-skillshow"></strong>
+    </h2>
 
-      <article
-        class="lg:w-100 flex w-3/4 flex-wrap justify-center gap-3 self-center lg:justify-start lg:self-start"
-      >
-        <Icon size="2em" name="vscode-icons:file-type-html" />
-        <Icon size="2em" name="vscode-icons:file-type-css2" />
-        <Icon size="2em" name="vscode-icons:file-type-php" />
-        <Icon size="2em" name="vscode-icons:file-type-mysql" />
-        <Icon size="2em" name="devicon:javascript" />
-        <Icon size="2em" name="material-icon-theme:figma" />
-        <Icon size="2em" name="octicon:mark-github-16" />
-        <Icon size="2em" name="skill-icons:symfony-dark" />
-        <Icon size="2em" name="devicon:bootstrap" />
-        <Icon size="2em" name="devicon:tailwindcss" />
-      </article>
+    <UtilsSkillLine />
 
-      <article
-        class="w-6/7 text-md flex flex-col gap-5 text-center md:text-left lg:w-full lg:gap-3 lg:text-xl"
-      >
-        <p>
-          <i18n-t keypath="about.full" tag="p">
-            <template #auto>
-              <strong>{{ t("about.autodidacte") }}</strong>
-            </template>
-            <template #fe><strong>frontend</strong></template>
-            <template #be><strong>backend</strong></template>
-            <template #gb
-              ><strong>{{ t("about.goodbase") }}</strong></template
-            >
-            <template #ui><strong>UI/UX</strong></template>
-          </i18n-t>
-        </p>
-        <article
-          class="flex flex-wrap justify-center gap-[1em] lg:justify-start"
-        >
-          <UtilsButtonSecondary to="#skill">
-            <template #ButtonContent>
-              {{ t("seeMore") }}
-            </template>
-          </UtilsButtonSecondary>
+    <p class="text-md flex text-wrap text-center md:text-left lg:text-xl">
+      <i18n-t keypath="about.full" tag="p">
+        <template #auto>
+          <strong>{{ t("about.autodidacte") }}</strong>
+        </template>
+        <template #fe><strong>frontend</strong></template>
+        <template #be><strong>backend</strong></template>
+        <template #gb>
+          <strong>{{ t("about.goodbase") }}</strong>
+        </template>
+        <template #ui><strong>UI/UX</strong></template>
+      </i18n-t>
+    </p>
 
-          <UtilsButtonPrimary to="#contact">
-            <template #ButtonContent>
-              {{ t("HireMe") }}
-              <Icon size="1.5em" name="material-symbols:arrow-forward" />
-            </template>
-          </UtilsButtonPrimary>
+    <div class="flex flex-wrap justify-center gap-5 lg:justify-start">
+      <UtilsButtonSecondary to="#skill">
+        <template #ButtonContent>
+          {{ t("seeMore") }}
+        </template>
+      </UtilsButtonSecondary>
 
-          <!-- <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
+      <UtilsButtonPrimary to="#contact">
+        <template #ButtonContent>
+          {{ t("HireMe") }}
+          <Icon size="1.5em" name="material-symbols:arrow-forward" />
+        </template>
+      </UtilsButtonPrimary>
+
+      <!-- <UtilsButtonSecondary class="flex lg:hidden" to="#skills">
             <template #ButtonContent>
               {{ t("videoShowcase") }}
               <Icon name="material-symbols:youtube-activity" />
             </template>
           </UtilsButtonSecondary> -->
-        </article>
-      </article>
-      <ClientSocialLink
-        class="my-5 flex h-[3em] flex-wrap gap-3 self-center lg:my-0 lg:self-start"
-      />
-    </article>
+    </div>
+    <ClientSocialLink />
   </article>
 </template>
 
@@ -122,6 +100,13 @@ const { t } = useI18n({
 </i18n>
 
 <style scoped>
+.aboutme {
+  --animation-property: 1.5s ease;
+  --XSlideStart: -100%;
+  --XSlideOverflow: 10%;
+  --XSlideEnd: 0;
+}
+
 .homepage-skillshow::after {
   content: "";
   animation: homepageSkillshow 7s linear infinite;

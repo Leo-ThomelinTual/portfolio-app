@@ -1,5 +1,8 @@
 <template>
-  <section class="fixed z-[-10] h-[100vh] w-full blur-md" aria-disabled="true">
+  <section
+    class="fixed top-0 z-[-10] h-[100vh] w-full blur-md"
+    aria-hidden="true"
+  >
     <div
       class="stars right-[50%] top-[50%] animate-[pulse_3s_ease-in-out_infinite]"
     />
@@ -35,6 +38,5 @@
   width: 15px;
   border-radius: 50%;
   background-color: white;
-  will-change: opacity;
 }
 </style>

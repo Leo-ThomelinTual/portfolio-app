@@ -1,15 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted, onBeforeUnmount } from "vue";
 
 const { t } = useI18n({
   useScope: "local",
 });
 
-let conceptTimeout = null;
+let conceptTimeout = 0;
 
 function toggleConcept() {
-  const frontend = document.querySelector("#frontend");
-  const backend = document.querySelector("#backend");
+  const frontend = document.querySelector(".frontend");
+  const backend = document.querySelector(".backend");
 
   if (frontend && backend) {
     frontend.classList.toggle("opacity-100");
@@ -48,42 +48,48 @@ function toggleConcept() {
     backend.classList.toggle("z-[1]");
     backend.classList.toggle("z-[0]");
 
-    if (conceptTimeout) clearTimeout(conceptTimeout);
+    if (conceptTimeout) {
+      clearTimeout(conceptTimeout);
+    }
 
     conceptTimeout = setTimeout(() => toggleConcept(), 6000);
   }
 }
 
-function EnableColumn() {
+function EnableColumnOrOverlap(is: string) {
   const overlapSection = document.querySelector("#overlap");
   const columnSection = document.querySelector("#column");
 
-  if (columnSection.classList.contains("hidden")) {
-    columnSection.classList.remove("hidden");
-    columnSection.classList.add("flex");
+  if (is === "Column") {
+    if (columnSection?.classList.contains("hidden")) {
+      columnSection.classList.remove("hidden");
+      columnSection.classList.add("flex");
 
-    overlapSection.classList.remove("flex");
-    overlapSection.classList.add("hidden");
-  }
-}
-function EnableOverlap() {
-  const overlapSection = document.querySelector("#overlap");
-  const columnSection = document.querySelector("#column");
+      overlapSection?.classList.remove("flex");
+      overlapSection?.classList.add("hidden");
 
-  if (overlapSection.classList.contains("hidden")) {
-    overlapSection.classList.remove("hidden");
-    overlapSection.classList.add("flex");
+      if (conceptTimeout) {
+        clearTimeout(conceptTimeout);
+      }
+    }
+  } else if (is === "Overlap") {
+    if (overlapSection?.classList.contains("hidden")) {
+      overlapSection.classList.remove("hidden");
+      overlapSection.classList.add("flex");
 
-    columnSection.classList.remove("flex");
-    columnSection.classList.add("hidden");
+      columnSection?.classList.remove("flex");
+      columnSection?.classList.add("hidden");
+
+      conceptTimeout = setTimeout(() => toggleConcept(), 6000);
+    }
   }
 }
 
 function checkDim() {
   if (window.innerWidth <= 1280) {
-    EnableColumn();
+    EnableColumnOrOverlap("Column");
   } else if (window.innerWidth > 1280) {
-    EnableOverlap();
+    EnableColumnOrOverlap("Overlap");
   }
 }
 
@@ -98,20 +104,20 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="relative flex h-[50vh] flex-row flex-wrap gap-2">
-    <article
+  <section class="relative flex flex-col">
+    <div
       class="absolute -top-10 left-0 z-[10] hidden w-max flex-row gap-2 text-nowrap xl:flex"
     >
       <button
-        @click="EnableColumn"
+        @click="EnableColumnOrOverlap(`Column`)"
         class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-gray-800 p-1 hover:w-[110px]"
       >
         <Icon class="flex-shrink-0" name="material-symbols:view-column-2" />
         <p class="opacity-0 group-hover:opacity-100">{{ t("Column") }}</p>
       </button>
       <button
-        @click="EnableOverlap"
-        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-gray-800 p-1 hover:w-[110px]"
+        @click="EnableColumnOrOverlap(`Overlap`)"
+        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-gray-800 p-1 hover:w-[130px]"
       >
         <Icon
           class="flex-shrink-0"
@@ -119,12 +125,11 @@ onBeforeUnmount(() => {
         />
         <p class="opacity-0 group-hover:opacity-100">{{ t("Overlap") }}</p>
       </button>
-    </article>
+    </div>
 
-    <section id="overlap" class="relative flex w-full">
+    <section id="overlap">
       <article
-        id="frontend"
-        class="absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black/50 backdrop-blur-sm"
+        class="frontend absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black/50 backdrop-blur-sm"
       >
         <h2
           class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
@@ -134,8 +139,7 @@ onBeforeUnmount(() => {
         <UtilsSkillFrontend />
       </article>
       <article
-        id="backend"
-        class="absolute z-[0] ml-0 mt-0 flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-35 shadow-none shadow-black/50 backdrop-blur-none"
+        class="backend absolute z-[0] ml-0 mt-0 flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-35 shadow-none shadow-black/50 backdrop-blur-none"
       >
         <h2
           class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
@@ -147,10 +151,7 @@ onBeforeUnmount(() => {
     </section>
 
     <!-- Column section -->
-    <section
-      id="column"
-      class="m-3 hidden h-max w-max flex-row flex-wrap gap-1"
-    >
+    <section id="column" class="flex hidden h-max w-full flex-wrap gap-1">
       <article
         class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-700 lg:bg-gray-500/25"
       >
@@ -183,7 +184,7 @@ onBeforeUnmount(() => {
   },
   "fr": {
     "Column": "Colonne",
-    "Overlap": "Empiler"
+    "Overlap": "Superposé"
   }
 }
 </i18n>

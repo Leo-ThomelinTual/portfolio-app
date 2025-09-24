@@ -1,5 +1,8 @@
 <template>
-  <NuxtLink class="button button-primary flex gap-1 hover:gap-2" to="">
+  <NuxtLink
+    class="button button-primary text-md flex gap-1 hover:gap-2 lg:text-xl"
+    to=""
+  >
     <slot name="ButtonContent" />
   </NuxtLink>
 </template>
