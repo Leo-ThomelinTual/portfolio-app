@@ -1,7 +1,5 @@
 <script setup lang="ts">
-
 import { Analytics } from "@vercel/analytics/nuxt";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { fadeInView } from "~/assets/AddonsAnimation/ts/AnimationHandler";
 const { t } = useI18n({
   useScope: "local",
@@ -15,7 +13,7 @@ onMounted(() => {
 <template>
   <main class="h-max w-full">
     <Analytics />
-    <SpeedInsights />
+
     <!-- Sidebar and Option -->
     <aside>
       <MobileSidebar class="flex lg:hidden" />
