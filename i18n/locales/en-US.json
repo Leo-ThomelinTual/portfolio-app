@@ -1,1 +1,81 @@
-{}
+{
+  "AboutMe": {
+    "Welcome": "Welcome, my name is",
+    "Iam": "I am ",
+    "Paragraphe": {
+      "text": "I learned web development in {auto}, thanks to various videos and free courses. My goal is to grow my skills in {fe} and {be}, and also learn other languages over time. I also have {gb} and I'm learning {ui}.",
+      "autodidacte": "autodidact",
+      "goodBase": "good bases in Web Design"
+    },
+    "Button": {
+      "seeMore": "See more",
+      "videoShowcase": "See the presentation video",
+      "HireMe": "Contact me"
+    }
+  },
+
+  "NoFound": {
+    "NotFound": "Unfortunately no project as been made in this framework yet."
+  },
+
+  "Others": {
+    "Title1": "Who am I?",
+    "Paragraphe1": "My name is Léo, and I started getting interested in web development when I was in high school. I began learning through online and freely accessible courses, which allowed me to acquire the basics of web development. After high school, I turned to a training program in web and mobile development, which enabled me to obtain a two-year degree, and left me with a few sleepless nights to catch up on.",
+
+    "Title2": "And now?",
+    "Paragraphe2": "Today, I create small personal projects out of curiosity, necessity, or simply for fun. On my GitHub, I share these projects, especially the ones I’m proud of. These projects also help me track my personal and professional growth, showing me what I’ve improved on and what I still need to work on. I always keep all my projects, from my very first HTML pages to the ones I’m not very proud of or that I don’t find visually or technically interesting.",
+
+    "Title3": "My future projects",
+    "Paragraphe3": "Now, I am looking to gain experience in the professional world.",
+
+    "UtilityLink": {
+      "Title": "Utility link",
+      "Button": {
+        "Download": "Download CV",
+        "GithubRepo": "My Github"
+      }
+    },
+    "ContactLink": {
+      "Title": "Contact me"
+    }
+  },
+  "CompetenceShowcase": {
+    "Button": {
+      "Column": "Column",
+      "Overlap": "Overlap"
+    }
+  },
+  "Options": {
+    "Title": "Settings"
+  },
+  "Showcase": {
+    "Button": {
+      "Youtube": "See on Youtube"
+    }
+  },
+  "Sidebar": {
+    "nav": {
+      "1": "Landing",
+      "2": "Skills",
+      "3": "Projects",
+      "4": "Contacts"
+    }
+  },
+  "CardHandler": {
+    "FluxRSS": {
+      "description": "The goal to this project is to construct a rss flux custom on the content and the interface allowing me to have the total contrôle of what information i need or what content prioritize."
+    }
+  },
+  "Index": {
+    "Projects": {
+      "Title": "My projects"
+    }
+  },
+  "Error": {
+    "Title": "Error",
+    "Error404": "The page that you search doesn't exist or is not accessible.",
+    "Button": {
+      "BackToMenu": "Back to Home"
+    }
+  }
+}

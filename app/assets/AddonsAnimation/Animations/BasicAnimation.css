@@ -2,7 +2,7 @@
 
 :root {
   /* Base animation config */
-  --animation-property: 2s linear infinite;
+  --animation-property: 2s linear;
 
   /* X Mouvement */
   --XSlideStart: 0;
@@ -31,18 +31,18 @@
 @keyframes SlideScaleOverflowRotateBlurOpacity {
   0% {
     /* X : Y */
-    transform: translate(var(--XSlideStart), var(--YSlideStart)) scale(var(--ScaleStart))
-      rotate(var(--RotateStart));
+    transform: translate(var(--XSlideStart), var(--YSlideStart))
+      scale(var(--ScaleStart)) rotate(var(--RotateStart));
     opacity: var(--OpacityStart);
     filter: blur(var(--BlurStart));
   }
   50% {
-    transform: translate(var(--XSlideOverflow), var(--YSlideOverflow)) scale(var(--ScaleOverflow))
-      rotate(var(--RotateMiddleState));
+    transform: translate(var(--XSlideOverflow), var(--YSlideOverflow))
+      scale(var(--ScaleOverflow)) rotate(var(--RotateMiddleState));
   }
   100% {
-    transform: translate(var(--XSlideEnd), var(--YSlideEnd)) scale(var(--ScaleEnd))
-      rotate(var(--RotateEnd));
+    transform: translate(var(--XSlideEnd), var(--YSlideEnd))
+      scale(var(--ScaleEnd)) rotate(var(--RotateEnd));
     opacity: var(--OpacityEnd);
     filter: blur(var(--BlurEnd));
   }
@@ -50,18 +50,18 @@
 
 @media screen and (min-width: 1280px) {
   [data-tag="fade-up"] {
+    will-change: transform, opacity;
     position: relative;
-    --OpacityStart: 0;
-    --OpacityEnd: 0;
-    --YSlideStart: 30px;
-    --YSlideEnd: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 1s ease,
+      transform 0.5s ease;
   }
 
   [data-tag="fade-up"].visible {
-    --OpacityStart: 0;
-    --OpacityEnd: 1;
-    --YSlideStart: 30px;
-    --YSlideEnd: 0;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

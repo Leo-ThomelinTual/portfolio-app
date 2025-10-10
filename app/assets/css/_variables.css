@@ -12,10 +12,26 @@
 
   /* THEME COLORS */
 
+  /* -Classic/Basic- */
+  --classic-border-muted: darkgray;
+  --classic-border: gray;
+  --classic-text-muted: darkgray;
+  --classic-button-primary: midnightblue;
+  --classic-button-border: royalblue;
+
   /* -Halloween- */
-  --Halloween-primaryColor: orange;
-  --Halloween-secondaryColor: indigo; /* also white work */
-  --Halloween-tertiaryColor: orangered;
+  --Halloween-border-muted: darkorange;
+  --Halloween-border: indigo;
+  --Halloween-text-muted: darkorange;
+  --Halloween-button-primary: orange;
+  --Halloween-button-border: orangered;
+
+  /* -NEON- */
+  --Neon-border-muted: purple;
+  --Neon-border: violet;
+  --neon-text-muted: purple;
+  --Neon-button-primary: rgb(104, 44, 104);
+  --Neon-button-border: violet;
 
   /* TEXT AND POLICES */
 

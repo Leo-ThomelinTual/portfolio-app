@@ -1,8 +1,4 @@
 <script setup>
-const { t } = useI18n({
-  useScope: "local",
-});
-
 function toggleHomepageShowcase() {
   const showcase = document.querySelector("#showcase");
   const sections = document.querySelectorAll("article:not(#showcase)");
@@ -80,7 +76,7 @@ onMounted(() => {
         target="_blank"
       >
         <Icon size="1.5em" name="mdi:youtube" />
-        {{ t("SeeYoutube") }}
+        {{ $t("Showcase.Button.Youtube") }}
       </NuxtLink>
     </div>
 
@@ -97,17 +93,6 @@ onMounted(() => {
     </div>
   </article>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "SeeYoutube": "See on Youtube"
-  },
-  "fr": {
-    "SeeYoutube": "Voir sur Youtube"
-  }
-}
-</i18n>
 
 <style scoped>
 .showcase {

@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <section
     class="h-50 ease group fixed bottom-[60px] right-0 z-[1000] flex w-[40px] items-center overflow-hidden rounded-l-md border-y-2 border-l-2 border-gray-500 bg-[#121212] px-1 py-3 shadow-xl shadow-black"

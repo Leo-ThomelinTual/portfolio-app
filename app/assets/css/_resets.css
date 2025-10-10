@@ -38,3 +38,13 @@ strong {
   font-size: 3rem;
   line-height: 3.5rem;
 }
+.bevel-border {
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    corner-shape: bevel;
+    border-bottom-right-radius: 16px;
+    border-top-left-radius: 16px;
+  }
+  @-moz-document url-prefix() {
+    border: 0px solid white;
+  }
+}

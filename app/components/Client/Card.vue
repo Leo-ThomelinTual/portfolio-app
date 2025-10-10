@@ -1,7 +1,7 @@
 <template>
   <section
     id="card"
-    class="case group relative flex w-[390px] flex-col gap-2 overflow-hidden rounded-xl border-2 border-gray-700 p-3 hover:border-white md:w-[450px] md:gap-5 md:p-5"
+    class="case group relative flex w-[390px] flex-col gap-2 overflow-hidden rounded-xl border-2 border-gray-700 bg-black/50 p-3 hover:border-white md:w-[450px] md:gap-5 md:p-5"
   >
     <slot name="cardProject-img">
       <NuxtImg src="/img/placeholder.png" />

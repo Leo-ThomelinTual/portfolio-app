@@ -1,9 +1,3 @@
-<script setup>
-const { t } = useI18n({
-  useScope: "local",
-});
-</script>
-
 <template>
   <section
     class="sidebar group/switch group fixed left-0 top-[50%] z-[1000] flex w-[60px] -translate-y-1/2 items-center overflow-hidden rounded-r-md py-10 opacity-25 backdrop-blur-[2px] hover:w-[200px] hover:opacity-100"
@@ -20,7 +14,9 @@ const { t } = useI18n({
           name="material-symbols:home-outline-rounded"
         />
 
-        <p class="opacity-0 group-hover:opacity-100">{{ t("Landing") }}</p>
+        <p class="opacity-0 group-hover:opacity-100">
+          {{ $t("Sidebar.nav.1") }}
+        </p>
       </NuxtLink>
 
       <NuxtLink
@@ -31,7 +27,7 @@ const { t } = useI18n({
         <Icon class="flex-shrink-0" size="2rem" name="material-symbols:check" />
 
         <p class="opacity-0 group-hover:opacity-100">
-          {{ t("Skills") }}
+          {{ $t("Sidebar.nav.2") }}
         </p>
       </NuxtLink>
 
@@ -42,7 +38,9 @@ const { t } = useI18n({
         <div class="arrow-right hidden group-hover/item:flex" />
         <Icon class="flex-shrink-0" size="2rem" name="pajamas:project" />
 
-        <p class="opacity-0 group-hover:opacity-100">{{ t("Projects") }}</p>
+        <p class="opacity-0 group-hover:opacity-100">
+          {{ $t("Sidebar.nav.3") }}
+        </p>
       </NuxtLink>
 
       <NuxtLink
@@ -56,7 +54,9 @@ const { t } = useI18n({
           name="material-symbols:call-outline"
         />
 
-        <p class="opacity-0 group-hover:opacity-100">{{ t("Contacts") }}</p>
+        <p class="opacity-0 group-hover:opacity-100">
+          {{ $t("Sidebar.nav.4") }}
+        </p>
       </NuxtLink>
     </nav>
 
@@ -68,23 +68,6 @@ const { t } = useI18n({
     </article>
   </section>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "Landing": "Landing",
-    "Skills": "Skills",
-    "Projects": "Projects",
-    "Contacts": "Contacts"
-  },
-  "fr": {
-    "Landing": "Accueil",
-    "Skills": "Compétences",
-    "Projects": "Projets",
-    "Contacts": "Contacts"
-  }
-}
-</i18n>
 
 <style scoped>
 * {

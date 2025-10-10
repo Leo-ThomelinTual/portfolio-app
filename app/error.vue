@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import type { NuxtError } from "#app";
-const { t } = useI18n({
-  useScope: "local",
-});
 
 const props = defineProps({
   error: Object as () => NuxtError,
@@ -17,15 +14,19 @@ const props = defineProps({
       <article
         class="z-max absolute top-[-40px] flex w-max rounded-md border-4 border-[--primaryColor] bg-[--secondaryColor] p-2 shadow-xl lg:-left-5"
       >
-        <h1 class="text-4xl">{{ t("Error") }} : {{ error?.statusCode }}</h1>
+        <h1 class="text-4xl">
+          {{ $t("Error.Title") }} : {{ error?.statusCode }}
+        </h1>
       </article>
       <h2 class="text-end text-xl">{{ error?.statusMessage }}</h2>
 
       <p class="my-auto text-center">
-        {{ t("pageSearch") }}
+        {{ $t("Error.Error404") }}
       </p>
       <UtilsButtonSecondary class="mx-auto mt-auto" to="/">
-        <template #ButtonContent> {{ t("BackMenu") }} </template>
+        <template #ButtonContent>
+          {{ $t("Error.Button.BackToMenu") }}
+        </template>
       </UtilsButtonSecondary>
     </article>
 
@@ -44,18 +45,3 @@ const props = defineProps({
     <UtilsMapping class="hidden md:flex" />
   </section>
 </template>
-
-<i18n lang="json">
-{
-  "en": {
-    "Error": "Error",
-    "pageSearch": "The page that you search doesn't exist or is not accessible.",
-    "BackMenu": "Back to the landing page"
-  },
-  "fr": {
-    "Error": "Erreur",
-    "pageSearch": "Il semble que la page que vous rechercher n'existe pas ou n'est pas accessible.",
-    "BackMenu": "Retour à l'accueil"
-  }
-}
-</i18n>

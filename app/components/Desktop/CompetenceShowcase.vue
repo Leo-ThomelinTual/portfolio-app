@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount } from "vue";
 
-const { t } = useI18n({
-  useScope: "local",
-});
-
 let conceptTimeout = 0;
 
 function toggleConcept() {
@@ -13,7 +9,7 @@ function toggleConcept() {
 
   if (frontend && backend) {
     frontend.classList.toggle("opacity-100");
-    frontend.classList.toggle("opacity-35");
+    frontend.classList.toggle("opacity-20");
 
     frontend.classList.toggle("mt-0");
     frontend.classList.toggle("mt-[20px]");
@@ -34,7 +30,7 @@ function toggleConcept() {
     frontend.classList.toggle("ml-5");
 
     backend.classList.toggle("opacity-100");
-    backend.classList.toggle("opacity-35");
+    backend.classList.toggle("opacity-20");
 
     backend.classList.toggle("shadow-lg");
     backend.classList.toggle("shadow-none");
@@ -105,44 +101,47 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="relative flex flex-col">
-    <div
-      class="absolute -top-10 left-0 z-[10] hidden w-max flex-row gap-2 text-nowrap xl:flex"
-    >
+    <slot name="addons" />
+    <div class="z-[10] my-1 hidden w-max flex-row gap-2 text-nowrap xl:flex">
       <button
         @click="EnableColumnOrOverlap(`Column`)"
-        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-gray-800 p-1 hover:w-[110px]"
+        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-black p-1 hover:w-[110px]"
       >
         <Icon class="flex-shrink-0" name="material-symbols:view-column-2" />
-        <p class="opacity-0 group-hover:opacity-100">{{ t("Column") }}</p>
+        <p class="opacity-0 group-hover:opacity-100">
+          {{ $t("CompetenceShowcase.Button.Column") }}
+        </p>
       </button>
       <button
         @click="EnableColumnOrOverlap(`Overlap`)"
-        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-gray-800 p-1 hover:w-[130px]"
+        class="group flex w-[35px] flex-row gap-2 overflow-hidden rounded-md border-2 border-gray-700 bg-black p-1 hover:w-[130px]"
       >
         <Icon
           class="flex-shrink-0"
           name="material-symbols:overview-key-rounded"
         />
-        <p class="opacity-0 group-hover:opacity-100">{{ t("Overlap") }}</p>
+        <p class="opacity-0 group-hover:opacity-100">
+          {{ $t("CompetenceShowcase.Button.Overlap") }}
+        </p>
       </button>
     </div>
 
     <section id="overlap">
       <article
-        class="frontend absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-100 shadow-lg shadow-black/50 backdrop-blur-sm"
+        class="frontend absolute z-[1] ml-5 mt-[20px] flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-black/35 p-3 opacity-100 shadow-lg shadow-black/50 backdrop-blur-sm"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 p-3 text-2xl uppercase"
         >
           Frontend
         </h2>
         <UtilsSkillFrontend />
       </article>
       <article
-        class="backend absolute z-[0] ml-0 mt-0 flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-gray-500/25 p-3 opacity-35 shadow-none shadow-black/50 backdrop-blur-none"
+        class="backend absolute z-[0] ml-0 mt-0 flex w-max flex-col gap-5 rounded-md border-2 border-gray-700 bg-black/35 p-3 opacity-20 shadow-none shadow-black/50 backdrop-blur-none"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 p-3 text-2xl uppercase"
         >
           Backend
         </h2>
@@ -153,20 +152,20 @@ onBeforeUnmount(() => {
     <!-- Column section -->
     <section id="column" class="flex hidden h-max w-full flex-wrap gap-1">
       <article
-        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-700 lg:bg-gray-500/25"
+        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-700 lg:bg-black/35"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 p-3 text-2xl uppercase"
         >
           Frontend
         </h2>
         <UtilsSkillFrontend />
       </article>
       <article
-        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-700 lg:bg-gray-500/25"
+        class="flex flex-col gap-2 rounded-md p-3 lg:border-2 lg:border-gray-700 lg:bg-black/35"
       >
         <h2
-          class="w-max rounded-md border-2 border-gray-700 bg-black/50 p-3 text-2xl uppercase"
+          class="w-max rounded-md border-2 border-gray-700 p-3 text-2xl uppercase"
         >
           Backend
         </h2>
@@ -176,19 +175,6 @@ onBeforeUnmount(() => {
   </section>
 </template>
 
-<i18n lang="json">
-{
-  "en": {
-    "Column": "Column",
-    "Overlap": "Overlap"
-  },
-  "fr": {
-    "Column": "Colonne",
-    "Overlap": "Superposé"
-  }
-}
-</i18n>
-
 <style scoped>
 * {
   transition:
@@ -197,8 +183,8 @@ onBeforeUnmount(() => {
     width 0.5s ease;
 }
 
-#frontend,
-#backend {
+.frontend,
+.backend {
   will-change: opacity, transform, backdrop;
 }
 </style>

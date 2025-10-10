@@ -1,8 +1,4 @@
 <script setup>
-const { t } = useI18n({
-  useScope: "local",
-});
-
 function toggleDesktopOptions() {
   const options = document.querySelector("#desktopOptions");
   const close = document.querySelector("#desktopClose");
@@ -54,7 +50,7 @@ function toggleTheme(theme) {
   >
     <article class="mb-1 flex flex-row gap-1">
       <p class="rounded-md bg-black px-5 py-2 font-bold">
-        {{ t("Settings") }}
+        {{ $t("Options.Title") }}
       </p>
       <button
         class="group w-max rounded-md bg-black px-2 py-2 font-bold"
@@ -78,7 +74,6 @@ function toggleTheme(theme) {
     <section
       class="flex w-max items-center gap-[1em] rounded-t-md rounded-br-md bg-black px-2 py-1"
     >
-      <p>{{ t("Language") }}</p>
 
       <NuxtLink to="/" class="group flex flex-col text-center">
         <Icon
@@ -139,16 +134,3 @@ function toggleTheme(theme) {
   transition: all 0.4s ease;
 }
 </style>
-
-<i18n lang="json">
-{
-  "en": {
-    "Settings": "Settings",
-    "Language": "Languages"
-  },
-  "fr": {
-    "Settings": "Options",
-    "Language": "Langages"
-  }
-}
-</i18n>
